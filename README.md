@@ -43,13 +43,19 @@ libeasyice require ffmpeg and mediainfo,all the dependent file already in `deps`
 the build require centos 7.2 or above. 
 
 1. build sdk
+   
+```
     cd libeasyice/make && make
     cd libhlsanalysis/make && make
     cd libtr101290/make && make
+```
 
 2. build examples
+    
+```
     cd examples
     sh build.sh
+```
 
 
 the sdk build files is output to `sdk` directory，it's also include all the dependent files,such as `ffmpeg` ,`mediainfo`.
