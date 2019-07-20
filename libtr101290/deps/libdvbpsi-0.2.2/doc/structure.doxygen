@@ -1,0 +1,32 @@
+/*! \page structure Structure of the decoders
+
+<p>The PSI decoder and the specific decoder:</p>
+
+<img src="decoder.png" />
+
+<p>Each decoder is split into two entities:</p>
+
+<ul>
+  <li>the <em>PSI decoder</em></li>
+  <li>the <em>specific decoder</em></li>
+</ul>
+
+<p>The reason of this split is that each PSI section has a common
+format. The main task of the <em>PSI decoder</em> is to get the TS
+packets given by the <em>application</em> and send complete PSI sections
+to the <em>specific decoder</em>. The <em>PSI decoder</em> must be
+reliable on TS discontinuities and signal them to the <em>specific
+decoder</em>.</p>
+
+<p>The task of the <em>specific decoder</em> is to get the PSI sections
+given by the <em>PSI decoder</em>, to build complete tables and to send
+them back to the <em>application</em>. At the same time it has to check
+TS discontinuities signaled by the <em>PSI decoder</em>. </p>
+
+<p>The <em>PSI decoder</em> is common to all the decoders wheras the
+<em>specific decoder</em> must be implemented for all the PSI
+tables.</p>
+
+\ref usage
+
+*/

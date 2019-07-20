@@ -1,0 +1,1641 @@
+{
+   "msglist" : {
+      "00001" : {
+         "index" : 0,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 79336,
+         "type" : "SDT_actual 错误"
+      },
+      "00002" : {
+         "index" : 1,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 119004,
+         "type" : "SDT_actual 错误"
+      },
+      "00003" : {
+         "index" : 2,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 153408,
+         "type" : "PCR 不连续错误"
+      },
+      "00004" : {
+         "index" : 3,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 161116,
+         "type" : "PAT 错误"
+      },
+      "00005" : {
+         "index" : 4,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 161304,
+         "type" : "PMT 错误"
+      },
+      "00006" : {
+         "index" : 5,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 198716,
+         "type" : "SDT_actual 错误"
+      },
+      "00007" : {
+         "index" : 6,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 238384,
+         "type" : "SDT_actual 错误"
+      },
+      "00008" : {
+         "index" : 7,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 277112,
+         "type" : "PCR 不连续错误"
+      },
+      "00009" : {
+         "index" : 8,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 277112,
+         "type" : "PCR 精度错误"
+      },
+      "00010" : {
+         "index" : 9,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 284820,
+         "type" : "PAT 错误"
+      },
+      "00011" : {
+         "index" : 10,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 285008,
+         "type" : "PMT 错误"
+      },
+      "00012" : {
+         "index" : 11,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 318096,
+         "type" : "SDT_actual 错误"
+      },
+      "00013" : {
+         "index" : 12,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 357764,
+         "type" : "SDT_actual 错误"
+      },
+      "00014" : {
+         "index" : 13,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 397432,
+         "type" : "SDT_actual 错误"
+      },
+      "00015" : {
+         "index" : 14,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 406832,
+         "type" : "PCR 不连续错误"
+      },
+      "00016" : {
+         "index" : 15,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 406832,
+         "type" : "PCR 精度错误"
+      },
+      "00017" : {
+         "index" : 16,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 414352,
+         "type" : "PAT 错误"
+      },
+      "00018" : {
+         "index" : 17,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 414540,
+         "type" : "PMT 错误"
+      },
+      "00019" : {
+         "index" : 18,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 476768,
+         "type" : "SDT_actual 错误"
+      },
+      "00020" : {
+         "index" : 19,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 516436,
+         "type" : "SDT_actual 错误"
+      },
+      "00021" : {
+         "index" : 20,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 537868,
+         "type" : "PCR 不连续错误"
+      },
+      "00022" : {
+         "index" : 21,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 537868,
+         "type" : "PCR 精度错误"
+      },
+      "00023" : {
+         "index" : 22,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 545388,
+         "type" : "PAT 错误"
+      },
+      "00024" : {
+         "index" : 23,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 545576,
+         "type" : "PMT 错误"
+      },
+      "00025" : {
+         "index" : 24,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 596148,
+         "type" : "SDT_actual 错误"
+      },
+      "00026" : {
+         "index" : 25,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 635816,
+         "type" : "SDT_actual 错误"
+      },
+      "00027" : {
+         "index" : 26,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 675484,
+         "type" : "SDT_actual 错误"
+      },
+      "00028" : {
+         "index" : 27,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 677364,
+         "type" : "PCR 不连续错误"
+      },
+      "00029" : {
+         "index" : 28,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 677364,
+         "type" : "PCR 精度错误"
+      },
+      "00030" : {
+         "index" : 29,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 684884,
+         "type" : "PAT 错误"
+      },
+      "00031" : {
+         "index" : 30,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 685072,
+         "type" : "PMT 错误"
+      },
+      "00032" : {
+         "index" : 31,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 754820,
+         "type" : "SDT_actual 错误"
+      },
+      "00033" : {
+         "index" : 32,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 794488,
+         "type" : "SDT_actual 错误"
+      },
+      "00034" : {
+         "index" : 33,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 812160,
+         "type" : "PCR 不连续错误"
+      },
+      "00035" : {
+         "index" : 34,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 812160,
+         "type" : "PCR 精度错误"
+      },
+      "00036" : {
+         "index" : 35,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 819680,
+         "type" : "PAT 错误"
+      },
+      "00037" : {
+         "index" : 36,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 819868,
+         "type" : "PMT 错误"
+      },
+      "00038" : {
+         "index" : 37,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 873824,
+         "type" : "SDT_actual 错误"
+      },
+      "00039" : {
+         "index" : 38,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 913492,
+         "type" : "SDT_actual 错误"
+      },
+      "00040" : {
+         "index" : 39,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 953160,
+         "type" : "SDT_actual 错误"
+      },
+      "00041" : {
+         "index" : 40,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 965192,
+         "type" : "PCR 不连续错误"
+      },
+      "00042" : {
+         "index" : 41,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 965192,
+         "type" : "PCR 精度错误"
+      },
+      "00043" : {
+         "index" : 42,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 972712,
+         "type" : "PAT 错误"
+      },
+      "00044" : {
+         "index" : 43,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 972900,
+         "type" : "PMT 错误"
+      },
+      "00045" : {
+         "index" : 44,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1032872,
+         "type" : "SDT_actual 错误"
+      },
+      "00046" : {
+         "index" : 45,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1072540,
+         "type" : "SDT_actual 错误"
+      },
+      "00047" : {
+         "index" : 46,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1112208,
+         "type" : "SDT_actual 错误"
+      },
+      "00048" : {
+         "index" : 47,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 1132700,
+         "type" : "PCR 不连续错误"
+      },
+      "00049" : {
+         "index" : 48,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 1132700,
+         "type" : "PCR 精度错误"
+      },
+      "00050" : {
+         "index" : 49,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 1140220,
+         "type" : "PAT 错误"
+      },
+      "00051" : {
+         "index" : 50,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 1140408,
+         "type" : "PMT 错误"
+      },
+      "00052" : {
+         "index" : 51,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1191920,
+         "type" : "SDT_actual 错误"
+      },
+      "00053" : {
+         "index" : 52,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1231588,
+         "type" : "SDT_actual 错误"
+      },
+      "00054" : {
+         "index" : 53,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1271256,
+         "type" : "SDT_actual 错误"
+      },
+      "00055" : {
+         "index" : 54,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 1286672,
+         "type" : "PCR 不连续错误"
+      },
+      "00056" : {
+         "index" : 55,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 1286672,
+         "type" : "PCR 精度错误"
+      },
+      "00057" : {
+         "index" : 56,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 1294192,
+         "type" : "PAT 错误"
+      },
+      "00058" : {
+         "index" : 57,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 1294380,
+         "type" : "PMT 错误"
+      },
+      "00059" : {
+         "index" : 58,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1350968,
+         "type" : "SDT_actual 错误"
+      },
+      "00060" : {
+         "index" : 59,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1390636,
+         "type" : "SDT_actual 错误"
+      },
+      "00061" : {
+         "index" : 60,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1430304,
+         "type" : "SDT_actual 错误"
+      },
+      "00062" : {
+         "index" : 61,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 1434628,
+         "type" : "PCR 不连续错误"
+      },
+      "00063" : {
+         "index" : 62,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 1434628,
+         "type" : "PCR 精度错误"
+      },
+      "00064" : {
+         "index" : 63,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 1442148,
+         "type" : "PAT 错误"
+      },
+      "00065" : {
+         "index" : 64,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 1442336,
+         "type" : "PMT 错误"
+      },
+      "00066" : {
+         "index" : 65,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1509640,
+         "type" : "SDT_actual 错误"
+      },
+      "00067" : {
+         "index" : 66,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1549308,
+         "type" : "SDT_actual 错误"
+      },
+      "00068" : {
+         "index" : 67,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 1585028,
+         "type" : "PCR 不连续错误"
+      },
+      "00069" : {
+         "index" : 68,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 1585028,
+         "type" : "PCR 精度错误"
+      },
+      "00070" : {
+         "index" : 69,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 1592736,
+         "type" : "PAT 错误"
+      },
+      "00071" : {
+         "index" : 70,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 1592924,
+         "type" : "PMT 错误"
+      },
+      "00072" : {
+         "index" : 71,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1628644,
+         "type" : "SDT_actual 错误"
+      },
+      "00073" : {
+         "index" : 72,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1668312,
+         "type" : "SDT_actual 错误"
+      },
+      "00074" : {
+         "index" : 73,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1707980,
+         "type" : "SDT_actual 错误"
+      },
+      "00075" : {
+         "index" : 74,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 1746896,
+         "type" : "PCR 不连续错误"
+      },
+      "00076" : {
+         "index" : 75,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 1746896,
+         "type" : "PCR 精度错误"
+      },
+      "00077" : {
+         "index" : 76,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 1754604,
+         "type" : "PAT 错误"
+      },
+      "00078" : {
+         "index" : 77,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 1754792,
+         "type" : "PMT 错误"
+      },
+      "00079" : {
+         "index" : 78,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1787692,
+         "type" : "SDT_actual 错误"
+      },
+      "00080" : {
+         "index" : 79,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1827360,
+         "type" : "SDT_actual 错误"
+      },
+      "00081" : {
+         "index" : 80,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1867028,
+         "type" : "SDT_actual 错误"
+      },
+      "00082" : {
+         "index" : 81,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 1891468,
+         "type" : "PCR 不连续错误"
+      },
+      "00083" : {
+         "index" : 82,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 1891468,
+         "type" : "PCR 精度错误"
+      },
+      "00084" : {
+         "index" : 83,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 1898988,
+         "type" : "PAT 错误"
+      },
+      "00085" : {
+         "index" : 84,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 1899176,
+         "type" : "PMT 错误"
+      },
+      "00086" : {
+         "index" : 85,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1946364,
+         "type" : "SDT_actual 错误"
+      },
+      "00087" : {
+         "index" : 86,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 1986032,
+         "type" : "SDT_actual 错误"
+      },
+      "00088" : {
+         "index" : 87,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2025700,
+         "type" : "SDT_actual 错误"
+      },
+      "00089" : {
+         "index" : 88,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 2045816,
+         "type" : "PCR 不连续错误"
+      },
+      "00090" : {
+         "index" : 89,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 2045816,
+         "type" : "PCR 精度错误"
+      },
+      "00091" : {
+         "index" : 90,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 2053336,
+         "type" : "PAT 错误"
+      },
+      "00092" : {
+         "index" : 91,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 2053524,
+         "type" : "PMT 错误"
+      },
+      "00093" : {
+         "index" : 92,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2105412,
+         "type" : "SDT_actual 错误"
+      },
+      "00094" : {
+         "index" : 93,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2145080,
+         "type" : "SDT_actual 错误"
+      },
+      "00095" : {
+         "index" : 94,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2184748,
+         "type" : "SDT_actual 错误"
+      },
+      "00096" : {
+         "index" : 95,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 2193960,
+         "type" : "PCR 不连续错误"
+      },
+      "00097" : {
+         "index" : 96,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 2193960,
+         "type" : "PCR 精度错误"
+      },
+      "00098" : {
+         "index" : 97,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 2201480,
+         "type" : "PAT 错误"
+      },
+      "00099" : {
+         "index" : 98,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 2201668,
+         "type" : "PMT 错误"
+      },
+      "00100" : {
+         "index" : 99,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2264084,
+         "type" : "SDT_actual 错误"
+      },
+      "00101" : {
+         "index" : 100,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2303752,
+         "type" : "SDT_actual 错误"
+      },
+      "00102" : {
+         "index" : 101,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2343420,
+         "type" : "SDT_actual 错误"
+      },
+      "00103" : {
+         "index" : 102,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 2354324,
+         "type" : "PCR 不连续错误"
+      },
+      "00104" : {
+         "index" : 103,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 2354324,
+         "type" : "PCR 精度错误"
+      },
+      "00105" : {
+         "index" : 104,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 2361844,
+         "type" : "PAT 错误"
+      },
+      "00106" : {
+         "index" : 105,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 2362032,
+         "type" : "PMT 错误"
+      },
+      "00107" : {
+         "index" : 106,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2423132,
+         "type" : "SDT_actual 错误"
+      },
+      "00108" : {
+         "index" : 107,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2462800,
+         "type" : "SDT_actual 错误"
+      },
+      "00109" : {
+         "index" : 108,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2502468,
+         "type" : "SDT_actual 错误"
+      },
+      "00110" : {
+         "index" : 109,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 2524088,
+         "type" : "PCR 不连续错误"
+      },
+      "00111" : {
+         "index" : 110,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 2524088,
+         "type" : "PCR 精度错误"
+      },
+      "00112" : {
+         "index" : 111,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 2531608,
+         "type" : "PAT 错误"
+      },
+      "00113" : {
+         "index" : 112,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 2531796,
+         "type" : "PMT 错误"
+      },
+      "00114" : {
+         "index" : 113,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2582180,
+         "type" : "SDT_actual 错误"
+      },
+      "00115" : {
+         "index" : 114,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2621848,
+         "type" : "SDT_actual 错误"
+      },
+      "00116" : {
+         "index" : 115,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2661516,
+         "type" : "SDT_actual 错误"
+      },
+      "00117" : {
+         "index" : 116,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2701184,
+         "type" : "SDT_actual 错误"
+      },
+      "00118" : {
+         "index" : 117,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 2709080,
+         "type" : "PCR 不连续错误"
+      },
+      "00119" : {
+         "index" : 118,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 2709080,
+         "type" : "PCR 精度错误"
+      },
+      "00120" : {
+         "index" : 119,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 2716600,
+         "type" : "PAT 错误"
+      },
+      "00121" : {
+         "index" : 120,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 2716788,
+         "type" : "PMT 错误"
+      },
+      "00122" : {
+         "index" : 121,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2780896,
+         "type" : "SDT_actual 错误"
+      },
+      "00123" : {
+         "index" : 122,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2820564,
+         "type" : "SDT_actual 错误"
+      },
+      "00124" : {
+         "index" : 123,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2860232,
+         "type" : "SDT_actual 错误"
+      },
+      "00125" : {
+         "index" : 124,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2899900,
+         "type" : "SDT_actual 错误"
+      },
+      "00126" : {
+         "index" : 125,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2939568,
+         "type" : "SDT_actual 错误"
+      },
+      "00127" : {
+         "index" : 126,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 2979236,
+         "type" : "SDT_actual 错误"
+      },
+      "00128" : {
+         "index" : 127,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 2983560,
+         "type" : "PCR 不连续错误"
+      },
+      "00129" : {
+         "index" : 128,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 2983560,
+         "type" : "PCR 精度错误"
+      },
+      "00130" : {
+         "index" : 129,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 2991080,
+         "type" : "PAT 错误"
+      },
+      "00131" : {
+         "index" : 130,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 2991268,
+         "type" : "PMT 错误"
+      },
+      "00132" : {
+         "index" : 131,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3058572,
+         "type" : "SDT_actual 错误"
+      },
+      "00133" : {
+         "index" : 132,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3098240,
+         "type" : "SDT_actual 错误"
+      },
+      "00134" : {
+         "index" : 133,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3137908,
+         "type" : "SDT_actual 错误"
+      },
+      "00135" : {
+         "index" : 134,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3177576,
+         "type" : "SDT_actual 错误"
+      },
+      "00136" : {
+         "index" : 135,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3217244,
+         "type" : "SDT_actual 错误"
+      },
+      "00137" : {
+         "index" : 136,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 3219688,
+         "type" : "PCR 不连续错误"
+      },
+      "00138" : {
+         "index" : 137,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 3219688,
+         "type" : "PCR 精度错误"
+      },
+      "00139" : {
+         "index" : 138,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 3227208,
+         "type" : "PAT 错误"
+      },
+      "00140" : {
+         "index" : 139,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 3227396,
+         "type" : "PMT 错误"
+      },
+      "00141" : {
+         "index" : 140,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3296580,
+         "type" : "SDT_actual 错误"
+      },
+      "00142" : {
+         "index" : 141,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3336248,
+         "type" : "SDT_actual 错误"
+      },
+      "00143" : {
+         "index" : 142,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3375916,
+         "type" : "SDT_actual 错误"
+      },
+      "00144" : {
+         "index" : 143,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 3414832,
+         "type" : "PCR 不连续错误"
+      },
+      "00145" : {
+         "index" : 144,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 3414832,
+         "type" : "PCR 精度错误"
+      },
+      "00146" : {
+         "index" : 145,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 3422540,
+         "type" : "PAT 错误"
+      },
+      "00147" : {
+         "index" : 146,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 3422728,
+         "type" : "PMT 错误"
+      },
+      "00148" : {
+         "index" : 147,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3455628,
+         "type" : "SDT_actual 错误"
+      },
+      "00149" : {
+         "index" : 148,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3495296,
+         "type" : "SDT_actual 错误"
+      },
+      "00150" : {
+         "index" : 149,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3534964,
+         "type" : "SDT_actual 错误"
+      },
+      "00151" : {
+         "index" : 150,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3574632,
+         "type" : "SDT_actual 错误"
+      },
+      "00152" : {
+         "index" : 151,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 3611668,
+         "type" : "PCR 不连续错误"
+      },
+      "00153" : {
+         "index" : 152,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 3611668,
+         "type" : "PCR 精度错误"
+      },
+      "00154" : {
+         "index" : 153,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 3619376,
+         "type" : "PAT 错误"
+      },
+      "00155" : {
+         "index" : 154,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 3619564,
+         "type" : "PMT 错误"
+      },
+      "00156" : {
+         "index" : 155,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3653968,
+         "type" : "SDT_actual 错误"
+      },
+      "00157" : {
+         "index" : 156,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3693636,
+         "type" : "SDT_actual 错误"
+      },
+      "00158" : {
+         "index" : 157,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3733304,
+         "type" : "SDT_actual 错误"
+      },
+      "00159" : {
+         "index" : 158,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3772972,
+         "type" : "SDT_actual 错误"
+      },
+      "00160" : {
+         "index" : 159,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3812640,
+         "type" : "SDT_actual 错误"
+      },
+      "00161" : {
+         "index" : 160,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3852308,
+         "type" : "SDT_actual 错误"
+      },
+      "00162" : {
+         "index" : 161,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 3857572,
+         "type" : "PCR 不连续错误"
+      },
+      "00163" : {
+         "index" : 162,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 3857572,
+         "type" : "PCR 精度错误"
+      },
+      "00164" : {
+         "index" : 163,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 3865092,
+         "type" : "PAT 错误"
+      },
+      "00165" : {
+         "index" : 164,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 3865280,
+         "type" : "PMT 错误"
+      },
+      "00166" : {
+         "index" : 165,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3931644,
+         "type" : "SDT_actual 错误"
+      },
+      "00167" : {
+         "index" : 166,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 3971312,
+         "type" : "SDT_actual 错误"
+      },
+      "00168" : {
+         "index" : 167,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4010980,
+         "type" : "SDT_actual 错误"
+      },
+      "00169" : {
+         "index" : 168,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 4046512,
+         "type" : "PCR 不连续错误"
+      },
+      "00170" : {
+         "index" : 169,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 4046512,
+         "type" : "PCR 精度错误"
+      },
+      "00171" : {
+         "index" : 170,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 4054220,
+         "type" : "PAT 错误"
+      },
+      "00172" : {
+         "index" : 171,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 4054408,
+         "type" : "PMT 错误"
+      },
+      "00173" : {
+         "index" : 172,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4090316,
+         "type" : "SDT_actual 错误"
+      },
+      "00174" : {
+         "index" : 173,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4129984,
+         "type" : "SDT_actual 错误"
+      },
+      "00175" : {
+         "index" : 174,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4169652,
+         "type" : "SDT_actual 错误"
+      },
+      "00176" : {
+         "index" : 175,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4209320,
+         "type" : "SDT_actual 错误"
+      },
+      "00177" : {
+         "index" : 176,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 4228120,
+         "type" : "PCR 不连续错误"
+      },
+      "00178" : {
+         "index" : 177,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 4228120,
+         "type" : "PCR 精度错误"
+      },
+      "00179" : {
+         "index" : 178,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 4235640,
+         "type" : "PAT 错误"
+      },
+      "00180" : {
+         "index" : 179,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 4235828,
+         "type" : "PMT 错误"
+      },
+      "00181" : {
+         "index" : 180,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4288656,
+         "type" : "SDT_actual 错误"
+      },
+      "00182" : {
+         "index" : 181,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4328324,
+         "type" : "SDT_actual 错误"
+      },
+      "00183" : {
+         "index" : 182,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4367992,
+         "type" : "SDT_actual 错误"
+      },
+      "00184" : {
+         "index" : 183,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 4399952,
+         "type" : "PCR 不连续错误"
+      },
+      "00185" : {
+         "index" : 184,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 4399952,
+         "type" : "PCR 精度错误"
+      },
+      "00186" : {
+         "index" : 185,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 4407472,
+         "type" : "PAT 错误"
+      },
+      "00187" : {
+         "index" : 186,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 4407660,
+         "type" : "PMT 错误"
+      },
+      "00188" : {
+         "index" : 187,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4447704,
+         "type" : "SDT_actual 错误"
+      },
+      "00189" : {
+         "index" : 188,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4487372,
+         "type" : "SDT_actual 错误"
+      },
+      "00190" : {
+         "index" : 189,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4527040,
+         "type" : "SDT_actual 错误"
+      },
+      "00191" : {
+         "index" : 190,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 4556556,
+         "type" : "PCR 不连续错误"
+      },
+      "00192" : {
+         "index" : 191,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 4556556,
+         "type" : "PCR 精度错误"
+      },
+      "00193" : {
+         "index" : 192,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 4564076,
+         "type" : "PAT 错误"
+      },
+      "00194" : {
+         "index" : 193,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 4564264,
+         "type" : "PMT 错误"
+      },
+      "00195" : {
+         "index" : 194,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4606376,
+         "type" : "SDT_actual 错误"
+      },
+      "00196" : {
+         "index" : 195,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4646044,
+         "type" : "SDT_actual 错误"
+      },
+      "00197" : {
+         "index" : 196,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 4650932,
+         "type" : "PCR 不连续错误"
+      },
+      "00198" : {
+         "index" : 197,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 4650932,
+         "type" : "PCR 精度错误"
+      },
+      "00199" : {
+         "index" : 198,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 4658452,
+         "type" : "PAT 错误"
+      },
+      "00200" : {
+         "index" : 199,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 4658640,
+         "type" : "PMT 错误"
+      },
+      "00201" : {
+         "index" : 200,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4725380,
+         "type" : "SDT_actual 错误"
+      },
+      "00202" : {
+         "index" : 201,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4765048,
+         "type" : "SDT_actual 错误"
+      },
+      "00203" : {
+         "index" : 202,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 4803400,
+         "type" : "PCR 不连续错误"
+      },
+      "00204" : {
+         "index" : 203,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 4803400,
+         "type" : "PCR 精度错误"
+      },
+      "00205" : {
+         "index" : 204,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 4811108,
+         "type" : "PAT 错误"
+      },
+      "00206" : {
+         "index" : 205,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 4811296,
+         "type" : "PMT 错误"
+      },
+      "00207" : {
+         "index" : 206,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4844760,
+         "type" : "SDT_actual 错误"
+      },
+      "00208" : {
+         "index" : 207,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4884428,
+         "type" : "SDT_actual 错误"
+      },
+      "00209" : {
+         "index" : 208,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 4924096,
+         "type" : "SDT_actual 错误"
+      },
+      "00210" : {
+         "index" : 209,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 4941016,
+         "type" : "PCR 不连续错误"
+      },
+      "00211" : {
+         "index" : 210,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 4941016,
+         "type" : "PCR 精度错误"
+      },
+      "00212" : {
+         "index" : 211,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 4948536,
+         "type" : "PAT 错误"
+      },
+      "00213" : {
+         "index" : 212,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 4948724,
+         "type" : "PMT 错误"
+      },
+      "00214" : {
+         "index" : 213,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5003432,
+         "type" : "SDT_actual 错误"
+      },
+      "00215" : {
+         "index" : 214,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5043100,
+         "type" : "SDT_actual 错误"
+      },
+      "00216" : {
+         "index" : 215,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5082768,
+         "type" : "SDT_actual 错误"
+      },
+      "00217" : {
+         "index" : 216,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 5092356,
+         "type" : "PCR 不连续错误"
+      },
+      "00218" : {
+         "index" : 217,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 5092356,
+         "type" : "PCR 精度错误"
+      },
+      "00219" : {
+         "index" : 218,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 5099876,
+         "type" : "PAT 错误"
+      },
+      "00220" : {
+         "index" : 219,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 5100064,
+         "type" : "PMT 错误"
+      },
+      "00221" : {
+         "index" : 220,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5162480,
+         "type" : "SDT_actual 错误"
+      },
+      "00222" : {
+         "index" : 221,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5202148,
+         "type" : "SDT_actual 错误"
+      },
+      "00223" : {
+         "index" : 222,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 5238620,
+         "type" : "PCR 不连续错误"
+      },
+      "00224" : {
+         "index" : 223,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 5238620,
+         "type" : "PCR 精度错误"
+      },
+      "00225" : {
+         "index" : 224,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 5246328,
+         "type" : "PAT 错误"
+      },
+      "00226" : {
+         "index" : 225,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 5246516,
+         "type" : "PMT 错误"
+      },
+      "00227" : {
+         "index" : 226,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5281860,
+         "type" : "SDT_actual 错误"
+      },
+      "00228" : {
+         "index" : 227,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5321528,
+         "type" : "SDT_actual 错误"
+      },
+      "00229" : {
+         "index" : 228,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5361196,
+         "type" : "SDT_actual 错误"
+      },
+      "00230" : {
+         "index" : 229,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5400864,
+         "type" : "SDT_actual 错误"
+      },
+      "00231" : {
+         "index" : 230,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 5403496,
+         "type" : "PCR 不连续错误"
+      },
+      "00232" : {
+         "index" : 231,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 5403496,
+         "type" : "PCR 精度错误"
+      },
+      "00233" : {
+         "index" : 232,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 5411016,
+         "type" : "PAT 错误"
+      },
+      "00234" : {
+         "index" : 233,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 5411204,
+         "type" : "PMT 错误"
+      },
+      "00235" : {
+         "index" : 234,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5480200,
+         "type" : "SDT_actual 错误"
+      },
+      "00236" : {
+         "index" : 235,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5519868,
+         "type" : "SDT_actual 错误"
+      },
+      "00237" : {
+         "index" : 236,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5559536,
+         "type" : "SDT_actual 错误"
+      },
+      "00238" : {
+         "index" : 237,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 5588112,
+         "type" : "PCR 不连续错误"
+      },
+      "00239" : {
+         "index" : 238,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 5588112,
+         "type" : "PCR 精度错误"
+      },
+      "00240" : {
+         "index" : 239,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 5595632,
+         "type" : "PAT 错误"
+      },
+      "00241" : {
+         "index" : 240,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 5595820,
+         "type" : "PMT 错误"
+      },
+      "00242" : {
+         "index" : 241,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5639248,
+         "type" : "SDT_actual 错误"
+      },
+      "00243" : {
+         "index" : 242,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5678916,
+         "type" : "SDT_actual 错误"
+      },
+      "00244" : {
+         "index" : 243,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5718584,
+         "type" : "SDT_actual 错误"
+      },
+      "00245" : {
+         "index" : 244,
+         "message" : "PCR 间隔超过40ms,PID = 256",
+         "offset" : 5730052,
+         "type" : "PCR 不连续错误"
+      },
+      "00246" : {
+         "index" : 245,
+         "message" : "PCR 精度误差超过正负 500ns,PID = 256",
+         "offset" : 5730052,
+         "type" : "PCR 精度错误"
+      },
+      "00247" : {
+         "index" : 246,
+         "message" : "PAT 间隔时间大于 0.5 秒",
+         "offset" : 5737572,
+         "type" : "PAT 错误"
+      },
+      "00248" : {
+         "index" : 247,
+         "message" : "PMT 间隔时间大于 0.5 秒",
+         "offset" : 5737760,
+         "type" : "PMT 错误"
+      },
+      "00249" : {
+         "index" : 248,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5797920,
+         "type" : "SDT_actual 错误"
+      },
+      "00250" : {
+         "index" : 249,
+         "message" : "间隔：0,PID = 17",
+         "offset" : 5837588,
+         "type" : "SDT_actual 错误"
+      }
+   },
+   "overview" : {
+      "00" : {
+         "brief" : "",
+         "errors" : 0,
+         "indicator" : "-----第 1 级-----"
+      },
+      "01" : {
+         "brief" : "同步丢失错误,共 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "同步丢失错误"
+      },
+      "02" : {
+         "brief" : "同步字节不等于 0x47,共 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "同步字节错误"
+      },
+      "03" : {
+         "brief" : "PAT 错误,共 35 次.\r\n\t其中:\r\nPAT 间隔大于 0.5 秒,有 35 次.\r\nPID=0 但 table_id 不等于 0,有 0 次. \r\nPAT 的 TS 包加扰指示不等于 0,有 0 次.\r\n",
+         "errors" : 35,
+         "indicator" : "PAT 错误"
+      },
+      "04" : {
+         "brief" : "连续计数错误,共 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "连续计数错误"
+      },
+      "05" : {
+         "brief" : "PMT 错误,共 35 次.\r\n\t其中:\r\nPMT 间隔时间大于 0.5 秒,有 35 次.\r\nPMT 的 TS 包加扰指示不等于 0,有 0 次.\r\n",
+         "errors" : 35,
+         "indicator" : "PMT 错误"
+      },
+      "06" : {
+         "brief" : "PMT 关联的 PID 没有及时到达,有 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "PID 错误"
+      },
+      "07" : {
+         "brief" : "",
+         "errors" : 0,
+         "indicator" : "-----第 2 级-----"
+      },
+      "08" : {
+         "brief" : "TS 包的传输错误指示为 1,有 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "传输错误"
+      },
+      "09" : {
+         "brief" : "CRC 错误,共 0 次.\r\n\t其中:\r\nCRC 错误出现在 PAT 表中,有 0 次.\r\nCRC 错误出现在 CAT 表中,有 0 次.\r\nCRC 错误出现在 PMT 表中,有 0 次.\r\nCRC 错误出现在 NIT 表中,有 0 次.\r\nCRC 错误出现在 SDT 表中,有 0 次.\r\nCRC 错误出现在 BAT 表中,有 0 次.\r\nCRC 错误出现在 TOT 表中,有 0 次.\r\nCRC 错误出现在 EIT 表中,有 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "CRC 错误"
+      },
+      "10" : {
+         "brief" : "PCR 间隔超过 40ms,共 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "PCR 间隔错误"
+      },
+      "11" : {
+         "brief" : "未设置不连续标志的情况下前后 PCR 差值大于 100ms,共 35 次.\r\n",
+         "errors" : 35,
+         "indicator" : "PCR 不连续错误"
+      },
+      "12" : {
+         "brief" : "PCR 精度误差超过正负 500ns,共 34 次.\r\n",
+         "errors" : 34,
+         "indicator" : "PCR 精度错误"
+      },
+      "13" : {
+         "brief" : "PTS 间隔超过 700ms,共 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "PTS 错误"
+      },
+      "14" : {
+         "brief" : "CAT 错误,共 0 次.\r\n\t其中:\r\nPID=1 但 table_id 不等于 1,有 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "CAT 错误"
+      },
+      "15" : {
+         "brief" : "",
+         "errors" : 0,
+         "indicator" : "-----第 3 级-----"
+      },
+      "16" : {
+         "brief" : "NIT_actual 错误,共 0 次.\r\n\t其中:\r\ntable_id 不等于 0x40 或 0x41 或 0x72,有 0 次.\r\nNIT_act 间隔超时,有 0 次.\r\nNIT_act 间隔短于 25ms,有 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "NIT_actual 错误"
+      },
+      "17" : {
+         "brief" : "NIT_other 错误,共 0 次.\r\n\t其中:\r\nNIT_other 间隔超时,有 0 次.\r\nNIT_other 间隔短于 25ms,有 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "NIT_other 错误"
+      },
+      "18" : {
+         "brief" : "SI 表间隔错误,共 111 次.\r\n\t其中:\r\nSI                  section 间隔短于 25ms,有 111 次.\r\nNIT                 section 间隔超时,有 0 次.\r\nBAT                 section 间隔超时,有 0 次.\r\nSDT_act             section 间隔超时,有 0 次.\r\nSDT_other           section 间隔超时,有 0 次.\r\nEIT_PF_act          section 间隔超时,有 0 次.\r\nEIT_PF_other        section 间隔超时,有 0 次.\r\nEIT_SCHEDULE_act    section 间隔超时,有 0 次.\r\nEIT_SCHEDULE_other  section 间隔超时,有 0 次.\r\nTDT                 section 间隔超时,有 0 次.\r\nTOT                 section 间隔超时,有 0 次.\r\n",
+         "errors" : 111,
+         "indicator" : "SI 表间隔错误"
+      },
+      "19" : {
+         "brief" : "有 PID 在 0.5 秒还未被 PMT 和 CAT 关联,有 0 次.",
+         "errors" : 0,
+         "indicator" : "关联 PID 错误"
+      },
+      "20" : {
+         "brief" : "SDT_actual 错误,共 111 次.\r\n\t其中:\r\nSDT_act 间隔超时,有 0 次.\r\nPID=0x11 但 table_id 不等于 0x42,0x46,0x4A 或 0x72,有 0 次.\r\nSDT_act 间隔短于 25ms,有 111 次.\r\n",
+         "errors" : 111,
+         "indicator" : "SDT_actual 错误"
+      },
+      "21" : {
+         "brief" : "SDT_other 错误,共 0 次.\r\n\t其中:\r\nSDT_other 间隔超时,有 0 次.\r\nSDT_other 间隔短于 25ms,有 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "SDT_other 错误"
+      },
+      "22" : {
+         "brief" : "EIT_actual 错误,共 0 次.\r\n\t其中:\r\nEIT_PF_act 间隔超时,有 0 次.\r\ntable_id 错误,有 0 次.\r\nEIT_PF_act 间隔短于 25ms,有 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "EIT_actual 错误"
+      },
+      "23" : {
+         "brief" : "EIT_other 错误,共 0 次.\r\n\t其中:\r\nEIT_PF_other 间隔超时,有 0 次.\r\nEIT_PF_other 间隔短于 25ms,有 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "EIT_other 错误"
+      },
+      "24" : {
+         "brief" : "EIT_P 或 F 仅出现一个,有 0 次.",
+         "errors" : 0,
+         "indicator" : "EIT_PF 错误"
+      },
+      "25" : {
+         "brief" : "RST 错误,共 0 次\r\n\t其中:\r\ntable_id 错误,有 0 次.\r\nRST section 间隔短于 25ms,有 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "RST 错误"
+      },
+      "26" : {
+         "brief" : "TDT 错误,共 0 次\r\n\t其中:\r\nTDT 间隔超时,有 0 次.\r\ntable_id 错误,有 0 次.\r\nRST section 间隔短于 25ms,有 0 次.\r\n",
+         "errors" : 0,
+         "indicator" : "TDT 错误"
+      }
+   }
+}

@@ -1,0 +1,1826 @@
+# Microsoft eMbedded Visual Tools Project File - Name="libdvbpsi" - Package Owner=<4>
+# Microsoft eMbedded Visual Tools Generated Build File, Format Version 6.02
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (WCE x86) Dynamic-Link Library" 0x8302
+# TARGTYPE "Win32 (WCE emulator) Dynamic-Link Library" 0xa602
+
+CFG=libdvbpsi - Win32 (WCE emulator) Debug
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "libdvbpsi.vcn".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "libdvbpsi.vcn" CFG="libdvbpsi - Win32 (WCE emulator) Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "libdvbpsi - Win32 (WCE emulator) Release" (based on "Win32 (WCE emulator) Dynamic-Link Library")
+!MESSAGE "libdvbpsi - Win32 (WCE emulator) Debug" (based on "Win32 (WCE emulator) Dynamic-Link Library")
+!MESSAGE "libdvbpsi - Win32 (WCE x86) Release" (based on "Win32 (WCE x86) Dynamic-Link Library")
+!MESSAGE "libdvbpsi - Win32 (WCE x86) Debug" (based on "Win32 (WCE x86) Dynamic-Link Library")
+!MESSAGE 
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName ""
+# PROP Scc_LocalPath ""
+# PROP ATL_Project 2
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "emulatorRel"
+# PROP BASE Intermediate_Dir "emulatorRel"
+# PROP BASE CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "emulatorRel"
+# PROP Intermediate_Dir "emulatorRel"
+# PROP CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "NDEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "NDEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /D "LIBDVBPSI_EXPORTS" /YX /Gs8192 /GF /O2 /c
+# ADD CPP /nologo /W3 /I "." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /D "LIBDVBPSI_EXPORTS" /YX /Gs8192 /GF /O2 /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+# ADD LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "emulatorDbg"
+# PROP BASE Intermediate_Dir "emulatorDbg"
+# PROP BASE CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "emulatorDbg"
+# PROP Intermediate_Dir "emulatorDbg"
+# PROP CPU_ID "{32E52003-403E-442D-BE48-DE10F8C6131D}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "LIBDVBPSI_EXPORTS" /YX /Gs8192 /GF /c
+# ADD CPP /nologo /W3 /Zi /Od /I "." /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "LIBDVBPSI_EXPORTS" /YX /Gs8192 /GF /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /debug /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+# ADD LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /debug /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "X86Rel"
+# PROP BASE Intermediate_Dir "X86Rel"
+# PROP BASE CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "X86Rel"
+# PROP Intermediate_Dir "X86Rel"
+# PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "NDEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "NDEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /D "LIBDVBPSI_EXPORTS" /YX /Gs8192 /GF /O2 /c
+# ADD CPP /nologo /W3 /I "." /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "NDEBUG" /D "LIBDVBPSI_EXPORTS" /YX /Gs8192 /GF /O2 /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+# ADD LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+# PROP BASE Use_MFC 0
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "X86Dbg"
+# PROP BASE Intermediate_Dir "X86Dbg"
+# PROP BASE CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 0
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "X86Dbg"
+# PROP Intermediate_Dir "X86Dbg"
+# PROP CPU_ID "{D6518FF3-710F-11D3-99F2-00105A0DF099}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+RSC=rc.exe
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "_X86_" /d "x86" /d "_i386_" /r
+CPP=cl.exe
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "LIBDVBPSI_EXPORTS" /YX /Gs8192 /GF /c
+# ADD CPP /nologo /W3 /Zi /Od /I "." /D "DEBUG" /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "_i386_" /D UNDER_CE=$(CEVersion) /D "UNICODE" /D "_UNICODE" /D "_X86_" /D "x86" /D "LIBDVBPSI_EXPORTS" /YX /Gs8192 /GF /c
+MTL=midl.exe
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /debug /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+# ADD LINK32 commctrl.lib coredll.lib $(CEx86Corelibc) /nologo /base:"0x00100000" /stack:0x10000,0x1000 /entry:"_DllMainCRTStartup" /dll /debug /nodefaultlib:"OLDNAMES.lib" /nodefaultlib:$(CENoDefaultLib) /subsystem:$(CESubsystem) /MACHINE:IX86
+
+!ENDIF 
+
+# Begin Target
+
+# Name "libdvbpsi - Win32 (WCE emulator) Release"
+# Name "libdvbpsi - Win32 (WCE emulator) Debug"
+# Name "libdvbpsi - Win32 (WCE x86) Release"
+# Name "libdvbpsi - Win32 (WCE x86) Debug"
+# Begin Group "Source Files"
+
+# PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+# Begin Source File
+
+SOURCE=..\src\demux.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DEMUX=\
+	"..\src\demux.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	
+NODEP_CPP_DEMUX=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DEMUX=\
+	"..\src\demux.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	
+NODEP_CPP_DEMUX=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DEMUX=\
+	"..\src\demux.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	
+NODEP_CPP_DEMUX=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DEMUX=\
+	"..\src\demux.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptor.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DESCR=\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	
+NODEP_CPP_DESCR=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DESCR=\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	
+NODEP_CPP_DESCR=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DESCR=\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	
+NODEP_CPP_DESCR=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DESCR=\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_02.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_02=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_02.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_02=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_02=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_02.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_02=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_02=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_02.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_02=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_02=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_02.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_03.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_03=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_03.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_03=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_03=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_03.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_03=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_03=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_03.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_03=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_03=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_03.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_04.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_04=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_04.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_04=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_04=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_04.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_04=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_04=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_04.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_04=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_04=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_04.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_05.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_05=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_05.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_05=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_05=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_05.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_05=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_05=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_05.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_05=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_05=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_05.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_06.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_06=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_06.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_06=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_06=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_06.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_06=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_06=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_06.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_06=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_06=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_06.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_07.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_07=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_07.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_07=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_07=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_07.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_07=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_07=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_07.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_07=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_07=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_07.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_08.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_08=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_08.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_08=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_08=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_08.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_08=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_08=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_08.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_08=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_08=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_08.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_09.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_09=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_09.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_09=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_09=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_09.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_09=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_09=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_09.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_09=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_09=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_09.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0a.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_0A=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0a.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0A=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_0A=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0a.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0A=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_0A=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0a.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0A=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_0A=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0a.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0b.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_0B=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0b.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0B=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_0B=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0b.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0B=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_0B=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0b.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0B=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_0B=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0b.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0c.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_0C=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0c.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0C=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_0C=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0c.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0C=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_0C=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0c.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0C=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_0C=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0c.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0d.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_0D=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0d.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0D=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_0D=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0d.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0D=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_0D=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0d.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0D=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_0D=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0d.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0e.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_0E=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0e.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0E=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_0E=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0e.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0E=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_0E=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0e.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0E=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_0E=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0e.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0f.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_0F=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0f.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0F=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_0F=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0f.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0F=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_0F=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0f.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_0F=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_0F=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_0f.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_42.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_42=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_42.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_42=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_42=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_42.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_42=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_42=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_42.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_42=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_42=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_42.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_47.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_47=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_47.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_47=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_47=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_47.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_47=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_47=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_47.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_47=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_47=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_47.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_48.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_48=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_48.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_48=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_48=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_48.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_48=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_48=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_48.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_48=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_48=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_48.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_55.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_55=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_55.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_55=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_55=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_55.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_55=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_55=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_55.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_55=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_55=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_55.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_56.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_56=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_56.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_56=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_56=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_56.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_56=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_56=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_56.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_56=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_56=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_56.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_59.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DR_59=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_59.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_59=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DR_59=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_59.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_59=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DR_59=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_59.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	
+NODEP_CPP_DR_59=\
+	"..\src\descriptors\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DR_59=\
+	"..\src\descriptor.h"\
+	"..\src\descriptors\dr_59.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\dvbpsi.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_DVBPS=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	
+NODEP_CPP_DVBPS=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_DVBPS=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	
+NODEP_CPP_DVBPS=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_DVBPS=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	
+NODEP_CPP_DVBPS=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_DVBPS=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\eit.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_EIT_C=\
+	"..\src\demux.h"\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\eit.h"\
+	"..\src\tables\eit_private.h"\
+	
+NODEP_CPP_EIT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_EIT_C=\
+	"..\src\demux.h"\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\eit.h"\
+	"..\src\tables\eit_private.h"\
+	
+NODEP_CPP_EIT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_EIT_C=\
+	"..\src\demux.h"\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\eit.h"\
+	"..\src\tables\eit_private.h"\
+	
+NODEP_CPP_EIT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_EIT_C=\
+	"..\src\demux.h"\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\eit.h"\
+	"..\src\tables\eit_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\pat.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_PAT_C=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\pat.h"\
+	"..\src\tables\pat_private.h"\
+	
+NODEP_CPP_PAT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_PAT_C=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\pat.h"\
+	"..\src\tables\pat_private.h"\
+	
+NODEP_CPP_PAT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_PAT_C=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\pat.h"\
+	"..\src\tables\pat_private.h"\
+	
+NODEP_CPP_PAT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_PAT_C=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\pat.h"\
+	"..\src\tables\pat_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\pmt.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_PMT_C=\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\pmt.h"\
+	"..\src\tables\pmt_private.h"\
+	
+NODEP_CPP_PMT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_PMT_C=\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\pmt.h"\
+	"..\src\tables\pmt_private.h"\
+	
+NODEP_CPP_PMT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_PMT_C=\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\pmt.h"\
+	"..\src\tables\pmt_private.h"\
+	
+NODEP_CPP_PMT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_PMT_C=\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\pmt.h"\
+	"..\src\tables\pmt_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\psi.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_PSI_C=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	
+NODEP_CPP_PSI_C=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_PSI_C=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	
+NODEP_CPP_PSI_C=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_PSI_C=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	
+NODEP_CPP_PSI_C=\
+	"..\src\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_PSI_C=\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\sdt.c
+
+!IF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Release"
+
+DEP_CPP_SDT_C=\
+	"..\src\demux.h"\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\sdt.h"\
+	"..\src\tables\sdt_private.h"\
+	
+NODEP_CPP_SDT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE emulator) Debug"
+
+DEP_CPP_SDT_C=\
+	"..\src\demux.h"\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\sdt.h"\
+	"..\src\tables\sdt_private.h"\
+	
+NODEP_CPP_SDT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Release"
+
+DEP_CPP_SDT_C=\
+	"..\src\demux.h"\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\sdt.h"\
+	"..\src\tables\sdt_private.h"\
+	
+NODEP_CPP_SDT_C=\
+	"..\src\tables\config.h"\
+	
+
+!ELSEIF  "$(CFG)" == "libdvbpsi - Win32 (WCE x86) Debug"
+
+DEP_CPP_SDT_C=\
+	"..\src\demux.h"\
+	"..\src\descriptor.h"\
+	"..\src\dvbpsi.h"\
+	"..\src\dvbpsi_private.h"\
+	"..\src\psi.h"\
+	"..\src\tables\sdt.h"\
+	"..\src\tables\sdt_private.h"\
+	".\config.h"\
+	
+
+!ENDIF 
+
+# End Source File
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hm;inl"
+# Begin Source File
+
+SOURCE=.\config.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\demux.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptor.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_02.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_03.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_04.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_05.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_06.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_07.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_08.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_09.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0a.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0b.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0c.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0d.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0e.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_0f.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_42.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_47.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_48.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_55.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_56.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\descriptors\dr_59.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\dvbpsi.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\dvbpsi_private.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\eit.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\eit_private.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\pat.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\pat_private.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\pmt.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\pmt_private.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\psi.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\sdt.h
+# End Source File
+# Begin Source File
+
+SOURCE=..\src\tables\sdt_private.h
+# End Source File
+# End Group
+# Begin Group "Resource Files"
+
+# PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+# End Group
+# End Target
+# End Project

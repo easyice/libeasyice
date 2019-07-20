@@ -1,0 +1,921 @@
+------------------------------------------------------------------------
+r157 | jpsaman | 2007-10-16 20:01:15 +0200 (Tue, 16 Oct 2007) | 2 lines
+
+Patch by Johann Hanne: Add dr_69.h to dr.h
+
+------------------------------------------------------------------------
+r156 | jpsaman | 2007-10-14 21:53:41 +0200 (Sun, 14 Oct 2007) | 2 lines
+
+Patch by Johann Hanne: "make dist" does not include examples/connect.h in the tarballs, so they will not compile. This attached patch fixes this.
+
+------------------------------------------------------------------------
+r155 | jpsaman | 2007-10-12 23:07:24 +0200 (Fri, 12 Oct 2007) | 1 line
+
+Add Jiri Pinkava to AUTHORS and update NEWS
+------------------------------------------------------------------------
+r154 | jpsaman | 2007-10-12 23:05:37 +0200 (Fri, 12 Oct 2007) | 1 line
+
+remove excess whitespace
+------------------------------------------------------------------------
+r153 | jpsaman | 2007-10-12 23:05:05 +0200 (Fri, 12 Oct 2007) | 2 lines
+
+Patch by Jiri Pinkava <Jiri.Pinkava at vscht.cz>: New descriptor 0x69 (Program Delivery Control PDC). Programme Delivery Control (PDC) is a standard (ETS 300 231) to control video recorders using hidden codes in the teletext service. The PDC data indicates to the recorder when a show or program starts. PDC is often used together with StarText, enabling the user to select a programme to record using specially coded teletext programme listings. The combination of features is often called PDC/StarText. More information on: http://en.wikipedia.org/wiki/Programme_Delivery_Control.
+
+------------------------------------------------------------------------
+r152 | jpsaman | 2007-10-11 22:25:35 +0200 (Thu, 11 Oct 2007) | 2 lines
+
+Added changelog entry for new release.
+
+------------------------------------------------------------------------
+r151 | jpsaman | 2007-10-11 22:21:47 +0200 (Thu, 11 Oct 2007) | 1 line
+
+Added cat support to news.
+------------------------------------------------------------------------
+r150 | jpsaman | 2007-10-11 22:19:10 +0200 (Thu, 11 Oct 2007) | 2 lines
+
+Patch by Johan Hanne: Update version information to 0.1.6 and changed package name to libdvbpsi5, because of an changing ABI.
+
+------------------------------------------------------------------------
+r149 | jpsaman | 2007-10-11 08:47:59 +0200 (Thu, 11 Oct 2007) | 2 lines
+
+Patch by Johann Hanne:  function in gen_pmt.c passes a char[] variable where the called function has an uint8_t[] in its declaration.
+
+------------------------------------------------------------------------
+r148 | jpsaman | 2007-10-11 08:47:13 +0200 (Thu, 11 Oct 2007) | 6 lines
+
+Patch by Johann Hanne: eit.h misses a declaration for:
+dvbpsi_descriptor_t* dvbpsi_EITEventAddDescriptor(
+                                              dvbpsi_eit_event_t* p_event,
+                                              uint8_t i_tag, uint8_t i_length,
+                                              uint8_t* p_data);
+
+------------------------------------------------------------------------
+r147 | jpsaman | 2007-10-11 08:46:25 +0200 (Thu, 11 Oct 2007) | 12 lines
+
+Patch by Johann Hanne: The C file defines:
+dvbpsi_descriptor_t * dvbpsi_GenStuffingDr(
+                                        dvbpsi_stuffing_dr_t * p_decoded,
+                                        int b_duplicate)
+but the header file declares:
+dvbpsi_descriptor_t * dvbpsi_GenStuffingDataDr(
+                                        dvbpsi_stuffing_dr_t * p_decoded,
+                                        int b_duplicate);
+
+The patch fixes this (and also two wrong function names within 
+comments).
+
+------------------------------------------------------------------------
+r146 | jpsaman | 2007-10-11 08:45:21 +0200 (Thu, 11 Oct 2007) | 2 lines
+
+Patch by Johann Hanne: cat.c includes an unused variable.
+
+------------------------------------------------------------------------
+r145 | jpsaman | 2007-10-05 19:53:35 +0200 (Fri, 05 Oct 2007) | 1 line
+
+Patch by Johan Hanne <jhml AT gmx.net> for adding CAT support
+------------------------------------------------------------------------
+r144 | massiot | 2007-04-24 18:44:05 +0200 (Tue, 24 Apr 2007) | 2 lines
+
+ * src/tables/eit.c: Simplify EIT table completion (thanks Johann).
+
+------------------------------------------------------------------------
+r143 | massiot | 2007-04-24 18:43:09 +0200 (Tue, 24 Apr 2007) | 2 lines
+
+ * src/descriptors/dr_56.c: Fixed a (major) typo in dr_56.c (thanks Johann !)
+
+------------------------------------------------------------------------
+r142 | massiot | 2007-04-16 18:53:22 +0200 (Mon, 16 Apr 2007) | 2 lines
+
+ * src/tables/eit.c: Merged Johann Hanne's patch for EIT discontinuities.
+
+------------------------------------------------------------------------
+r141 | xtophe | 2007-03-21 21:02:19 +0100 (Wed, 21 Mar 2007) | 2 lines
+
+bootstrap: support automake 1.10
+
+------------------------------------------------------------------------
+r140 | hartman | 2007-03-12 03:57:25 +0100 (Mon, 12 Mar 2007) | 2 lines
+
+* Also accept 0x46 as descriptor tag when decoding. For encoding we will need to add a new param to the descriptor struct.
+
+------------------------------------------------------------------------
+r139 | hartman | 2007-03-12 03:41:39 +0100 (Mon, 12 Mar 2007) | 2 lines
+
+* Fix dr_56 documentation
+
+------------------------------------------------------------------------
+r138 | massiot | 2007-01-22 19:03:13 +0100 (Mon, 22 Jan 2007) | 2 lines
+
+ * Prepare for version 0.1.6.
+
+------------------------------------------------------------------------
+r137 | massiot | 2007-01-19 18:33:26 +0100 (Fri, 19 Jan 2007) | 3 lines
+
+ * misc : Removed test of the audio descriptor since with the new
+   definition we don't test anything.
+
+------------------------------------------------------------------------
+r136 | massiot | 2007-01-19 18:32:37 +0100 (Fri, 19 Jan 2007) | 3 lines
+
+ * src/descriptors/dr_56.c: Fixed bad declaration and typo in descriptor 
+   56 (teletext).
+
+------------------------------------------------------------------------
+r135 | sam | 2006-09-20 13:56:27 +0200 (Wed, 20 Sep 2006) | 4 lines
+
+  * Update bootstrap file.
+  * Check for gettimeofday() in configure.ac.
+  * Fix decode_mpeg.c so that it builds on Win32.
+
+------------------------------------------------------------------------
+r134 | sam | 2006-09-20 12:42:52 +0200 (Wed, 20 Sep 2006) | 2 lines
+
+  * Fix clock accuracy computing, it's (integer * 10 ^ - exponent).
+
+------------------------------------------------------------------------
+r133 | sam | 2006-09-20 01:37:39 +0200 (Wed, 20 Sep 2006) | 3 lines
+
+  * Temporarily disable i_audio_type test in test_dr.c until someone fixes
+    dr.xml (broken due to the new 0x0a descriptor specs).
+
+------------------------------------------------------------------------
+r132 | sigmunau | 2006-07-18 10:34:12 +0200 (Tue, 18 Jul 2006) | 4 lines
+
+Fix descriptor 0x0a to match newer specs. Note that this will break binary compatibility.
+
+TODO: Update test code
+
+------------------------------------------------------------------------
+r131 | massiot | 2006-02-03 16:44:46 +0100 (Fri, 03 Feb 2006) | 3 lines
+
+ * src/dvbpsi.c: Fixed the use of uninitialized data when
+   section_syntax_indicator=0.
+
+------------------------------------------------------------------------
+r130 | jpsaman | 2005-11-18 00:14:19 +0100 (Fri, 18 Nov 2005) | 1 line
+
+Added bytes transferred and bitrates between two PCR's to the verbose output.
+------------------------------------------------------------------------
+r129 | jpsaman | 2005-11-09 22:38:43 +0100 (Wed, 09 Nov 2005) | 1 line
+
+beautifying
+------------------------------------------------------------------------
+r128 | jpsaman | 2005-11-09 22:23:27 +0100 (Wed, 09 Nov 2005) | 1 line
+
+Add sequence number
+------------------------------------------------------------------------
+r127 | jpsaman | 2005-11-09 22:09:29 +0100 (Wed, 09 Nov 2005) | 1 line
+
+fix indentation
+------------------------------------------------------------------------
+r126 | jpsaman | 2005-11-09 21:44:07 +0100 (Wed, 09 Nov 2005) | 1 line
+
+Add pid to verbose output
+------------------------------------------------------------------------
+r125 | jpsaman | 2005-11-09 20:52:06 +0100 (Wed, 09 Nov 2005) | 1 line
+
+Prettying the printfs in verbose mode.
+------------------------------------------------------------------------
+r124 | jpsaman | 2005-11-09 20:14:46 +0100 (Wed, 09 Nov 2005) | 2 lines
+
+Added a verbose option that prints PCR statistics in milliseconds.
+
+------------------------------------------------------------------------
+r123 | jpsaman | 2005-10-26 23:53:58 +0200 (Wed, 26 Oct 2005) | 1 line
+
+print backwards PCR
+------------------------------------------------------------------------
+r122 | jpsaman | 2005-09-22 22:44:09 +0200 (Thu, 22 Sep 2005) | 1 line
+
+Remove conflicting redefinition of macro release and fix several typo in this spec file.
+------------------------------------------------------------------------
+r121 | sam | 2005-09-17 15:41:55 +0200 (Sat, 17 Sep 2005) | 2 lines
+
+  * Build decode_mpeg on Win32, just don’t build the network part.
+
+------------------------------------------------------------------------
+r120 | sam | 2005-09-15 18:14:52 +0200 (Thu, 15 Sep 2005) | 2 lines
+
+  * Do not build examples/decode_mpeg on Win32.
+
+------------------------------------------------------------------------
+r119 | sam | 2005-09-15 18:14:20 +0200 (Thu, 15 Sep 2005) | 2 lines
+
+  * Fixed the package name in Debian build rules.
+
+------------------------------------------------------------------------
+r118 | massiot | 2005-09-14 21:16:53 +0200 (Wed, 14 Sep 2005) | 2 lines
+
+ * src/tables/sdt.h: Declaration of dvbpsi_SDTServiceAddDescriptor.
+
+------------------------------------------------------------------------
+r117 | jpsaman | 2005-08-03 10:44:38 +0200 (Wed, 03 Aug 2005) | 1 line
+
+setting svn properties on the files
+------------------------------------------------------------------------
+r116 | jpsaman | 2005-08-03 10:43:05 +0200 (Wed, 03 Aug 2005) | 1 line
+
+example tool for checking an MPEG2-TS stream.
+------------------------------------------------------------------------
+r114 | massiot | 2005-07-06 15:46:17 +0200 (Wed, 06 Jul 2005) | 2 lines
+
+ * Updated ChangeLog.
+
+------------------------------------------------------------------------
+r113 | sam | 2005-07-06 15:07:44 +0200 (Wed, 06 Jul 2005) | 3 lines
+
+  * updated build files for 0.1.5 release.
+  * removed unneedde executable flags.
+
+------------------------------------------------------------------------
+r112 | massiot | 2005-07-06 14:42:10 +0200 (Wed, 06 Jul 2005) | 2 lines
+
+ * ALL: preparing for 0.1.5 release.
+
+------------------------------------------------------------------------
+r111 | massiot | 2005-07-04 17:20:54 +0200 (Mon, 04 Jul 2005) | 6 lines
+
+ * src/dvbpsi.c: Fixed a long-standing issue in the section gathering. The
+   code assumed that no more than 2 sections could be present in a TS
+   packet, this is wrong. Consequently on some rare transponders (Hotbird
+   11785 H), some PMT sections may be lost. This is a MAJOR bug of
+   libdvbpsi and we should release a new version immediately.
+
+------------------------------------------------------------------------
+r110 | gbazin | 2005-06-04 14:52:02 +0200 (Sat, 04 Jun 2005) | 1 line
+
+* src/tables/sdt.c, src/descriptors/dr_48.c: added sanity checks for bad streams.
+------------------------------------------------------------------------
+r109 | massiot | 2005-05-17 21:59:13 +0200 (Tue, 17 May 2005) | 2 lines
+
+ * configure.ac : Allow the user to specify extra arguments to CFLAGS.
+
+------------------------------------------------------------------------
+r108 | gbazin | 2005-04-19 14:33:21 +0200 (Tue, 19 Apr 2005) | 2 lines
+
+* ALL: bunch of bug and mem-leak fixes.
+
+------------------------------------------------------------------------
+r107 | massiot | 2005-04-11 17:59:48 +0200 (Mon, 11 Apr 2005) | 2 lines
+
+* src/dvbpsi.c: Fixed drop of first packet when gathering sections.
+
+------------------------------------------------------------------------
+r106 | fenrir | 2005-03-23 18:03:12 +0100 (Wed, 23 Mar 2005) | 2 lines
+
+ * Makefile.am: added new files ...
+
+------------------------------------------------------------------------
+r105 | fenrir | 2005-03-23 18:02:48 +0100 (Wed, 23 Mar 2005) | 2 lines
+
+ * all: added descriptor 4d/4e for EIT.
+
+------------------------------------------------------------------------
+r104 | massiot | 2005-03-21 14:38:56 +0100 (Mon, 21 Mar 2005) | 4 lines
+
+* src/descriptor: Descriptor 0x52 decoding and generation
+* examples/decode_pmt.c: More verbose output
+Patch courtesy of Andrew John Hughes.
+
+------------------------------------------------------------------------
+r103 | massiot | 2005-01-21 15:34:51 +0100 (Fri, 21 Jan 2005) | 2 lines
+
+* src/tables/*.h: Protect multiple-lines macros with { }
+
+------------------------------------------------------------------------
+r102 | gbazin | 2004-12-22 13:09:54 +0100 (Wed, 22 Dec 2004) | 2 lines
+
+* ALL: WinCE port.
+
+------------------------------------------------------------------------
+r101 | massiot | 2004-12-20 14:54:29 +0100 (Mon, 20 Dec 2004) | 2 lines
+
+ * Updated AUTHORS file.
+
+------------------------------------------------------------------------
+r100 | massiot | 2004-12-20 14:43:25 +0100 (Mon, 20 Dec 2004) | 2 lines
+
+ * src/tables/eit.c: Fixed EIT b_free_ca.
+
+------------------------------------------------------------------------
+r99 | massiot | 2004-12-20 14:42:55 +0100 (Mon, 20 Dec 2004) | 4 lines
+
+ * src/tables/sdt.c: Fixed b_free_ca and b_eit_schedule, implemented
+   SDT generation.
+   (patch courtesy of Luzin Viktor <vl at msp dot ru>)
+
+------------------------------------------------------------------------
+r98 | massiot | 2004-11-10 20:34:56 +0100 (Wed, 10 Nov 2004) | 2 lines
+
+ * src/dvbpsi.c: When encountering a discontinuity, print the PID.
+
+------------------------------------------------------------------------
+r97 | massiot | 2004-11-10 15:47:53 +0100 (Wed, 10 Nov 2004) | 3 lines
+
+ * src/tables/eit.c, src/tables/sdt.c: Fixed numerous parsing bugs due to
+   wrong offsets and bad reading of the spec (sic).
+
+------------------------------------------------------------------------
+r96 | hartman | 2004-10-29 14:26:37 +0200 (Fri, 29 Oct 2004) | 2 lines
+
+* compile fixes
+
+------------------------------------------------------------------------
+r95 | hartman | 2004-10-29 14:20:44 +0200 (Fri, 29 Oct 2004) | 3 lines
+
+* New 0x56 EBU System B Teletext descriptor decoder.
+  Currently untested
+
+------------------------------------------------------------------------
+r94 | massiot | 2004-10-22 15:04:36 +0200 (Fri, 22 Oct 2004) | 3 lines
+
+ * src/dvbpsi.c: duplicate packets are legal, do not treat them as a
+   discontinuity.
+
+------------------------------------------------------------------------
+r93 | massiot | 2004-10-19 21:17:49 +0200 (Tue, 19 Oct 2004) | 6 lines
+
+  * src/tables/eit*: EIT decoder (no generator yet)
+  * 0x55 (dvb parental rating) descriptor decoder
+  * fixed a segfault in the subtitles descriptor decoder
+  * bumped up version number to 0.1.5
+
+
+------------------------------------------------------------------------
+r92 | sam | 2004-08-27 11:30:01 +0200 (Fri, 27 Aug 2004) | 2 lines
+
+  * New minor Debian upload.
+
+------------------------------------------------------------------------
+r91 | nitrox | 2004-08-27 11:08:17 +0200 (Fri, 27 Aug 2004) | 7 lines
+
+
+Fixed a bug in the PMT parser
+( descriptor could have a size of 0 bytes ...
+  That is the case on the channel "Barnkanalen" on swedish DVB-T transmissions)
+
+
+
+------------------------------------------------------------------------
+r90 | sam | 2004-07-05 11:22:27 +0200 (Mon, 05 Jul 2004) | 4 lines
+
+  * bootstrap:
+    + Run libtoolize before aclocal.
+    + Support automake 1.8.
+
+------------------------------------------------------------------------
+r89 | gbazin | 2004-06-28 21:17:23 +0200 (Mon, 28 Jun 2004) | 1 line
+
+* src/descriptors/dr_59.c: fixed dvb subtitles descriptor generation.
+------------------------------------------------------------------------
+r88 | sam | 2004-02-24 15:31:18 +0100 (Tue, 24 Feb 2004) | 2 lines
+
+  * Added proper SVN keywords to files and directories (for $Id and ignores).
+
+------------------------------------------------------------------------
+r86 | sam | 2004-02-23 22:44:01 +0100 (Mon, 23 Feb 2004) | 3 lines
+
+  * ChangeLog:
+    + Moved changelog to SVN format.
+
+------------------------------------------------------------------------
+r81 | sam | 2004-01-02 15:23:41 +0100 (Fri, 02 Jan 2004) | 5 lines
+
+  * debian/rules:
+    + Distribute the NEWS file.
+  * examples/.cvsignore:
+    + Ignore decode_sdt.
+
+------------------------------------------------------------------------
+r80 | sam | 2004-01-02 15:15:46 +0100 (Fri, 02 Jan 2004) | 8 lines
+
+  * libdvbpsi.spec debian/changelog:
+    + Prepared the 0.1.4 release.
+  * NEWS ChangeLog:
+    + Renamed the old changelog to a NEWS file.
+    + Regenerated a ChangeLog from the CVS logs.
+  * Makefile.am:
+    + Added a "make changelog" rule.
+
+------------------------------------------------------------------------
+r79 | sam | 2003-11-06 18:41:42 +0100 (Thu, 06 Nov 2003) | 9 lines
+
+  * configure.ac, src/Makefile.am:
+    + Set interface to 3:0:0.
+    + Set version number to 0.1.4.
+    + Use the autotools/ directory.
+  * debian/control:
+    + Set policy to 3.6.1.0.
+    + Renamed source package to libdvbpsi3.
+    + Removed the autotools-dev build dependency.
+
+------------------------------------------------------------------------
+r78 | nitrox | 2003-11-06 17:20:30 +0100 (Thu, 06 Nov 2003) | 3 lines
+
+. 0x59 (dvb subtitles) descriptor decoder
+  Work of Tristan Leteurtre <tristan.leteurtre@anevia.com>
+
+------------------------------------------------------------------------
+r77 | sam | 2003-11-06 11:13:40 +0100 (Thu, 06 Nov 2003) | 2 lines
+
+  * bootstrap: imported libdvdcss's bootstrap file.
+
+------------------------------------------------------------------------
+r76 | tooney | 2003-09-23 15:04:54 +0200 (Tue, 23 Sep 2003) | 4 lines
+
+
+  . Memory leak fix
+    Courtesy of Johann Hanne <jhml@gmx.net>
+
+------------------------------------------------------------------------
+r75 | asmax | 2003-09-16 20:43:09 +0200 (Tue, 16 Sep 2003) | 2 lines
+
+* fixed an unitialiazed pointer (thanks jonny ;)
+
+------------------------------------------------------------------------
+r74 | sam | 2003-07-30 12:14:08 +0200 (Wed, 30 Jul 2003) | 4 lines
+
+  * debian/Makefile.am:
+    + Added debian/compat.
+    + Removed debian/*.dirs.
+
+------------------------------------------------------------------------
+r73 | sam | 2003-07-30 12:11:55 +0200 (Wed, 30 Jul 2003) | 2 lines
+
+  * debian/rules: Don't rely on debian/*.dirs to create directories.
+
+------------------------------------------------------------------------
+r72 | sam | 2003-07-30 12:06:56 +0200 (Wed, 30 Jul 2003) | 7 lines
+
+  * debian/control:
+    + Set policy to 3.6.0. No changes required.
+    + Set debhelper build-dependency to (>= 4.0) due to debian/compat.
+    + Renamed source package to libdvbpsi2.
+  * libdvbpsi.spec:
+    + Renamed source package to libdvbpsi2.
+
+------------------------------------------------------------------------
+r71 | sam | 2003-07-30 12:00:12 +0200 (Wed, 30 Jul 2003) | 3 lines
+
+  * src/Makefile.am: Changed major number.
+  * configure.ac: Changed package name to libdvbpsi2.
+
+------------------------------------------------------------------------
+r70 | gbazin | 2003-07-29 01:24:12 +0200 (Tue, 29 Jul 2003) | 3 lines
+
+
+* src/Makefile.am: include demux.h in the dist.
+
+------------------------------------------------------------------------
+r69 | gbazin | 2003-07-29 01:12:22 +0200 (Tue, 29 Jul 2003) | 3 lines
+
+
+* ALL: bumped version number to 0.1.3
+
+------------------------------------------------------------------------
+r68 | fenrir | 2003-07-25 23:08:45 +0200 (Fri, 25 Jul 2003) | 2 lines
+
+ * pmt.c : fixed my last commit.
+
+------------------------------------------------------------------------
+r67 | fenrir | 2003-07-25 22:20:40 +0200 (Fri, 25 Jul 2003) | 2 lines
+
+ * all: fixed segfault with invalid/corrupted psi data.
+
+------------------------------------------------------------------------
+r66 | yves | 2003-02-02 12:47:13 +0100 (Sun, 02 Feb 2003) | 4 lines
+
+- updated URL again.
+- macros for redhat.
+- fixes here and here.
+
+------------------------------------------------------------------------
+r65 | sam | 2003-01-14 20:51:14 +0100 (Tue, 14 Jan 2003) | 2 lines
+
+  * ./debian/control: fixed a typo (thanks jorge!).
+
+------------------------------------------------------------------------
+r64 | yves | 2002-12-13 14:06:38 +0100 (Fri, 13 Dec 2002) | 2 lines
+
+corrected few things for sir rpmlint (uploaded in Mandrake).
+
+------------------------------------------------------------------------
+r63 | yves | 2002-12-13 10:54:02 +0100 (Fri, 13 Dec 2002) | 6 lines
+
+update spec file:
+ - s#Copyright#License#
+ - include the libtool .la files.
+ - use macros.
+ - update URL: tag.
+
+------------------------------------------------------------------------
+r62 | massiot | 2002-12-13 10:34:32 +0100 (Fri, 13 Dec 2002) | 2 lines
+
+Fixed a typo.
+
+------------------------------------------------------------------------
+r61 | jobi | 2002-12-12 11:19:32 +0100 (Thu, 12 Dec 2002) | 3 lines
+
+  * src/descriptors/*: fixed some typos
+  * misc/*: added tests on the new descriptors
+
+------------------------------------------------------------------------
+r60 | jobi | 2002-12-11 14:14:42 +0100 (Wed, 11 Dec 2002) | 3 lines
+
+  * src/descriptors/*: added a few DVB descriptors decoder and generator
+    (Stuffing, Bouquet Name, Service Name)
+
+------------------------------------------------------------------------
+r59 | jobi | 2002-12-11 14:04:57 +0100 (Wed, 11 Dec 2002) | 5 lines
+
+  * src/demux.*: DVB PSI tables demux, required since one PID channel
+    may contain different tables.
+  * src/tables/sdt*: SDT decoder (no generator yet)
+  * examples/decode_sdt.c: added SDT decoder example
+
+------------------------------------------------------------------------
+r58 | sam | 2002-12-02 13:59:57 +0100 (Mon, 02 Dec 2002) | 3 lines
+
+  * ./bootstrap: automake 1.7 is accepted as well.
+  * ./bootstrap: we look for glibtoolize if libtoolize isn't present.
+
+------------------------------------------------------------------------
+r57 | alexis | 2002-10-14 11:23:32 +0200 (Mon, 14 Oct 2002) | 3 lines
+
+
+Package Debian for Woody / Sarge / Sid and not just Sid.
+
+------------------------------------------------------------------------
+r56 | sam | 2002-10-11 11:40:43 +0200 (Fri, 11 Oct 2002) | 2 lines
+
+  * Updated changelogs and package files for the release.
+
+------------------------------------------------------------------------
+r55 | sam | 2002-10-11 11:28:38 +0200 (Fri, 11 Oct 2002) | 2 lines
+
+  * Makefile.am: added bootstrap to the distribution.
+
+------------------------------------------------------------------------
+r54 | sam | 2002-10-11 11:19:18 +0200 (Fri, 11 Oct 2002) | 7 lines
+
+  * bootstrap: we remove generated files before running the autotools, to
+    make sure we get the latest version.
+  * bootstrap, Makefile.am: moved the --foreign flag to Makefile.am.
+  * src/Makefile.am: renamed an unused _SOURCES variable to something
+    automake will not choke on.
+  * src/Makefile.am: updated the library version.
+
+------------------------------------------------------------------------
+r53 | massiot | 2002-10-11 00:24:26 +0200 (Fri, 11 Oct 2002) | 2 lines
+
+Better automake detection.
+
+------------------------------------------------------------------------
+r52 | massiot | 2002-10-11 00:08:28 +0200 (Fri, 11 Oct 2002) | 2 lines
+
+Really bumped up revision number to 0.1.2 :p.
+
+------------------------------------------------------------------------
+r51 | massiot | 2002-10-11 00:07:26 +0200 (Fri, 11 Oct 2002) | 4 lines
+
+  * */Makefile.am: reworked automake directories to avoid linking problems
+    on Mac OS X.
+  * Bumped up revision number to 0.1.2.
+
+------------------------------------------------------------------------
+r50 | sam | 2002-10-10 11:27:02 +0200 (Thu, 10 Oct 2002) | 5 lines
+
+  * configure.ac, bootstrap: removed redundant stuff from CVS such as the
+    Makefile.in files, configure and config.*, and added a bootstrap script
+    to generate them; renamed configure.in to configure.ac and moved config.h
+    to . because it's now the recommended practice.
+
+------------------------------------------------------------------------
+r49 | sam | 2002-10-07 16:15:14 +0200 (Mon, 07 Oct 2002) | 4 lines
+
+  * src/dvbpsi.h: removed automatic inclusion of inttypes.h because it was
+    too platform-dependent and led to lots of cross-compilation problems. Now
+    the program using libdvbpsi has to make sure it is C99 compliant.
+
+------------------------------------------------------------------------
+r48 | bozo | 2002-06-06 23:33:31 +0200 (Thu, 06 Jun 2002) | 3 lines
+
+  * ltmain.sh: updated from debian 'sid' version of libtool, should fix the
+    Mac OS X compilation.
+
+------------------------------------------------------------------------
+r47 | bozo | 2002-06-03 01:04:08 +0200 (Mon, 03 Jun 2002) | 2 lines
+
+  * configure.in, configure, src/config.h.in, src/dvbpsi.h, misc/gen_crc.c: int types detection. It fixes (or should fix) solaris and mingw port.
+
+------------------------------------------------------------------------
+r46 | bozo | 2002-05-24 23:58:16 +0200 (Fri, 24 May 2002) | 3 lines
+
+  * src/tables/pmt.c: fixed the PMT generator which used to add one PSI
+    section for one ES.
+
+------------------------------------------------------------------------
+r45 | sam | 2002-05-18 14:20:46 +0200 (Sat, 18 May 2002) | 2 lines
+
+  * ALL: ran the auto* tools across the whole mess.
+
+------------------------------------------------------------------------
+r44 | sam | 2002-05-18 14:12:48 +0200 (Sat, 18 May 2002) | 2 lines
+
+  * ./debian/Makefile.am: forgot to update this file. hmpf.
+
+------------------------------------------------------------------------
+r43 | sam | 2002-05-18 13:53:44 +0200 (Sat, 18 May 2002) | 2 lines
+
+  * ./debian/*: updated Debian control files for the 0.1.1 release.
+
+------------------------------------------------------------------------
+r42 | bozo | 2002-05-18 13:41:46 +0200 (Sat, 18 May 2002) | 2 lines
+
+  * .cvsignore: fixed ignore list.
+
+------------------------------------------------------------------------
+r41 | bozo | 2002-05-18 13:39:07 +0200 (Sat, 18 May 2002) | 7 lines
+
+ * ALL: automake rebuild.
+ * ChangeLog: up to date changelog.
+ * configure, configure.in: updated version.
+ * libdvbpsi.spec: updated RPM configuration.
+ * src/Makefile.am, src/Makefile.in: updated libtool interface.
+ * misc/Makefile.am, misc/Makefile.in: added test_dr.h into distribution.
+
+------------------------------------------------------------------------
+r40 | massiot | 2002-05-14 23:47:35 +0200 (Tue, 14 May 2002) | 2 lines
+
+Fix for MacOS X.
+
+------------------------------------------------------------------------
+r39 | bozo | 2002-05-11 13:42:27 +0200 (Sat, 11 May 2002) | 2 lines
+
+  * src/descriptors/dr.h: stupid mistake.
+
+------------------------------------------------------------------------
+r38 | bozo | 2002-05-11 01:50:36 +0200 (Sat, 11 May 2002) | 2 lines
+
+  * ALL: doc fixes.
+
+------------------------------------------------------------------------
+r37 | bozo | 2002-05-11 00:58:53 +0200 (Sat, 11 May 2002) | 20 lines
+
+  * src/descriptors/dr_09.c: reserved bits set to 1 as specified in ISO.
+  * src/descriptors/dr.h: new headers.
+  * src/descriptors/Makefile.am: new descriptors.
+  * misc/dr.xml, misc/test_dr.c: up to date descriptor definition and
+    associated generated file.
+  * src/descriptors/dr_0b.h, src/descriptors/dr_0b.c: MPEG2 "system
+    clock" descriptor decoder and generator.
+  * src/descriptors/dr_0c.h, src/descriptors/dr_0c.c: MPEG2 "multiplex
+    buffer utilization" descriptor decoder and generator.
+  * src/descriptors/dr_0d.h, src/descriptors/dr_0d.c: MPEG2 "copyright"
+    descriptor decoder and generator.
+  * src/descriptors/dr_0e.h, src/descriptors/dr_0e.c: MPEG2 "maximum
+    bitrate" descriptor decoder and generator.
+  * src/descriptors/dr_0f.h, src/descriptors/dr_0f.c: MPEG2 "private
+    data indicator" descriptor decoder and generator.
+
+Note: all the MPEG2 descriptors decoders and generators (except for wide
+range data) have been tested with the "test_dr" program located in the
+"misc" directory.
+
+------------------------------------------------------------------------
+r36 | bozo | 2002-05-09 22:39:02 +0200 (Thu, 09 May 2002) | 2 lines
+
+  * misc/dr.dtd, misc/dr.xml, misc/dr.xsl, misc/test_dr.h, misc/test_dr.c: more improvement.
+
+------------------------------------------------------------------------
+r35 | bozo | 2002-05-09 21:59:20 +0200 (Thu, 09 May 2002) | 2 lines
+
+  * misc/dr.dtd, misc/dr.xml, misc/dr.xsl, misc/test_dr.h, misc/test_dr.c: modified the way tests are performed (avoid stupid iterations).
+
+------------------------------------------------------------------------
+r34 | bozo | 2002-05-09 19:00:03 +0200 (Thu, 09 May 2002) | 13 lines
+
+  * src/descriptors/dr_02.c:
+  * src/descriptors/dr_07.c:
+  * src/descriptors/dr_08.c:
+  * src/descriptors/dr_09.c:
+  * src/descriptors/dr_0a.c:
+  * misc/dr.xml: xml brief description of each descriptor to generate
+    "misc/test_dr.c".
+  * misc/dr.xsl: stylesheet used to generate "misc/test_dr.c".
+  * misc/dr.dtd: DTD against which misc/dr.xml validates.
+  * misc/test_dr.c: generated file.
+  * misc/test_dr.h: macros used by misc/test_dr.c.
+  * src/descriptors/dr.h: gathers all dr_*.h headers.
+
+------------------------------------------------------------------------
+r33 | bozo | 2002-05-08 18:45:33 +0200 (Wed, 08 May 2002) | 6 lines
+
+  * src/descriptors/dr_08.h: fixed a typo.
+  * src/descriptors/dr_09.h, src/descriptors/dr_09.c: MPEG2 "conditional
+    access" descriptor decoder and generator (not tested).
+  * src/descriptors/dr_0a.h, src/descriptors/dr_0a.c: MPEG2 "ISO 639
+    language" descriptor decoder and generator (not tested).
+
+------------------------------------------------------------------------
+r32 | bozo | 2002-05-08 17:55:32 +0200 (Wed, 08 May 2002) | 7 lines
+
+  * src/descriptors/dr_06.h, src/descriptors/dr_06.c: MPEG2 "data
+    stream alignment" descriptor decoder and generator (not tested).
+  * src/descriptors/dr_07.h, src/descriptors/dr_07.c: MPEG2 "target
+    background grid" descriptor decoder and generator (not tested).
+  * src/descriptors/dr_08.h, src/descriptors/dr_08.c: MPEG2 "video
+    window" descriptor decoder and generator (not tested).
+
+------------------------------------------------------------------------
+r31 | bozo | 2002-05-08 16:56:28 +0200 (Wed, 08 May 2002) | 10 lines
+
+  * doc/doxygen.cfg: up to date documentation configuration.
+  * src/descriptor.c: doesn't copy data if none when creating a
+    descriptor.
+  * src/descriptors/dr_02.c, src/descriptors/dr_03.c: generators
+    optimization.
+  * src/descriptors/dr_04.h, src/descriptors/dr_04.c: MPEG2 "hierarchy"
+    descriptor decoder and generator (not tested).
+  * src/descriptors/dr_05.h, src/descriptors/dr_05.c: MPEG2
+    "registration" descriptor decoder and generator (not tested).
+
+------------------------------------------------------------------------
+r30 | bozo | 2002-05-08 15:33:52 +0200 (Wed, 08 May 2002) | 5 lines
+
+  * src/descriptors/dr_02.h, src/descriptors/dr_02.c: fixed a typo and
+    a little optimization.
+  * src/descriptors/dr_03.h, src/descriptors/dr_03.c: MPEG2 "audio
+    stream" descriptor decoder and generator (not tested).
+
+------------------------------------------------------------------------
+r29 | bozo | 2002-05-08 15:11:41 +0200 (Wed, 08 May 2002) | 2 lines
+
+  * src/descriptors/dr_02.c: removed a warning under solaris.
+
+------------------------------------------------------------------------
+r28 | bozo | 2002-05-08 15:00:40 +0200 (Wed, 08 May 2002) | 9 lines
+
+  * ALL: added the src/descriptors directory.
+  * src/descriptor.h, src/descriptor.c: added a p_decoded field to the
+    dvbpsi_descriptor_s structure and added an 's' to the
+    dvbpsi_DeleteDescriptors function.
+  * src/tables/pmt.c: added 's' where needed.
+  * src/tables/pat.h: typo in the documentation.
+  * src/descriptors/dr_02.h, src/descriptors/dr_02.c: MPEG2 "video
+    stream" descriptor decoder and generator (not tested).
+
+------------------------------------------------------------------------
+r27 | bozo | 2002-04-09 02:42:46 +0200 (Tue, 09 Apr 2002) | 3 lines
+
+  * libdvbpsi.spec: corrected sources URL.
+  * Makefile.*: added spec file to the distribution.
+
+------------------------------------------------------------------------
+r26 | bozo | 2002-04-09 01:01:35 +0200 (Tue, 09 Apr 2002) | 2 lines
+
+  * libdvbpsi.spec: corrected URL.
+
+------------------------------------------------------------------------
+r25 | bozo | 2002-04-09 00:45:29 +0200 (Tue, 09 Apr 2002) | 2 lines
+
+  * libdvbpsi.spec: added rpm .spec file.
+
+------------------------------------------------------------------------
+r24 | bozo | 2002-04-03 02:09:43 +0200 (Wed, 03 Apr 2002) | 4 lines
+
+  * ChangeLog: updated cgangelog.
+  * NEWS: updated NEWS.
+  * debian/Makefile.*: debian Makefiles.
+
+------------------------------------------------------------------------
+r23 | sam | 2002-04-03 01:41:56 +0200 (Wed, 03 Apr 2002) | 4 lines
+
+
+  * ./debian/libdvbpsi0.copyright: fixed download URL.
+  * ./debian/rules: we now build packages with --enable-release.
+
+------------------------------------------------------------------------
+r22 | bozo | 2002-04-03 01:30:58 +0200 (Wed, 03 Apr 2002) | 2 lines
+
+Removed the font from the distribution.
+
+------------------------------------------------------------------------
+r21 | bozo | 2002-04-03 01:28:52 +0200 (Wed, 03 Apr 2002) | 3 lines
+
+  - Added debian stuff in the distribution;
+  - workaround for the generation of decoder.png in the documentation.
+
+------------------------------------------------------------------------
+r20 | sam | 2002-04-03 00:57:35 +0200 (Wed, 03 Apr 2002) | 5 lines
+
+
+  * ./debian/*: Debian package generation files.
+  * ./examples/Makefile.am: example programs aren't installed by default.
+  * ./src/Makefile.am: libtool now uses -version-info instead of -release.
+
+------------------------------------------------------------------------
+r19 | bozo | 2002-04-02 19:55:30 +0200 (Tue, 02 Apr 2002) | 2 lines
+
+typo.
+
+------------------------------------------------------------------------
+r18 | bozo | 2002-04-02 19:47:42 +0200 (Tue, 02 Apr 2002) | 2 lines
+
+Updated INSTALL and README.
+
+------------------------------------------------------------------------
+r17 | bozo | 2002-03-28 15:59:42 +0100 (Thu, 28 Mar 2002) | 2 lines
+
+Little modification in the API usage page.
+
+------------------------------------------------------------------------
+r16 | bozo | 2002-03-28 15:48:43 +0100 (Thu, 28 Mar 2002) | 2 lines
+
+Added the font file and some little fixes.
+
+------------------------------------------------------------------------
+r15 | bozo | 2002-03-28 13:08:53 +0100 (Thu, 28 Mar 2002) | 2 lines
+
+Cool graphs in documentation.
+
+------------------------------------------------------------------------
+r14 | bozo | 2002-03-27 21:13:25 +0100 (Wed, 27 Mar 2002) | 2 lines
+
+Documentation files included in "dist" target.
+
+------------------------------------------------------------------------
+r13 | bozo | 2002-03-27 21:02:43 +0100 (Wed, 27 Mar 2002) | 4 lines
+
+More powerfull API documentation.
+Added Some human readable documentation
+Added a .cvsignore
+
+------------------------------------------------------------------------
+r12 | bozo | 2002-03-26 00:34:02 +0100 (Tue, 26 Mar 2002) | 2 lines
+
+.cvsignore stuff
+
+------------------------------------------------------------------------
+r11 | bozo | 2002-03-25 22:00:50 +0100 (Mon, 25 Mar 2002) | 2 lines
+
+Doxygen documentation.
+
+------------------------------------------------------------------------
+r10 | bozo | 2002-03-19 00:53:39 +0100 (Tue, 19 Mar 2002) | 2 lines
+
+typo.
+
+------------------------------------------------------------------------
+r9 | bozo | 2002-03-18 13:38:53 +0100 (Mon, 18 Mar 2002) | 2 lines
+
+Bug fix in the PMT decoder.
+
+------------------------------------------------------------------------
+r8 | bozo | 2002-03-15 13:16:01 +0100 (Fri, 15 Mar 2002) | 2 lines
+
+C++ compliant headers.
+
+------------------------------------------------------------------------
+r7 | bozo | 2002-01-23 00:28:17 +0100 (Wed, 23 Jan 2002) | 2 lines
+
+I forgot to free the arrays.
+
+------------------------------------------------------------------------
+r6 | bozo | 2002-01-22 21:30:16 +0100 (Tue, 22 Jan 2002) | 5 lines
+
+  - new generation of PAT and PMT decoders that can receive non-consecutive
+    section numbers;
+  - moved tables codecs into "src/tables";
+  - moved PSI decoder in public files to allow external decoders.
+
+------------------------------------------------------------------------
+r5 | bozo | 2002-01-09 12:22:26 +0100 (Wed, 09 Jan 2002) | 6 lines
+
+  - PMT generator;
+  - example (gen_pmt);
+  - fixed a non-null pointer in 'descriptor.c';
+  - cosmetic changes;
+  - generators review and comments.
+
+------------------------------------------------------------------------
+r4 | bozo | 2002-01-07 20:35:45 +0100 (Mon, 07 Jan 2002) | 2 lines
+
+Cosmetic change in debug messages.
+
+------------------------------------------------------------------------
+r3 | bozo | 2002-01-07 19:53:03 +0100 (Mon, 07 Jan 2002) | 2 lines
+
+Added .cvsignore files.
+
+------------------------------------------------------------------------
+r2 | bozo | 2002-01-07 19:44:03 +0100 (Mon, 07 Jan 2002) | 2 lines
+
+Fix solaris compilation.
+
+------------------------------------------------------------------------
+r1 | bozo | 2002-01-07 19:30:35 +0100 (Mon, 07 Jan 2002) | 2 lines
+
+Initial commit.
+
+------------------------------------------------------------------------

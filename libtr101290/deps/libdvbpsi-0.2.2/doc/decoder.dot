@@ -1,0 +1,13 @@
+digraph decoder {
+  "app"                 [ shape="box"
+                          label="Application"
+                          color="blue4" ];
+  "psi_dec"             [ shape="box"
+                          label="PSI decoder"
+                          color="red3" ];
+  "specific_dec"        [ shape="box"
+                          label="Specific decoder"
+                          color="green4" ];
+
+  app -> psi_dec -> specific_dec -> app
+}

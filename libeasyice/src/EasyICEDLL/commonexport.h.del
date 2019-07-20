@@ -1,0 +1,36 @@
+#ifndef COMMONEXPORT_H
+#define COMMONEXPORT_H
+
+#include "../libtr101290/libtr101290.h"
+
+
+#define LV_DEBUG    0
+#define LV_WARNING  1
+#define LV_ERROR    2
+
+#define LOG_BUFFER_SIZE (1024*1024)
+
+
+typedef void (*pfLogFun)(int level,const char* module,const char* sInfo,void *pApp);
+
+
+
+#ifdef DLL_FILE
+extern __declspec(dllexport) Clibtr101290* g_pTrcore;
+#define EASYICEDLL_API __declspec(dllexport)
+#else
+extern __declspec(dllimport) Clibtr101290* g_pTrcore;
+#define EASYICEDLL_API __declspec(dllimport)
+#endif
+
+
+
+EASYICEDLL_API void ei_log(int level,const char *module, const char *fmt, ...);
+
+
+EASYICEDLL_API void SetLogFunCb(pfLogFun pFun,void *pApp);
+
+EASYICEDLL_API void DestroyLog();
+
+#endif
+

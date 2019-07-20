@@ -1,0 +1,5 @@
+
+#sudo yum install openssl-devel
+#sudo yum install openssl
+
+./configure --prefix=/mnt/hgfs/libeasyice/sdk/ --with-ssl

@@ -1,0 +1,24 @@
+TODO:
+- Document howto change "Old API" to "New API"
+- use dvbpsi_NewBAT/CAT/XXX() and dvbpsi_DeleteXXX() in dvbpsi_GatherXXXSections() functions
+- fix demux_subdec_t and dvbpsi_decoder_t discrepancy
+- require one handle to libdvbpsi and chain table decoders
+- (optional) highlevel TS handler functions (eg: dvbpsi_ts_* )
+- (optional) make use of BitStream header files to minimize rework
+- find solution for SIS descriptors decoding, since they use the same tag-id as PMT descriptors do.
+  Separate DVB/ITU and SCTE descriptors in separate directories.
+  For instance: descriptors/dvb
+                descriptors/scte
+- write SIS Command Decoders
+
+ENHANCEMENTS:
+- dvbinfo: record/caculate distance between audio and video in bytes AND time
+- dvbinfo: new modular design
+     input (tcp,udp,file) -> buffer -> analysis -> output (tcp,udp,file)
+                                          |-> event log -> write capture info to file (date, pkt, pid, cc, bytes pos in file): think of wireshark mainscreen
+- dvbinfo-gui: capture (MPEG-TS) file -> generate graphs -> PSI (pat/pmt/cat) interval (new versions, repeated version)
+               capture event log      ->                 -> packer arrival times/diffs (VBR/CBR), split by ES (each ES other color)
+                                                         -> stream/packet details
+
+DECISION:
+- dvbpsi_descriptor_t decoder/encoder functions do not use dvbpsi_t pointer and message callback on error NULL is returned

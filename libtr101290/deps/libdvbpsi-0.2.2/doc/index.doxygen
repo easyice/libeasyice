@@ -1,0 +1,49 @@
+/*! \mainpage Index libdvbpsi's documentation
+ *
+ * \section intro_sec Introduction
+
+\author Arnaud de Bossoreille de Ribou <bozo@via.ecp.fr>
+\author Christophe Massion <massiot@via.ecp.fr>
+\author Jean-Paul Saman <jpsaman@videolan.org>
+\author Johan Billen <jobi@via.ecp.fr>
+\author Johann Hanne <jhml@gmx.net>
+\author and others (see AUTHORS file)
+
+<p>The <em>libdvbpsi</em> is a library developed by the <a
+href="http://www.videolan.org/">VideoLAN</a> team. This document
+describes how to use it and the "C" API.</p>
+
+<h2>What is libdvbpsi ?</h2>
+
+<p><em>libdvbpsi</em> is a set of tools which allows to decode and generate all the Program specific Information (<em>PSI</em>) present in a MPEG2 TS or a DVB stream.</p>
+
+<p>The two keywords are <em>portability</em> and <em>simplicity</em>.</p>
+
+<h2>License</h2>
+
+<p>libdvbpsi was originally released under the GPLv2 and later relicensed under the LGPLv2. All versions prior to version 0.2.0 are GPLv2, versions 0.2.0 and later are LGPLv2.1.<p>
+
+<h2>Tables and Descriptors</h2>
+<p>libdvbpsi supports the following PSI tables and many descriptors regularly found in MPEG/DVB Transport streams</p>
+
+<ul>
+  <li>Bouquet Association Table (<em>BAT</em>)</li>
+  <li>Conditional Access Table (<em>CAT</em>)</li>
+  <li>EPG Information Table (<em>EIT</em>)</li>
+  <li>Network Information Table (<em>NIT</em>)</li>
+  <li>Program Association Table (<em>PAT</em>)</li>
+  <li>Program Map Table (<em>PMT</em>)</li>
+  <li>Section Description Table (<em>SDT</em>)</li>
+  <li>Splice Information Section Table (<em>SIS</em>)</li>
+  <li>TOT Table (<em>TOT</em>)</li>
+</ul>
+
+<h2>Usage</h2>
+
+<ul>
+  <li>\ref structure</li>
+  <li>\ref usage</li>
+  <li>\ref newdec</li>
+</ul>
+
+*/

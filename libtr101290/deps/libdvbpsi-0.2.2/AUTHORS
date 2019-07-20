@@ -1,0 +1,66 @@
+# The format of this file was inspired by the Linux kernel CREDITS file.
+# 
+# Authors and contributors are listed alphabetically.
+# 
+# The fields are: name (N), email (E), web-address (W), CVS account login (C),
+# PGP key ID and fingerprint (P), description (D), and snail-mail address (S).
+
+N: Arnaud de Bossoreille de Ribou
+E: bozo@via.ecp.fr
+C: bozo
+D: main structure
+D: PSI section gathering
+D: PAT decoder/generator
+D: PMT decoder/generator
+D: MPEG descriptors
+
+N: Johan Bilien
+E: jobi@via.ecp.fr
+C: jobi
+D: subtables decoder
+D: SDT decoder
+D: most DVB descriptors
+
+N: Johann Hanne
+E: jhml@gmx.net
+D: CAT support
+D: NIT decoder
+D: TOT/TDT decoder
+D: DVB satellite delivery systems descriptor 0x43
+D: DVB local time offset descriptor 0x58
+D: Terrestrial delivery system descriptor 0x5a
+
+N: Andrew John Hughes
+E: gnu_andrew@member.fsf.org
+D: descriptor 0x52
+D: decode_pmt verbose output
+
+N: Tristan Leteurtre
+E: tristan.leteurtre@anevia.com
+C: tooney
+D: subtitles descriptor (0x59)
+
+N: Viktor Luzin
+E: vl@msp.ru
+D: SDT generator
+
+N: Christophe Massiot
+E: massiot@via.ecp.fr
+C: massiot
+D: initial specs
+D: EIT decoder
+D: parental rating descriptor (0x55)
+
+N: Jiri Pinkava
+E: jiri.pinkava@vscht.cz
+D: Program Delivery Control (0x69)
+
+N: Jean-Paul Saman
+E: jpsaman@videolan.org
+D: VBI Data Descriptor (0x45)
+D: CUE Identifier Descriptor (0x8a)
+D: Splice Information Table
+
+N: Zlu Zu
+E: zluzu@gmail.com
+D: BAT decoder and generator

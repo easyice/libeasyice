@@ -1,0 +1,55 @@
+General
+ID                                       : 1 (0x1)
+Complete name                            : ./helloworld.ts
+Format                                   : MPEG-TS
+File size                                : 5.60 MiB
+Duration                                 : 1 min 9 s
+Overall bit rate mode                    : Variable
+Overall bit rate                         : 663 kb/s
+
+Video
+ID                                       : 256 (0x100)
+Menu ID                                  : 1 (0x1)
+Format                                   : AVC
+Format/Info                              : Advanced Video Codec
+Format profile                           : High@L2.2
+Format settings, CABAC                   : Yes
+Format settings, ReFrames                : 4 frames
+Codec ID                                 : 27
+Duration                                 : 1 min 11 s
+Width                                    : 640 pixels
+Height                                   : 360 pixels
+Display aspect ratio                     : 16:9
+Frame rate mode                          : Variable
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Scan type                                : Progressive
+
+Audio
+ID                                       : 257 (0x101)
+Menu ID                                  : 1 (0x1)
+Format                                   : AAC
+Format/Info                              : Advanced Audio Codec
+Format version                           : Version 4
+Format profile                           : HE-AAC / LC
+Muxing mode                              : ADTS
+Codec ID                                 : 15
+Duration                                 : 1 min 11 s
+Bit rate mode                            : Variable
+Channel(s)                               : 2 channels
+Channel positions                        : Front: L R
+Sampling rate                            : 44.1 kHz / 22.05 kHz
+Frame rate                               : 21.533 FPS (1024 spf)
+Compression mode                         : Lossy
+Delay relative to video                  : -155 ms
+
+Menu
+ID                                       : 4096 (0x1000)
+Menu ID                                  : 1 (0x1)
+Duration                                 : 1 min 9 s
+List                                     : 256 (0x100) (AVC) / 257 (0x101) (AAC)
+Service name                             : Service01
+Service provider                         : FFmpeg
+Service type                             : digital television
+

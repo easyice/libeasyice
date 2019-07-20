@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE dr SYSTEM "dr.dtd">
+
+<dr>
+  <descriptor name="video stream (b_mpeg2 = false)" sname="vstream" fname="VStream" msuffix="1" >
+    <boolean name="b_multiple_frame_rate" default="0" />
+    <integer name="i_frame_rate_code" bitcount="4" default="0" />
+    <insert>
+      <begin>
+  s_decoded.b_mpeg2 = 0;</begin>
+    </insert>
+    <boolean name="b_constrained_parameter" default="0" />
+    <boolean name="b_still_picture" default="0" />
+  </descriptor>
+
+  <descriptor name="video stream (b_mpeg2 = true)" sname="vstream" fname="VStream" msuffix="2" >
+    <boolean name="b_multiple_frame_rate" default="0" />
+    <integer name="i_frame_rate_code" bitcount="4" default="0" />
+    <insert>
+      <begin>
+  s_decoded.b_mpeg2 = 12;</begin>
+    </insert>
+    <boolean name="b_constrained_parameter" default="0" />
+    <boolean name="b_still_picture" default="0" />
+    <integer name="i_profile_level_indication" bitcount="8" default="0" />
+    <integer name="i_chroma_format" bitcount="2" default="0" />
+    <boolean name="b_frame_rate_extension" default="0" />
+  </descriptor>
+
+  <descriptor name="audio stream" sname="astream" fname="AStream">
+    <boolean name="b_free_format" default="0" />
+    <integer name="i_id" bitcount="1" default="0" />
+    <integer name="i_layer" bitcount="2" default="0" />
+  </descriptor>
+
+  <descriptor name="hierarchy" sname="hierarchy" fname="Hierarchy">
+    <integer name="i_h_type" bitcount="4" default="0" />
+    <integer name="i_h_layer_index" bitcount="6" default="0" />
+    <integer name="i_h_embedded_layer" bitcount="6" default="0" />
+    <integer name="i_h_priority" bitcount="6" default="0" />
+  </descriptor>
+
+  <descriptor name="registration" sname="registration" fname="Registration">
+    <insert>
+      <begin>
+  s_decoded.i_additional_length = 0;</begin>
+    </insert>
+    <integer name="i_format_identifier" bitcount="32" default="0" />
+  </descriptor>
+
+  <descriptor name="data stream alignment" sname="ds_alignment" fname="DSAlignment">
+    <integer name="i_alignment_type" bitcount="8" default="0" />
+  </descriptor>
+
+  <descriptor name="target background grid" sname="target_bg_grid" fname="TargetBgGrid">
+    <integer name="i_horizontal_size" bitcount="14" default="0" />
+    <integer name="i_vertical_size" bitcount="14" default="0" />
+    <integer name="i_pel_aspect_ratio" bitcount="4" default="0" />
+  </descriptor>
+
+  <descriptor name="video window" sname="vwindow" fname="VWindow">
+    <integer name="i_horizontal_offset" bitcount="14" default="0" />
+    <integer name="i_vertical_offset" bitcount="14" default="0" />
+    <integer name="i_window_priority" bitcount="4" default="0" />
+  </descriptor>
+
+  <descriptor name="conditional access" sname="ca" fname="CA">
+    <insert>
+      <begin>
+  s_decoded.i_private_length = 0;</begin>
+    </insert>
+    <integer name="i_ca_system_id" bitcount="16" default="0" />
+    <integer name="i_ca_pid" bitcount="13" default="0" />
+  </descriptor>
+
+  <descriptor name="system clock" sname="system_clock" fname="SystemClock">
+    <boolean name="b_external_clock_ref" default="0" />
+    <integer name="i_clock_accuracy_integer" bitcount="6" default="0" />
+    <integer name="i_clock_accuracy_exponent" bitcount="3" default="0" />
+  </descriptor>
+
+  <descriptor name="multiplex buffer utilization" sname="mx_buff_utilization" fname="MxBuffUtilization">
+    <boolean name="b_mdv_valid" default="0" />
+    <integer name="i_mx_delay_variation" bitcount="15" default="0" />
+    <integer name="i_mx_strategy" bitcount="3" default="0" />
+  </descriptor>
+
+  <descriptor name="copyright" sname="copyright" fname="Copyright">
+    <insert>
+      <begin>
+  s_decoded.i_additional_length = 0;</begin>
+    </insert>
+    <integer name="i_copyright_identifier" bitcount="32" default="0" />
+  </descriptor>
+
+  <descriptor name="maximum bitrate" sname="max_bitrate" fname="MaxBitrate">
+    <integer name="i_max_bitrate" bitcount="22" default="0" />
+  </descriptor>
+
+  <descriptor name="private data indicator" sname="private_data" fname="PrivateData">
+    <integer name="i_private_data" bitcount="32" default="0" />
+  </descriptor>
+<!--
+  <descriptor name="stuffing" sname="stuffing" fname="Stuffing">
+    <insert>
+      <begin>
+  s_decoded.i_stuffing_length = 0;</begin>
+    </insert>
+  </descriptor>
+
+  <descriptor name="bouquet name" sname="bouquet_name" fname="BouquetName">
+    <insert>
+      <begin>
+  s_decoded.i_name_length = 0;</begin>
+    </insert>
+  </descriptor>-->
+
+  <descriptor name="service" sname="service" fname="Service">
+    <insert>
+      <begin>
+  s_decoded.i_service_provider_name_length = 0;</begin>
+    </insert>
+    <insert>
+      <begin>
+  s_decoded.i_service_name_length = 0;</begin>
+    </insert>
+    <integer name="i_service_type" bitcount="8" default="0" />
+  </descriptor>
+
+</dr>

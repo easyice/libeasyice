@@ -1,0 +1,38 @@
+========================================================================
+动态链接库：HlsAnalysis 项目概述
+========================================================================
+
+应用程序向导已为您创建了此 HlsAnalysis DLL。  
+
+本文件概要介绍组成 HlsAnalysis 应用程序的每个文件的内容。
+
+
+HlsAnalysis.vcproj
+这是使用应用程序向导生成的 VC++ 项目的主项目文件。 
+它包含生成该文件的 Visual C++ 的版本信息，以及有关使用应用程序向导选择的平台、配置和项目功能的信息。
+
+HlsAnalysis.cpp
+这是主 DLL 源文件。
+
+/////////////////////////////////////////////////////////////////////////////
+其他标准文件：
+
+StdAfx.h, StdAfx.cpp
+这些文件用于生成名为 HlsAnalysis.pch 的预编译头 (PCH) 文件和名为 StdAfx.obj 的预编译类型文件。
+
+/////////////////////////////////////////////////////////////////////////////
+其他注释：
+
+应用程序向导使用“TODO:”指示应添加或自定义的源代码部分。
+
+/////////////////////////////////////////////////////////////////////////////
+
+base 
+https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8
+
+https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear1/prog_index.m3u8
+
+
+
+adv
+https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8

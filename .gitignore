@@ -1,0 +1,13 @@
+*.o
+*.d
+*.gz
+*.mp4
+*.ts
+*.DS_Store
+*.bak
+*.a
+*.so
+tags
+
+
+

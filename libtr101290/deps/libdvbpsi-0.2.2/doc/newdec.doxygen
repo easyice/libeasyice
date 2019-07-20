@@ -1,0 +1,8 @@
+/*! \page newdec How to implement a new specific decoder ?
+
+<p>Look at the PAT example. Especially how the PSI decoder is
+initialized. It's mandatory to check the
+dvbpsi_decoder_s::b_discontinuity flag each time the PSI decoder calls
+the specific decoder and then to reset it to 0.</p>
+
+*/

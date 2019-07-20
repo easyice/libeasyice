@@ -1,0 +1,173 @@
+$Id$
+
+Changes between 0.2.1 and 0.2.2:
+--------------------------------
+
+  * revert regression introduced by "ignore initial discontinuity" commit (commit-id: d565a849ad0191ed14db018546c71eb52d47a741).
+  * do not use -no-undefined linkerflag on *BSD systems
+
+Changes between 0.2.0 and 0.2.1:
+--------------------------------
+
+  * ignore initial discontinuity
+  * Build fixes for BSD builds
+  * Build fixes for MSYS builds
+
+Changes between 0.1.7 and 0.2.0:
+--------------------------------
+
+  * Relicense libdvbpsi from GPLv2 to LGPLv2.1
+  * bump version number to 0.2.0 (skipping 0.1.8 and 0.1.9) to indicate
+    GPL -> LGPL license change
+  * new CUE Identifier descriptor support (0x8a)
+  * new Splice Information Section table support (0xFC) (SCTE 35 2004)
+  * new BAT table (decoder and generator)
+  * new descriptor 0x44
+  * depreceated all API's in preparation for 1.0.0 release with revamped API
+    packagers and application developers should anticipate:
+    - structure renames dvbpsi_handle to dvbpsi_t
+    - prototype changes
+    - removal of printf for message printing
+    - message callback function
+    For more information see changes in libdvbpsi-ng branch.
+
+Changes between 0.1.6 and 0.1.7:
+--------------------------------
+
+  * new VBI data descriptor support (0x45)
+  * NIT support
+  * TOT/TDT support
+  * new DVB Satellite Delivery systems descriptor support (0x43)
+  * new DVB Local time offset descriptor support (0x58)
+  * new Terrestrial Delivery systems descriptor support (0x5a)
+
+Changes between 0.1.5 and 0.1.6:
+--------------------------------
+
+  * fixed a parsing bug due to outdated spec in ISO 639 language descriptor
+  * fixed the use of uninitialized data when section_syntax_indicator=0
+  * fixed a parsing bug in the EBU teletext descriptor decoder
+  * fixed the declaration of dvbpsi_DecodeTeletextDr
+  * new example tool for checking an MPEG-2 TS file
+  * fixed EIT discontinuities
+  * new cat support
+  * new PDC support descriptor 0x69
+
+Changes between 0.1.4 and 0.1.5:
+--------------------------------
+
+  * Windows CE port
+  * src/tables/eit*: EIT decoder (no generator yet)
+  * src/tables/sdt*: SDT generator
+  * 0x4d/0x4e (EIT) descriptors decoders
+  * 0x52 (stream identifier) descriptor decoder
+  * 0x55 (dvb parental rating) descriptor decoder
+  * 0x56 (EBU teletext) descriptor decoder
+  * fixed a segfault in the subtitles descriptor decoder
+  * correctly handle duplicate packets
+  * correctly handle TS packets containing multiple PSI sections
+
+Changes between 0.1.3 and 0.1.4:
+--------------------------------
+
+  * 0x59 (dvb subtitles) descriptor decoder
+  * memory leak fix
+  * fixed an unitialiazed pointer
+
+Changes between 0.1.2 and 0.1.3:
+--------------------------------
+
+  * fixed segfault with invalid/corrupted psi data
+  * update spec file
+  * src/descriptors/*: fixed some typos
+  * misc/*: added tests on the new descriptors
+  * src/descriptors/*: added a few DVB descriptors decoder and generator
+    (Stuffing, Bouquet Name, Service Name)
+  * src/demux.*: DVB PSI tables demux, required since one PID channel
+    may contain different tables.
+  * src/tables/sdt*: SDT decoder (no generator yet)
+  * examples/decode_sdt.c: added SDT decoder example
+
+Changes between 0.1.1 and 0.1.2:
+--------------------------------
+
+  * Makefile.am: added bootstrap to the distribution.
+  * bootstrap: we remove generated files before running the autotools, to
+    make sure we get the latest version.
+  * bootstrap, Makefile.am: moved the --foreign flag to Makefile.am.
+  * src/Makefile.am: renamed an unused _SOURCES variable to something
+    automake will not choke on.
+  * configure.ac, bootstrap: removed redundant stuff from CVS such as the
+    Makefile.in files, configure and config.*, and added a bootstrap script
+    to generate them; renamed configure.in to configure.ac and moved config.h
+    to . because it's now the recommended practice.
+  * src/dvbpsi.h: removed automatic inclusion of inttypes.h because it was
+    too platform-dependent and led to lots of cross-compilation problems. Now
+    the program using libdvbpsi has to make sure it is C99 compliant.
+  * configure.in, ltmain.sh: fixes for Solaris, mingw and Mac OS X.
+  * src/tables/pmt.c: fixed the PMT generator which used to add one PSI
+    section for one ES.
+  * */Makefile.am: reworked automake directories to avoid linking problems
+    on Mac OS X.
+
+Changes between 0.1.0 and 0.1.1:
+--------------------------------
+
+  * src/descriptor.h, src/descriptor.c: added a p_decoded field to the
+    dvbpsi_descriptor_s structure.
+  * src/descriptor.h, src/descriptor.c, src/tables/pmt.c: added an 's' to the
+    dvbpsi_DeleteDescriptors function.
+  * src/descriptors/dr_02.h, src/descriptors/dr_02.c: MPEG2 "video stream"
+    descriptor decoder and generator.
+  * src/descriptors/dr_03.h, src/descriptors/dr_03.c: MPEG2 "audio stream"
+    descriptor decoder and generator.
+  * src/descriptors/dr_04.h, src/descriptors/dr_04.c: MPEG2 "hierarchy"
+    descriptor decoder and generator.
+  * src/descriptors/dr_05.h, src/descriptors/dr_05.c: MPEG2 "registration"
+    descriptor decoder and generator.
+  * src/descriptors/dr_06.h, src/descriptors/dr_06.c: MPEG2 "data stream
+    alignment" descriptor decoder and generator.
+  * src/descriptors/dr_07.h, src/descriptors/dr_07.c: MPEG2 "target background
+    grid" descriptor decoder and generator.
+  * src/descriptors/dr_08.h, src/descriptors/dr_08.c: MPEG2 "video window"
+    descriptor decoder and generator.
+  * src/descriptors/dr_09.h, src/descriptors/dr_09.c: MPEG2 "conditional
+    access" descriptor decoder and generator.
+  * src/descriptors/dr_0a.h, src/descriptors/dr_0a.c: MPEG2 "ISO 639 language"
+    descriptor decoder and generator.
+  * src/descriptors/dr_0b.h, src/descriptors/dr_0b.c: MPEG2 "system clock"
+    descriptor decoder and generator.
+  * src/descriptors/dr_0c.h, src/descriptors/dr_0c.c: MPEG2 "multiplex buffer
+    utilization" descriptor decoder and generator.
+  * src/descriptors/dr_0d.h, src/descriptors/dr_0d.c: MPEG2 "copyright"
+    descriptor decoder and generator.
+  * src/descriptors/dr_0e.h, src/descriptors/dr_0e.c: MPEG2 "maximum bitrate"
+    descriptor decoder and generator.
+  * src/descriptors/dr_0f.h, src/descriptors/dr_0f.c: MPEG2 "private data
+    indicator" descriptor decoder and generator.
+  * src/descriptors/dr.h: gathers all dr_*.h headers.
+  * misc/dr.xml: xml brief description of each descriptor to generate
+    "misc/test_dr.c".
+  * misc/dr.dtd: DTD against which misc/dr.xml validates.
+  * misc/dr.xsl: stylesheet used to generate "misc/test_dr.c".
+  * misc/test_dr.c: generated file.
+  * misc/test_dr.h: macros used by misc/test_dr.c.
+  * doc/doxygen.cfg: up to date documentation configuration.
+  * configure, configure.in: fixed MacOS X compilation.
+
+News in 0.1.0:
+--------------
+
+  * doc/*: documentation.
+  * misc/gen_pmt.c: PMT generator example.
+  * example/decode_pmt.c: PMT decoder example.
+  * misc/gen_pat.c: PAT generator example.
+  * example/decode_pat.c: PAT decoder example.
+  * src/tables/pmt.h, src/tables/pmt_private.h, src/tables/pmt.c: PMT decoder
+    and PMT generator.
+  * src/tables/pat.h, src/tables/pat_private.h, src/tables/pat.c: PAT decoder
+    and PAT generator.
+  * src/dvbpsi.h, src/dvbpsi_private.h, src/dvbpsi.c: PSI decoder.
+  * src/descriptor.h, src/descriptor.c: descriptors.
+  * src/psi.h, src/psi.c: PSI sections.
+

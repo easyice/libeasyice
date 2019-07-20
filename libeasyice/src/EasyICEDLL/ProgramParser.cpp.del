@@ -1,0 +1,256 @@
+#include "StdAfx.h"
+#include "ProgramParser.h"
+
+
+
+bool hm_hevc_check_rap(CTsPacket* tspacket)
+{        
+        
+        return false;
+}
+
+
+CProgramParser::CProgramParser(int nTsLength)
+{
+	m_llTotalPacketCounter = 0;
+	m_pcr = -1;
+	m_Vpts = -1;
+	m_Apts = -1;
+	m_dts = -1;
+	m_pcrBefor = -1;
+	m_nAudioPid = -1;
+
+	m_pProgInfo = NULL;
+	m_nPacketCountOfPcr = 0;
+	m_fTransportRate = 0;
+	m_nGopsizeTmp = 0;
+	m_nGopBytesTmp = 0;
+
+	m_nTsLength = nTsLength;
+}
+
+CProgramParser::~CProgramParser(void)
+{
+}
+
+PARSED_FRAME_INFO CProgramParser::PushBackTsPacket(CTsPacket* tsPacket,long long packetID)
+{
+	PARSED_FRAME_INFO parsed_frame_info;
+	m_nGopBytesTmp+=m_nTsLength;
+
+	//m_llTotalPacketCounter++;
+	//将绝对包数作为计数，不再使用每个节目各自的ts包计数
+	m_llTotalPacketCounter = packetID;
+	
+	TIMESTAMP tp;
+	tp.pos = m_llTotalPacketCounter;
+
+	PROGRAM_TIMESTAMPS& pTts = m_pProgInfo->tts;
+	bool bIFrame = false;
+	BYTE stream_id;
+	
+	//check for gop
+	int pid = tsPacket->Get_PID();
+	if (pid == m_video_pid_type.pid)
+	{
+		if (m_video_pid_type.stream_type == 0x02)	//MPEGV
+		{
+			BYTE bPic = 0;
+			if ( tsPacket->Get_PES_PIC_INFO(bPic) )
+			{
+				parsed_frame_info.bNewPicture = true;;
+				parsed_frame_info.FrameType = (FRAME_TYPE)bPic;
+				if (bPic == 1)
+				{
+					bIFrame = true;
+				}
+				MPEG2_AssembleGop(bPic);
+			}
+
+			if (tsPacket->Get_PES_stream_id(stream_id))
+			{
+				if (stream_id >= 0xE0 && stream_id <= 0xEF)
+				{
+					if (tsPacket->Mpeg_Get_Sequenec_head_code())
+					{
+						bIFrame = true;
+					}
+				}
+			}
+		}
+		else if (m_video_pid_type.stream_type == 0x1B)	//H.264
+		{
+			parsed_frame_info = m_avcParser.ParseTsContinue(tsPacket->m_pPacket,188);
+	
+			//parse sps
+			if (parsed_frame_info.bNewPicture && parsed_frame_info.structure != STRUCTURE_BOTTOM_FIELD)
+			{
+				H264_AssembleGop(parsed_frame_info.FrameType);
+			}
+			
+			if (parsed_frame_info.bNewPicture && parsed_frame_info.structure != STRUCTURE_BOTTOM_FIELD)
+			{
+				if (parsed_frame_info.FrameType == FRAME_I || parsed_frame_info.FrameType == FRAME_IDR)
+				{
+					bIFrame = true;
+				}
+			}
+			//带有sps的ts包认为是I帧起始。用于适应slice头在PES的下一个TS包中的情况
+			if (tsPacket->Get_PES_stream_id(stream_id))
+			{
+				if (stream_id >= 0xE0 && stream_id <= 0xEF)
+				{
+					if (tsPacket->H264_Get_sps())
+					{
+						bIFrame = true;
+					}
+				}
+			}
+		}
+		else if (m_video_pid_type.stream_type == 0x24)	//HEVC
+		{
+			if (tsPacket->Get_PES_stream_id(stream_id))
+			{
+				if (stream_id >= 0xE0 && stream_id <= 0xEF)
+				{
+					if (hm_hevc_check_rap(tsPacket))
+					{
+						bIFrame = true;
+					}
+				}
+			}
+		}
+	}	//!Get_PID()
+
+
+	return parsed_frame_info;
+}
+
+inline void CProgramParser::MPEG2_AssembleGop(BYTE bPic)
+{
+	switch(bPic)
+	{
+	case 0x01:	//I
+		if ( !m_gopTmp.empty() )	//组合完成,新的开始
+		{
+			GOP_LIST gl;
+			gl.gop = m_gopTmp;
+			//gl.time = m_pcr;
+			gl.pos = m_llTotalPacketCounter;
+			gl.gop_size = m_nGopsizeTmp;
+			gl.gop_bytes = m_nGopBytesTmp;
+			m_pProgInfo->gopList.push_back(gl);
+		}
+		m_gopTmp = "I";
+		m_nGopsizeTmp = 1;
+		m_nGopBytesTmp = m_nTsLength;
+		break;
+
+	case 0x02:	//P
+		m_gopTmp += "P";
+		m_nGopsizeTmp++;
+		break;
+
+	case 0x03:	//B
+		m_gopTmp += "B";
+		m_nGopsizeTmp++;
+		break;
+	}
+}
+
+inline void CProgramParser::H264_AssembleGop(FRAME_TYPE frame_type)
+{
+
+
+	switch(frame_type)
+	{
+	case FRAME_I:	//I
+		if ( !m_gopTmp.empty() )	//组合完成,新的开始
+		{
+			GOP_LIST gl;
+			gl.gop = m_gopTmp;
+			//gl.time = m_pcr;
+			gl.pos = m_llTotalPacketCounter;
+			gl.gop_size = m_nGopsizeTmp;
+			gl.gop_bytes = m_nGopBytesTmp;
+			m_pProgInfo->gopList.push_back(gl);
+		}
+		m_gopTmp = "I";
+		m_nGopsizeTmp = 1;
+		m_nGopBytesTmp = m_nTsLength;
+		break;
+	case FRAME_IDR:	//IDR
+		if ( !m_gopTmp.empty() )	//组合完成,新的开始
+		{
+			GOP_LIST gl;
+			gl.gop = m_gopTmp;
+			//gl.time = m_pcr;
+			gl.pos = m_llTotalPacketCounter;
+			gl.gop_size = m_nGopsizeTmp;
+			gl.gop_bytes = m_nGopBytesTmp;
+			m_pProgInfo->gopList.push_back(gl);
+		}
+		m_gopTmp = "IDR-";//IDR-
+		m_nGopsizeTmp = 1;
+		m_nGopBytesTmp = m_nTsLength;
+		break;
+
+	case FRAME_P:
+		m_gopTmp += "P";
+		m_nGopsizeTmp++;
+		break;
+
+	case FRAME_B:
+		m_gopTmp += "B";
+		m_nGopsizeTmp++;
+		break;
+	case FRAME_SP:
+		m_gopTmp += "-SP-";//-SP-
+		m_nGopsizeTmp++;
+		break;
+	case FRAME_SI:
+		m_gopTmp +="-SI-";//-SI-
+		m_nGopsizeTmp++;
+		break;
+	default:
+		break;
+	}
+}
+
+void CProgramParser::MakeRate(long long pcr)
+{
+
+}
+
+void CProgramParser::SetVideoStreamInfo(PID_STREAM_TYPE video_pid_type)
+{
+	m_video_pid_type = video_pid_type;
+}
+
+int CProgramParser::DecodePacket(CTsPacket* tsPacket)
+{
+	if (tsPacket->Get_PID() == m_video_pid_type.pid)
+	{
+		if (m_video_pid_type.stream_type == 0x02)	//MPEGV
+		{
+
+		}
+		else if (m_video_pid_type.stream_type == 0x1B)	//H.264
+		{
+			//m_avcParser.ParseTsPacket(tsPacket->m_pPacket,188);
+		}
+	}
+	return 0;
+}
+
+void CProgramParser::AddOtherPacket()
+{
+	//m_llTotalPacketCounter++;
+	m_nPacketCountOfPcr++;
+}
+
+void CProgramParser::SetAudioPid(int pid)
+{
+	m_nAudioPid = pid;
+}
+

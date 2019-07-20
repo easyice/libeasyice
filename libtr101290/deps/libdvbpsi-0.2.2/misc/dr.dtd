@@ -1,0 +1,25 @@
+<!ELEMENT dr (descriptor*)>
+
+<!ELEMENT descriptor (integer | boolean | insert)*>
+
+<!ELEMENT integer EMPTY>
+
+<!ELEMENT boolean EMPTY>
+
+<!ELEMENT insert (begin? | check? | end?)>
+
+<!ELEMENT begin (#PCDATA)>
+
+<!ELEMENT check (#PCDATA)>
+
+<!ATTLIST descriptor name CDATA #IMPLIED>
+<!ATTLIST descriptor sname CDATA #IMPLIED>
+<!ATTLIST descriptor fname CDATA #IMPLIED>
+<!ATTLIST descriptor msuffix CDATA #IMPLIED>
+
+<!ATTLIST integer name CDATA #IMPLIED>
+<!ATTLIST integer bitcount CDATA #IMPLIED>
+<!ATTLIST integer default CDATA #IMPLIED>
+
+<!ATTLIST boolean name CDATA #IMPLIED>
+<!ATTLIST boolean default CDATA #IMPLIED>

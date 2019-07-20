@@ -1,0 +1,83 @@
+/*! \page howto-new-api Howto port dvbpsi API (upto version 0.2.0) to version 1.0.0
+
+<p>An update to libdvbpsi API was long overdue. In time the API grew to be inconsistent and
+needed some cleanup. The following issue are addressed in this version:</p>
+
+<ul>
+<li>explicit library handle allocation with <em>dvbpsi_new()</em> (delete with <em>dvbpsi_delete()</em>)</li>
+<li>consistent API for table and descriptor decoder/encoders</li>
+<li>message callback function for easier intergrating libdvbpsi logging in applications</li>
+</ul>
+
+<p>The biggest change is the addition off an explicit dvbpsi_t pointer to
+ALL table decoder and encoder API's. This dvbpsi_t pointer is a dvbpsi handle
+which must be allocated using <em>dvbpsi_new()</em> and takes a callback function
+for logging. The handle must be deleted with <em>dvbpsi_delete()</em> if it is no
+longer needed.
+</p>
+
+<code>dvbpsi_t *dvbpsi_new(dvbpsi_message_cb callback, enum dvbpsi_msg_level level);</code>
+
+<p>The dvbpsi_t pointer must be released by calling <em>dvbpsi_delete()</em></p>
+
+<code>void dvbpsi_delete(dvbpsi_t *handle);</code>
+
+<h2>Example</h2>
+
+<p>
+The following examples shows howto translate existing applications. In these examples only
+source code snippits are used and can thus not be compiled standalone. The examples are taken
+from existing applications using libdvbpsi. For a more elaborate example take a look in examples/ directory
+and especially to the file examples/dvbinfo/libdvbpsi.c from the dvbinfo application.
+</p>
+
+<p>In many existing applications the following scheme is used to attaching a PAT decoder to a dvbpsi handle:</p>
+
+<code>
+&nbsp; dvbpsi_handle handle; <br />
+&nbsp; dvbpsi_AttachPAT(handle, handle_PAT, data); <br />
+</code>
+
+<p>The same scheme is used for other PSI tables too, this translate to the following code sequence:</p>
+
+<code>
+&nbsp; dvbpsi_t *handle = dvbpsi_new(&dvbpsi_message, DVBPSI_MSG_DEBUG); <br />
+&nbsp; if (handle == NULL) <br />
+&nbsp;&nbsp; goto error; <br />
+&nbsp; if (!dvbpsi_pat_attach(handle, handle_PAT, data)) <br />
+&nbsp; { <br />
+&nbsp; &nbsp; dvbpsi_delete(handle); <br />
+&nbsp; &nbsp; handle = NULL; <br />
+&nbsp; &nbsp; goto error; <br />
+&nbsp; } <br />
+&nbsp; <br />
+&nbsp; return 0; <br />
+&nbsp; <br />
+error: <br />
+&nbsp; if (dvbpsi_decoder_present(handle)) <br />
+&nbsp; &nbsp; dvbpsi_pat_detach(handle); <br />
+&nbsp; if (handle) <br />
+&nbsp; &nbsp;  dvbpsi_delete(handle); <br />
+&nbsp; return -1; <br />
+</code>
+
+<p>The <em>message callback function</em> <b>dvbpsi_message</b> is defined as follows below. In this case
+the output goes directly to the console. Applications however can call into their messaging API and pass
+along libdvbpsi messages if wanted. See the following example:
+</p>
+
+<code>
+static void dvbpsi_message(dvbpsi_t *p_dvbpsi, const dvbpsi_msg_level_t level, const char* msg) <br />
+{ <br />
+&nbsp; switch(level) <br />
+&nbsp; { <br />
+&nbsp; case DVBPSI_MSG_ERROR: fprintf(stderr, "Error: "); break;   <br />
+&nbsp; case DVBPSI_MSG_WARN:  fprintf(stderr, "Warning: "); break; <br />
+&nbsp; case DVBPSI_MSG_DEBUG: fprintf(stderr, "Debug: "); break;   <br />
+&nbsp; default: <br />
+&nbsp; &nbsp; return; <br />
+&nbsp; } <br />
+&nbsp; fprintf(stderr, "%s\n", msg); <br />
+} <br />
+</code>
+*/

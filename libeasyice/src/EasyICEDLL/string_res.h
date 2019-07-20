@@ -1,0 +1,1 @@
+./string_res_chs.h

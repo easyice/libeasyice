@@ -1,0 +1,6 @@
+*.o
+*.d
+*.gz
+*.ts
+*.mp4
+*.DS_Store

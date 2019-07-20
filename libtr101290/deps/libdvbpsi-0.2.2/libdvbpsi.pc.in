@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libdvbpsi
+Description: libdvbpsi is a simple library designed for decoding and generation of MPEG TS and DVB PSI tables.
+Version: @PACKAGE_VERSION@
+Libs: -L${libdir} -ldvbpsi
+Cflags: -I${includedir}

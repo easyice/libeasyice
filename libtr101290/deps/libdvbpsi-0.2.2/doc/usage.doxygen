@@ -1,0 +1,38 @@
+/*! \page usage API usage
+
+<p>When the application needs a new decoder it just has to call the
+<em>dvbpsi_AttachXXX()</em> function where XXX is the name of the table
+(ex: dvbpsi_AttachPAT()). The function returns a handle on the new
+decoder.</p>
+
+<p>Then the application has to send the TS packets needed by the decoder
+by calling the dvbpsi_PushPacket() function. If a new table is complete
+then the decoder calls the callback specified by the application when it
+called <em>dvbpsi_AttachXXX()</em>.</p>
+
+<p>When the application don't need the decoder anymore it just has to
+call the <em>dvbpsi_DetachXXX()</em> function (ex:
+dvbpsi_DetachPAT()).</p>
+
+<p>In this version of <em>libdvbpsi</em> the descriptors aren't decoded.
+These decoders will come in the next release.</p>
+
+<p>For specific tools, the best to do is to have a look at the include
+file:</p>
+
+<ul>
+  <li>Program Specific Information: psi.h</li>
+  <li>Descriptors: descriptor.h</li>
+  <li>Program Association Table: pat.h</li>
+  <li>Program Map Table: pmt.h</li>
+  <li>Conditional Access Table: cat.h</li>
+  <li>EPG Information Table: eit.h</li>
+  <li>Network Informtation Table: nit.h</li>
+  <li>Stream Description Table: sdt.h</li>
+  <li>Splice Information Section Table: sis.h</li>
+  <li>TOT: tot.h</li>
+</ul>
+
+\ref structure
+
+*/

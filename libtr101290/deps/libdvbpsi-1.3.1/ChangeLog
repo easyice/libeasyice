@@ -1,0 +1,3603 @@
+commit 9ae00f930a6db41ba68d3c82dbe39b0b2f5831c3
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Tue Sep 4 13:29:02 2012 +0200
+
+    src/dvbpsi.c: fix segmentation fault in dvbpsi_decoder_psi_section_add()
+    
+    When p->i_number == p_section->i_number AND p_prev == NULL, then the function
+    will crash with a segmentation fault. In this case the first element in the linked
+    list is going to be replaced. The pointer p_prev does not point to a valid sections,
+    since p is the first element in the list. To solve this case it needs to be treated
+    seperate.
+
+commit 81a0414e802f0032c54438f757767c0e3c88005b
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Fri Aug 31 09:48:07 2012 +0200
+
+    In preparation of 1.0.0-pre1 release.
+
+commit 04bf964202822fa89fe0789a681369446715475e
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Fri Aug 31 09:42:23 2012 +0200
+
+    Update AUTHORS and NEWS
+
+commit 317e1f7a713ca1b5e85dda01e553938e3d43f35d
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Thu Aug 30 12:55:08 2012 +0200
+
+    Add 0x50 Descriptor Decoder/Generator support
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 10d96702d458473dfe4ee83a0868bcc92535bc68
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Thu Aug 30 12:54:27 2012 +0200
+
+    Add 0x4F Descriptor Decoder/Generator support
+    
+    Added dr_4f.{c,h} to src/descriptors/dr.h and src/Makefile.am.
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 30fad8b6f33bccb23bc74682c5e08275958ecb5a
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Thu Aug 30 11:32:19 2012 +0200
+
+    0x4A Descriptor comment fix
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 488d950cfa4871ea4f3927b9ce0523e6629c75da
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Fri Aug 31 09:31:58 2012 +0200
+
+    descriptor 0x4B: Various fixes.
+    
+    Various fixes:
+    - add boundary check for p_decoded->i_references
+    - fix comments
+
+commit 5a449a915214a79dce2a3b8e9fe6eeeb9e843432
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Thu Aug 30 11:31:34 2012 +0200
+
+    Add 0x4B Descriptor Decoder/Generator support
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 89570ee7446bb57ac218bd83cb003be8142731c3
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 22 17:11:31 2012 +0200
+
+    Documentation fixes.
+
+commit d3b5bbb6eccfc5892c4d500d756e309cbbc68fb4
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 22 16:36:19 2012 +0200
+
+    Documentation updates.
+
+commit fe8e756dbb65c76af0387bd4c1a8449d7b6fb570
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 22 16:11:51 2012 +0200
+
+    src/demux.h: fix comment for dvbpsi_demux_new_cb_t
+
+commit 56fddbe8c959f62bbe74fe29f83b3e445f1127ad
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 22 15:50:45 2012 +0200
+
+    src/deprecated.h: Remove unused headerfile
+
+commit 8a2a5754acabb36078eeda3884c527e9f2c00510
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 22 14:25:01 2012 +0200
+
+    descriptors: fix wrong use of dvbpsi_DuplicateDecodedDescriptor()
+    
+    Duplicating p_descriptor->p_decoded which has just been newly create is
+    wrong. The pointer is empty. What should have been done is duplicating
+    the pointer p_decoded which is passed to the generator function for the
+    descriptor.
+
+commit ed90883538d3fc057961ec354e255a7add8354fd
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 22 13:52:36 2012 +0200
+
+    src/descriptor.{c,h}: fix comment for function dvbpsi_DuplicateDecodedDescriptor()
+
+commit 38f40d8960fb4e55de0d0d52395b42702a4469e8
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 22 10:48:19 2012 +0200
+
+    dvbinfo: add descriptor 0x7c
+
+commit 9d935eafdd4191e9c7680d053f51e23486e3f4c3
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Tue Aug 21 09:42:50 2012 +0200
+
+    Mention 0x7c descriptor in NEWS
+
+commit 1ee3ed018b43774b9a080d98960645631ed15711
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Tue Aug 21 09:41:31 2012 +0200
+
+    Add AAC Audio descriptor 0x7c
+    
+    Decode AAC Audio descriptor 0x7c and identify profile, level and type.
+
+commit 6083a0dea5dba3794747d6a7fa72996f32a90ad7
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Aug 20 17:08:48 2012 +0200
+
+    Add missing descriptor headerfiles.
+
+commit fb84669e17ab70a3c16e270e7cf53e4174604acd
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Aug 20 15:41:21 2012 +0200
+
+    dvbpsi.h: remove stray 'dvbpsi_handle'
+
+commit f84d6dd302e3d2bfbe2580fa8cb2e2798525b75f
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Aug 20 15:34:59 2012 +0200
+
+    remove comment
+
+commit ef32ce117a9bba858249a481b16cba47fd1a91f6
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Aug 20 15:20:56 2012 +0200
+
+    Rename dvbpsi_decoder_sections_completed() to dvbpsi_decoder_psi_sections_completed()
+
+commit 9ee6abd6b0f81abf82147f1127bf0b44b67a8153
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 15 16:16:31 2012 +0200
+
+    tables/eit.c: fix wrong check
+    
+    The test on line 348 was wrong. It should test for p->p_next to exist instead
+    of testing for it being NULL.
+
+commit 5c3b697f4fc14b92e34b858abcf69378284bee3f
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 15 16:07:55 2012 +0200
+
+    dvbpsi.c: fix bug in dvbpsi_decoder_psi_section_add()
+    
+    Inserting a new PSI section did not take into account that the previous
+    pointer could be none existing. It was equal to the start of the list,
+    which resulted in a loop.
+    
+    (Fixes commit: 57c6cd6360106fe6ca9738d2fc52a2a87ad276cb)
+
+commit 8b0c641494fb08fe746027c27fb2ba3ca132b30d
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 15 15:17:33 2012 +0200
+
+    dvbpsi.c: cleanup
+
+commit cbb8c180ad87a873bcd4ad1af15a13c6cf84d9a6
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 15 14:17:10 2012 +0200
+
+    Update comment.
+
+commit 57c6cd6360106fe6ca9738d2fc52a2a87ad276cb
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Aug 13 13:34:02 2012 +0200
+
+    Replace p_decoder->ap_sections[256] array with a linked list.
+    
+    The member p_decoder->ap_sections[256] is replaced by p_decoder->p_sections.
+    This is a pointer to a linked list, which makes the dvbpsi_decoder_section_chain()
+    function obsolete.
+
+commit d4b4906755f2ce67269e34007162ca6ae415217b
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Thu Aug 9 14:52:27 2012 +0200
+
+    TS discontinuity check
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 9bb01dd1cd689ca08f643e0eb9cf856ad7846424
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Thu Aug 9 12:55:13 2012 +0200
+
+    Update AUTHORS and NEWS
+
+commit e4b03fdd92c7feb26529573c35ee676bad83ebf1
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Thu Aug 9 12:54:56 2012 +0200
+
+    RST table: indentation fixes.
+
+commit 3eab23d93e7f5274529ea69c8941cdd1cf24c2a8
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Mon Jul 23 14:09:30 2012 +0200
+
+    Add RST decoder/generator support
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 87b7cc9e36a6c11fbe01184865b449bc59df6a2e
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Thu Aug 9 12:13:54 2012 +0200
+
+    RST table definition
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 5175238f1118b83f35ba93be8e2cac4bd2e6f21f
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Thu Aug 9 12:27:24 2012 +0200
+
+    BAT decoding fix
+    
+    The dvbpsi_bat_sections_decode method parsing index was wrongly incremented
+    dvbpsi_AddSectionBAT method did not correctly check for memory allocation.
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 67a5116053e5152c9b6ef480ea954720dbbc790b
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Thu Aug 2 09:24:36 2012 +0200
+
+    BAT decoding method signature fix
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 784aa0bc865c413087681b5eec97a8733f851e31
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Tue Jul 17 14:41:09 2012 +0200
+
+    src/tables/eit.c: naming fix
+
+commit 51cc5d4441a6b1f9111c1250563affe81c4f7726
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jul 4 16:57:40 2012 +0200
+
+    Massive renaming of functions in preparation of release.
+    
+    The function arguments and its order have changed during cleaning up.
+    This breaks the old API and a rename of functions was needed to properly
+    mark the older API as deprecated.
+
+commit 0c2c5155d7db7bebd8cf8aa4af3d45bff11b340b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Sun Jul 1 14:19:58 2012 +0200
+
+    dvbpsi decoder cleanup
+    
+    - rename p_dvbpsi->p_private to p_dvbpsi->p_decoder
+    - use dvbpsi_NewDecoder() where possible
+
+commit f2b2ab34043fd2a20b7b9754a1c116f071729d85
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 27 14:20:33 2012 +0200
+
+    src/tables/tot.c: Simplify dvbpsi_ValidTOTSection()
+    
+    The function reimplemented the CRC check function which is available
+    in src/psi.c
+
+commit 2b2d1423ee388e07821e71acd4555f7692241382
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 27 14:02:55 2012 +0200
+
+    Add utility function dvbpsi_AddDescriptor().
+    
+    Adding a descriptor to the end of the descriptor list has now been
+    moved to a utility function implemented in src/descriptor.c
+
+commit 7a09ba19c981a600a7c0b880f79da25f83daa94c
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Jun 21 21:01:31 2012 +0200
+
+    Add utility function dvbpsi_AddSectionDecoder()
+    
+    Add a PSI section to dvbpsi_decoder_t::ap_sections[] array. The function returns
+    true when it overwrites an earlier entry and false otherwise.
+
+commit 2e8db83c909628f44de5532dca2c508db5cbdf3b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Jun 21 20:03:58 2012 +0200
+
+    Add utiltiy function dvbpsi_ChainSectionsDecoder()
+    
+    The function dvbpsi_ChainSectionsDecoder() turns the dvbpsi_decoder_t::ap_sections[] array
+    into a linked list.
+
+commit 75dd4adee3765ff9937aacc03b90e63e9e4d0461
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Jun 21 19:46:25 2012 +0200
+
+    Add utility function dvbpsi_SectionsCompleteDecoder()
+    
+    The table decoder check for all sections received in the same manner, this
+    is now abstracted away in the dvbpsi_SectionsCompleteDecoder() function.
+
+commit 551e2865a016f14c8418ea5d380aa08e7805fb34
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Jun 21 16:05:00 2012 +0200
+
+    New utility function dvbpsi_ReInitDecoder().
+    
+    Add a function to reinit a decoder as is needed by PSI decoders.
+
+commit 61a0d7c4a1e8834ac793d39cc9fb343f0db91f9a
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Jun 21 15:38:37 2012 +0200
+
+    Move common dvbpsi_*_decoder_t members to dvbpsi_decoder_t
+    
+    The struct members ::p_current_valid, ::i_last_section_number and
+    ::ap_sections[] array are used by all PSI section decoders. They are
+    moved to DVBPSI_DECODER_COMMON.
+
+commit 2807e23e1d39e56b5fa00a4eb6c2e3cbe3b37b94
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 20 16:44:27 2012 +0200
+
+    ignore doc/decoder.png it is generated.
+
+commit 41e5a3bd5e326ab1c147aa2f5db1fcaeeb6b3224
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 20 16:37:36 2012 +0200
+
+    examples/dvbinfo: limit fifo size
+    
+    Implemented a function fifo_size() that returns the current size of the fifo.
+    The dvbinfo example program uses fifo_size() to detect if the total size of
+    buffers inside the fifo exceeds a certain threshold. The threshold is currently
+    defined at compile time.
+
+commit fcb8d11cd3068067e07abb54ce857f3a5dc8543b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 20 15:20:24 2012 +0200
+
+    ATSC ETT: Refactor dvbpsi_atsc_GatherETTSections and fix dvbpsi_atsc_DecodeETTSections.
+
+commit 9d700f4e71d0fd11896e399a6b15cf6caaebf0f7
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 20 14:30:12 2012 +0200
+
+    ATSC EIT: refactor dvbpsi_atsc_GatherEITSections.
+
+commit c0cc2545500dd7622929eadc32d3202facc36873
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 20 11:59:51 2012 +0200
+
+    ATSC MGT: refactor dvbpsi_atsc_GatherMGTSections.
+
+commit 0f386934cd3b90875abf8b25ecc09b389662bd75
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 20 11:43:59 2012 +0200
+
+    ATSC STT: refactor dvbpsi_atsc_GatherSTTSections.
+
+commit ce14f6f7aa0d74936b3fa935a4d4445e70a3beba
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 20 11:22:33 2012 +0200
+
+    ATSC VCT: refactor dvbpsi_atsc_GatherVCTSections.
+
+commit 4e5fc784cd80552476b782accce6e431c0677b06
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 17:42:19 2012 +0200
+
+    dvbinfo: print more information on TDT/TOT tables.
+
+commit d1f318a2a5aeffae9cf8dbc77141978390211445
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 17:41:56 2012 +0200
+
+    BAT: refactor dvbpsi_GatherBATSections
+
+commit 546c4c45d01374adbf3193b5fcddfa71fb782268
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 17:23:13 2012 +0200
+
+    CAT: refactor dvbpsi_GatherCATSections.
+
+commit d48aceeb16d755efcec6caca83c29f06d5c6fb1a
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 17:12:17 2012 +0200
+
+    EIT: refactor dvbpsi_GatherEITSections.
+
+commit d1ba16b47c994c906e7f5eb666a48f742c7a7017
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 16:49:47 2012 +0200
+
+    NIT: refactor dvbpsi_GatherNITSections
+
+commit 9b62d74abc3ef8ab1430fb56cdf20317ae1a1bf0
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 15:57:47 2012 +0200
+
+    src/tables: solve potential memleaks.
+
+commit b8303d17f53345bd0f640457a8e1ccc31623008a
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 15:56:49 2012 +0200
+
+    SIS: handle multiple PSI sections.
+
+commit ad90fcf4b99b8bc8111f6a5212628264ab4ad8fc
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 14:32:37 2012 +0200
+
+    TOT: refactor dvbpsi_GatherTOTSections
+
+commit 146d2414ee0229c04b0e10307374c0724ed64120
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 13:54:41 2012 +0200
+
+    SIS: refactor dvbpsi_GatherSISSections.
+
+commit 58e54473035f0f10d888b8bdb035c70f746facb7
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 12:56:23 2012 +0200
+
+    SDT: rework dvbpsi_GatherSDTSections
+
+commit fa575f15ef50814616f9cbeb248d8a71739304b0
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 12:40:34 2012 +0200
+
+    PMT: rework dvbpsi_GatherPMTSections
+
+commit 85be9dd9592fd3c9f9a10d302b17b0cfe55f07e8
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 13 11:50:37 2012 +0200
+
+    PAT: rework dvbpsi_GatherPATSections()
+
+commit 6a65c6c91d16edd15308de653d062d5b4ac9e9b7
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 11 20:17:54 2012 +0200
+
+    DVB PSI tables: use dvbpsi_CheckPSISection() utility functions.
+    
+    Refactor out common code for checking PSI sections for PSI tables.
+
+commit 58617799bd71e106c6c8ec3f5a2118cd2bf236c3
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 11 14:22:49 2012 +0200
+
+    PSI: add dvbpsi_CheckPSISection() utility function
+    
+    All PSI table check the same common things before accepting a section as
+    being a valid section. Centralize these checks into a single function.
+
+commit caed81f65b96d9a5a836990ce45ef40b537e5895
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 11 14:10:49 2012 +0200
+
+    PAT: refactor dvbpsi_GatherPATSections()
+    
+    Refactor dvbpsi_GatherPATSections().
+
+commit ed0b0dcc91a060fa2950029b6b87eabe6d32de17
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Jun 6 17:47:33 2012 +0200
+
+    Rename dvbpsi_callback_t to dvbpsi_callback_gather_t.
+    
+    The callback member of dvbpsi_decoder_t is used by dvbpsi_GatherXXSections()
+    functions. This patch makes the usage visisble.
+
+commit 6ad561b99674d70c52277c5695510222a626944c
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 4 16:13:56 2012 +0200
+
+    doxygen: layout improvements.
+
+commit 5ce1bf15f3f7132e950fb81c1c6875e0c05765b9
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 4 15:01:29 2012 +0200
+
+    doxygen fixes.
+    
+    Update doxygen information and fix linkage of howto-new-api.doxygen
+
+commit 826a8881f5b5268406c54fddec762380f294d0bc
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 4 13:07:43 2012 +0200
+
+    demux: rename dvbpsi_demux_subdec_t::p_cb_data to p_decoder
+    
+    The functions dvbpsi_GatherXSections() and dvbpsi_NewDemuxSubDecoder() take a
+    private decoder as argument. Change this argument from 'void *' to 'dvbpsi_decoder_t *'.
+    This makes its use more clear.
+
+commit 2d3fb64a23dbd3d67b6b49b8e4b80aeeeb842ab3
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 4 11:06:16 2012 +0200
+
+    demux: use new utility functions.
+    
+    Use new utility functions to replace common code blocks. Moving
+    code to demux.c instead of repeating them in the subtable functions.
+    This reduces the amount of code in subtable files and reduces the risk
+    of introducing errors in future for this code.
+
+commit 7beb890c236a7f434abb9e3455b3f8cbd4734fc3
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 4 11:02:44 2012 +0200
+
+    demux: refactor
+    
+    Refactor common demux code structures into utility functions.
+    See the complete list below:
+    - rearrange arguments of dvbpsi_demux_new_cb_t callback
+    - define dvbpsi_demux_gather_cb_t callback type
+    - define dvbpsi_demux_detach_cb_t callback type
+    - new utility function dvbpsi_NewDemuxSubDecoder()
+    - new utility function dvbpsi_DeleteDemuxSubDecoder()
+    - new utility funciton dvbpsi_AttachDemuxSubDecoder()
+    - new utility function dvbpsi_DetachDemuxSubDecoder()
+
+commit 5e65f7a55e4714f671118848096da7225a5c840d
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed May 30 16:47:08 2012 +0200
+
+    Update AUTHORS
+
+commit 9211675decc1b71b7d92e27da61ccf70ab1a6bb2
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed May 30 16:41:32 2012 +0200
+
+    Demux: rename pf_callback to pf_gather
+    
+    Renaming pf_callback to pf_gather to reflect its usage. It also
+    removes a typedef which was only used inside src/demux.c
+
+commit ff9c72ee5629bb1c37be46da17a8c5deeabdd072
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed May 30 16:14:50 2012 +0200
+
+    ATSC ETT Table: fix compilation
+    
+    Include config.h as first include file. It comes with some defines needed
+    for compilation.
+
+commit 6f82e448a88fb014281acd9e89138cca58dc8036
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed May 30 15:56:56 2012 +0200
+
+    NEWS: update
+
+commit 6c1008d2fb35ac33534794d7db8d148ef9157ab4
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Tue May 22 15:56:21 2012 +0200
+
+    Add 0x4a descriptor support
+    
+    Indentation cleanup.
+    
+    Signed-off-by: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+
+commit 57e31b5a55db8e5cb8b24926256891c182157ea6
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Tue May 22 10:57:46 2012 +0200
+
+    Add 0x49 descriptor support
+    
+    Some readability improvements.
+    
+    Signed-off-by: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+
+commit 943165fe6bcee8c70ecd5f2f7a63755b099da1da
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Tue May 22 10:56:29 2012 +0200
+
+    Add 0x41 descriptor support
+    
+    Slightly modified before applying.
+    
+    Signed-off-by: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+
+commit ed4344a31e68fe894e73103fa2a6ae74c2a98e99
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed May 30 15:11:53 2012 +0200
+
+    NEWS: add ATSC tables and descriptors
+
+commit 8ab35810e7964d034d4ca2a298c8a036214009fc
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed May 30 15:11:13 2012 +0200
+
+    ATSC descriptors: fix compilation
+
+commit 4f3cfef258c46da46d27d61ff4a79ad8a6621691
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed May 30 15:09:59 2012 +0200
+
+    ATSC tables: do not include stdint.h twice.
+    
+    The stdint.h header file was included twice.
+
+commit 387b7cf5421d7d7cd96b8d38588b4f547f5ccd84
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon May 14 16:21:31 2012 +0200
+
+    ATSC VCT table: forward port
+    
+    - indentation cleanup
+    - Gather fucnction cleanup
+    - API cleanup
+
+commit 7e6453a414ed2bbb5129b3ddaa10f26792329ca0
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed May 9 17:04:13 2012 +0200
+
+    BAT table: fix compiler warning.
+    
+    The compiler warned about comparison of signed and unsigned values. This
+    patch fixes this comparison.
+
+commit 702e602d230b2c595557145947b30ab89fcc5fe2
+Author: Roberto Corne <corno.roberto@gmail.com>
+Date:   Wed May 9 17:00:00 2012 +0200
+
+    dr_40.c: Fix syntax error and include in Makefile.am
+    
+    The descriptor 0x40 was not included in src/Makefile.am. Therefor
+    syntax errors where not picked up. This patch adds the descriptor
+    to the src/Makefile.am and fixes a typo.
+    
+    Signed-off-by: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+
+commit 5070805f5c6f9c1acac94daf24092badf87c75a1
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon May 7 16:43:07 2012 +0200
+
+    ATSC: whitespace cleanup
+
+commit 20f6f24762243ace7ccbc23c928d94cedba13d29
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Apr 16 12:37:29 2012 +0200
+
+    ATSC: descriptors refactor
+    
+    - refactor descriptor structs allocations
+
+commit 5886ce5eae0c0780fc4d45b9b09ee69b6211fd3c
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Apr 16 10:46:25 2012 +0200
+
+    ATSC tables fix bugs
+    - check for subdec instead of demux when calling dvbpsi_demuxGetSubDec() function
+    - check if subtable decoder pointer actually exist
+
+commit 3afc689b09b9e253f021b1e4f4439dfd55e89924
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Apr 16 10:45:07 2012 +0200
+
+    Cleanup
+    - remove excess whitelines
+    - indent
+
+commit 24c07ff7d833d3931f8a72d4fa6ce91a31c410dc
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Tue Mar 20 11:04:58 2012 +0100
+
+    ATSC descriptors: cleanup and review
+    
+    - remove excess parenthesis
+    - add boundary checks
+    - explicite allocation of struct members
+      requires explicite release of struct members when freeing
+
+commit 981844678f3f03e671c6e7a592756f42bb1c2200
+Author: Michael Krufky <mkrufky@linuxtv.org>
+Date:   Sat Jan 7 16:40:13 2012 -0500
+
+    fix broken interfaces in ETT parser
+    
+    Signed-off-by: Michael Krufky <mkrufky@linuxtv.org>
+
+commit 5d461d8ab19caab97e511edff18778b4a05ea4e2
+Author: Michael Krufky <mkrufky@linuxtv.org>
+Date:   Fri Jan 6 15:19:22 2012 -0500
+
+    change license of ETT parser from GPL to LGPL
+    
+    Signed-off-by: Adam Charrett <adam@dvbstreamer.org>
+    Signed-off-by: Michael Krufky <mkrufky@linuxtv.org>
+
+commit 962397f8040fd75df75ac1fb0d7d04b5b252a2f0
+Author: Adam Charrett <adam@dvbstreamer.org>
+Date:   Fri Jan 6 15:15:17 2012 -0500
+
+    add support for parsing ETT (Extended Text Table)
+    
+    Signed-off-by: Adam Charrett <adam@dvbstreamer.org>
+    Signed-off-by: Michael Krufky <mkrufky@linuxtv.org>
+
+commit 94a623e25916c01c668fe592cb9ca50db9e63bf7
+Author: Michael Krufky <mkrufky@linuxtv.org>
+Date:   Fri Jan 6 12:00:09 2012 -0500
+
+    Adam Charrett wrote pretty much the same MGT parsing code I wrote, but 5 years ago...
+    
+    Signed-off-by: Michael Krufky <mkrufky@linuxtv.org>
+
+commit da1fd7c379218db57767ff4c5327b301a464a0bc
+Author: Michael Krufky <mkrufky@linuxtv.org>
+Date:   Thu Jan 5 17:59:57 2012 -0500
+
+    change license of MGT parser from GPL to LGPL
+    
+    Signed-off-by: Michael Krufky <mkrufky@linuxtv.org>
+
+commit bf22bb744f15a18428943de501f4c4fe6aecde2b
+Author: Michael Krufky <mkrufky@linuxtv.org>
+Date:   Thu Jan 5 17:57:50 2012 -0500
+
+    Change licenses on code from Adam Charrett from GPL to LGPL
+    
+    Signed-off-by: Adam Charrett <adam@dvbstreamer.org>
+    Signed-off-by: Michael Krufky <mkrufky@linuxtv.org>
+
+commit deff4cc50d3734aef1cfee86c288c61d7274fc7f
+Author: Michael Krufky <mkrufky@linuxtv.org>
+Date:   Thu Jan 5 23:05:19 2012 -0500
+
+    Add support for parsing ATSC MGT (Master Guide Table)
+    
+    Signed-off-by: Michael Krufky <mkrufky@linuxtv.org>
+
+commit ab181e94c6ff59f85ec3d899690acd6471bc595a
+Author: Adam Charrett <adam@dvbstreamer.org>
+Date:   Thu Jan 5 22:59:31 2012 -0500
+
+    Add support for parsing ATSC tables: EIT STT VCT & new descriptors
+    
+    Adds ATSC table support for: EIT STT VCT
+    Adds descriptor support for: 13 14 62 66 73 76 83
+    
+    Signed-off-by: Adam Charrett <adam@dvbstreamer.org>
+    Signed-off-by: Michael Krufky <mkrufky@linuxtv.org>
+
+commit 385db26163ffa2d92cdcce38f71f06089026a8d9
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Mon May 21 14:56:57 2012 +0200
+
+    Add R. Corno to AUTHORS file.
+
+commit e0770c098ac8a692a40c738ccf61c5e42f716a67
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Mon May 21 14:46:08 2012 +0200
+
+    descriptors: refactor and cleanup
+    
+    - dvbpsi_Decode*() first check length then allocate memory
+    - dvbpsi_Gen*() refactor
+
+commit 4a7ee37e248dbb8e94c592fde026b56564fad272
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Mon May 21 13:49:42 2012 +0200
+
+    descriptors: add helper function dvbpsi_DuplicateDecodedDescriptor()
+    
+    - update all descriptors.
+
+commit fdae10cd9ac0e3b623e8a7349a14d017373931aa
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Mon May 21 12:03:20 2012 +0200
+
+    descriptors: implement some helper functions
+    
+    - add dvbpsi_CanDecodeAsDescriptor() helper function
+    - add dvbpsi_IsDescriptorDecoded() helper function
+    - update descriptors
+
+commit 2d8ba47b73c8843ab6cc1c5d6838216114b13e71
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Mon May 21 11:39:32 2012 +0200
+
+    dr_03: small cleanup
+
+commit 3e8810cb284aae5745bd9c7abeacea6c44779d34
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Mon May 21 11:34:54 2012 +0200
+
+    Updated NEWS
+
+commit 10cb8ee14bcbec1ae6796cd008f44d84c0f6c9f2
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Mon May 21 11:33:03 2012 +0200
+
+    dr_03: variable_rate_audio_indicator inserted in audio stream descriptor
+    
+    Added variable_rate_audio_indicator.
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit 316d502b92769d6939a927482d422c72922787f8
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon May 7 16:29:15 2012 +0200
+
+    dvbinfo: small logging improvements.
+
+commit a708ad109670c837cebd027802870a03c75b73ef
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Apr 25 14:28:38 2012 +0200
+
+    dvbinfo: fix logging
+    
+    Logging functions nested use of va_arg(), which was wrong. The solutions
+    is to simplify the logging function nesting.
+
+commit a24fd472eee487c4081e679d4803b923a246e78b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 26 17:03:26 2012 +0200
+
+    dvbinfo: implement monitor mode
+    
+    In monitor mode dvbinfo runs as Unix daemon and the logging goes to syslog instead of stderr.
+    - added -m (--monitor) commandline switch to run in the background
+    - added -s (--summary) commandline switch to produce bitrate summary files
+    - added --summary-file commandline switch to give a summary-file name (default: stdout)
+    - added --summary-period commandline switch to write every <n> ms a new summary file
+    - implemented a logging callback function for routing the dvbpsi log messages to dvbinfo application
+
+commit c576e2082c9c8db5996d76cc6c418d9fde2a211e
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 26 17:02:06 2012 +0200
+
+    fix a bug with HAVE_VARIADIC_MACROS message() function
+    
+    The code referred to a not defined DVBPSI_MSG_FORMAT define and a not define variable inside the HAVE_VARIADIC_MACROS code block.
+
+commit 78ec585506594fc4dafa1d0dec663661184d89ee
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sun Mar 25 20:57:42 2012 +0200
+
+    Add descriptor 0x40 to NEWS
+
+commit cd51369a4ac813dd54059974318e045de0def590
+Author: Roberto Corno <corno.roberto@gmail.com>
+Date:   Sun Mar 25 20:46:30 2012 +0200
+
+    Add descriptor 0x40
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit d5389aa81e58e8c1afcacda338600dbedfa3db3e
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sun Mar 25 20:35:24 2012 +0200
+
+    Add EIT generator to NEWS
+
+commit d1c39d1ace94d122428590f9ae5d94756b1c2db3
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sun Mar 25 20:34:22 2012 +0200
+
+    Cleanup EIT generator
+    
+    Cleanup EIT generator as merged from his Sašo Kiselkov repository.
+
+commit e88e9a831eb1d4b00075ed5e27ae90b9e349651a
+Merge: 4322f26 e0f4a74
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sun Mar 25 20:23:39 2012 +0200
+
+    Merge http://netdev.netlab.sk/libdvbpsi
+
+commit 4322f26bf874a74f01482c5abc84588a05cdde8c
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Mar 14 12:50:08 2012 +0100
+
+    ignore m4 directory
+
+commit 79c18b03003a43d57ada26cd0a53fce29046a206
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Mar 14 12:49:07 2012 +0100
+
+    configure.ac: small rework
+
+commit eea3cea0807aa69954c0655c97803526f5dc6330
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Mar 14 12:45:40 2012 +0100
+
+    remove attribute((deprecated))
+
+commit 096c5fd7d09e0bcc6b7d2fbe2f493ed0125498b3
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Mar 14 11:37:28 2012 +0100
+
+    descriptors/dr_44.c: Build fix
+    
+    Remove error debugging messages from the descriptor.
+
+commit 9522bf4f5f42b01bf451f6920967b2f9bf1455c8
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Mar 14 11:04:11 2012 +0100
+
+    src/dvbpsi_private.h: Fix building with HAVE_VARIADIC_MACROS.
+
+commit ddda1724883ade82ff4f9a58dd7fe7633f91824d
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Mar 14 10:46:48 2012 +0100
+
+    update for autotools
+
+commit 292560495d86a66ebfe91640886daf520900164c
+Merge: 08e3266 2fede7b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Mar 14 10:18:38 2012 +0100
+
+    Merge branch 'branch/libdvbpsi-ng' of git.m2x.eu:libdvbpsi
+    
+    Conflicts:
+    	configure.ac
+    	examples/decode_mpeg.c
+    	examples/get_pcr_pid.c
+    	src/Makefile.am
+    	src/demux.h
+    	src/dvbpsi.h
+    	src/dvbpsi_private.h
+    	src/psi.h
+    	src/tables/bat.h
+    	src/tables/bat_private.h
+    	src/tables/cat.h
+    	src/tables/cat_private.h
+    	src/tables/eit.h
+    	src/tables/eit_private.h
+    	src/tables/nit.h
+    	src/tables/nit_private.h
+    	src/tables/pat.h
+    	src/tables/pat_private.h
+    	src/tables/pmt.h
+    	src/tables/pmt_private.h
+    	src/tables/sdt.h
+    	src/tables/sdt_private.h
+    	src/tables/sis.h
+    	src/tables/sis_private.h
+    	src/tables/tot.h
+    	src/tables/tot_private.h
+
+commit e0f4a747852ae1648c47242f2281861bd2727446
+Author: Sašo Kiselkov <skiselkov@gmail.com>
+Date:   Wed Dec 14 18:08:43 2011 +0100
+
+    Fixed bad section number sequence generation for EIT sections.
+
+commit 6333c5b93b8b3bb2e19d86a5ef6dc357d0ba9654
+Author: Sašo Kiselkov <skiselkov@gmail.com>
+Date:   Wed Dec 14 15:24:19 2011 +0100
+
+    Fixed bad generation of EIT sections - should use i_service_id not i_ts_id for the table extension.
+
+commit 2fede7bdd4bc05970cd8c3a7c4c4ef284221ff0f
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Nov 16 15:59:37 2011 +0100
+
+    dvbinfo: empty entire capture fifo on closing
+    
+    If the capture thread finishes first, then empty the capture fifo
+    before exiting the application. The previous logic would just stop
+    the processing thread when the capture thread has ended. This
+    resulted in dvbinfo skipping the rest of the capture file and give
+    an incomplete result as summary.
+
+commit 1a8e62c8733a74b01b33c8f669c2c874b699b952
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Nov 16 15:58:42 2011 +0100
+
+    dvbinfo: protect buffer depth count with mutex.
+
+commit 93012b7dc7b164c5ba9f59d4c9a7aa91deddc33b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Nov 16 13:20:49 2011 +0100
+
+    dvbinfo: dump content of NULL packets too.
+    
+    Add some more comments and do not skip printing of content for NULL packets.
+
+commit 1fbecf30d2775598ea49db86ca02051ca1d714ad
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Nov 16 13:13:35 2011 +0100
+
+    src/tables/bat.c: Fix crash.
+    
+    The callback function requires a pointer to dvbpsi_bat_t be passed that will be freed by the receiving application.
+    Make sure there is a clean startup point when attaching the subdecoders,
+
+commit 7a3e05ed5090c1d2f1b417d07ea5c74c4dee3605
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Nov 16 11:26:24 2011 +0100
+
+    INSTALL: remove excess whitespace
+
+commit de009c3719355eed5f5129da1fca55e12fb6eb30
+Author: Marc Olzheim <marc@iphion.nl>
+Date:   Wed Nov 16 10:10:10 2011 +0100
+
+    dvbinfo: fix typo.
+    
+    Signed-off-by: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+
+commit 6c0183ad6f591cd19f92bcc65291e3557ee69c41
+Author: Marc Olzheim <marc@iphion.nl>
+Date:   Wed Nov 16 09:30:56 2011 +0100
+
+    tables/bat: fix dvbpsi_GatherBATSections.
+    
+    Signed-off-by: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+
+commit 0061f6850b6538a9ba79feed25a826ad9a3eb703
+Author: Marc Olzheim <marc@iphion.nl>
+Date:   Wed Nov 16 09:30:15 2011 +0100
+
+    dvbinfo: fix typo.
+    
+    Signed-off-by: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+
+commit 0dd6f6db36767ee0e6941c08c1b9b190a6d23b95
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Nov 16 09:39:25 2011 +0100
+
+    dvbinfo: Add hex representation of PID to error message on discontinuity.
+
+commit 46a0dc4ada4a3e4ea1e71bb9a41f5ee0d091f982
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Nov 14 10:54:50 2011 +0100
+
+    INSTALL: enhance documentation
+    
+    - add index
+    - add section on develop setup
+    - add section on packaging
+
+commit 79b2835338130cbf9e30c2a745b9099cc6ac429e
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Nov 10 15:31:25 2011 +0100
+
+    doc/howto-new-api: add new API description.
+    
+    Add a description on howto translate the old API into the new (update) API.
+
+commit 1ac4cd6166346638d5b529694af412faebb8e0b2
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Nov 10 13:40:17 2011 +0100
+
+    src/tables/nit.*: Make dvbpsi_NewNIT() and dvbpsi_DeleteNIT() functions.
+
+commit a28931881b5f1380b53817a3e12cc3f39554e375
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Nov 10 13:11:12 2011 +0100
+
+    Cleanup use of linker options -no-undefined to be more portable.
+
+commit c30a651ce287ca7d30c17f1bea3d48b9e47dd44c
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Nov 10 13:09:54 2011 +0100
+
+    Revert "Use -no-undefined when building for windows"
+    
+    This reverts commit 4a9fb815b6a390f82fc0a7fe25b0cb7141aaa42c.
+
+commit feab57cd0156b5c5aae55b6aefc7e1c2b04e3935
+Merge: c5f609a 08e3266
+Author: Sašo Kiselkov <skiselkov@gmail.com>
+Date:   Wed Nov 9 10:36:16 2011 +0100
+
+    Merge branch 'master' of git://git.videolan.org/libdvbpsi
+
+commit 08e3266c5034e1a61b8f00e5ba7e68836d9b5945
+Author: Brad <brad@comstyle.com>
+Date:   Fri Nov 4 09:33:15 2011 +0100
+
+    Cleanup use of linker option --no-undefined to be more portable.
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+    (cherry picked from commit 67bdf95ca413147a3c52285bd579852a31f7e59d)
+
+commit c5f609ab3444f081bf5d3bbc6d9467148a35dd40
+Author: Sašo Kiselkov <skiselkov@gmail.com>
+Date:   Fri Nov 4 09:29:48 2011 +0100
+
+    Fixed incorrect short event descriptor field offset computation. The old
+    algorithm didn't take the event_name_length and text_length fields into
+    consideration when calculating memcpy offsets for the text field.
+
+commit e8ed4c57fe3a0fccf485a3e8d1762c53fce834eb
+Merge: 2d6d87a 0d70171
+Author: Sašo Kiselkov <skiselkov@gmail.com>
+Date:   Fri Nov 4 09:29:20 2011 +0100
+
+    Merge branch 'master' of git://git.videolan.org/libdvbpsi
+
+commit 0d70171fea1519a631ab20856394025c757c9bd2
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Nov 3 16:58:47 2011 +0100
+
+    NEWS: update
+    (cherry picked from commit 74845e2ada2e90c43e729d94f7fe2b633fc7f715)
+
+commit 43ba231f56a891c30c3e2b19d5d3e3b2412977c8
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Oct 19 13:37:02 2011 +0200
+
+    Prepare for 0.2.2 bugfix release
+    
+    Fix regression introduced by commit-id: d565a849ad0191ed14db018546c71eb52d47a741.
+    (cherry picked from commit 4bd7cd7c84d3027a99c7593470401afbd01a13bd)
+    
+    Conflicts:
+    
+    	src/dvbpsi.h
+
+commit f75f5b933ddb04a1811b5461857e638ebf002741
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Nov 3 16:56:31 2011 +0100
+
+    OpenBSD build fix.
+    (cherry picked from commit 35f3240cd435500a420b848f5326ff041fe70d98)
+
+commit 2d6d87af7b9638780ba388c5f308e8dcdebd4369
+Author: Sašo Kiselkov <skiselkov@gmail.com>
+Date:   Thu Oct 13 17:11:09 2011 +0200
+
+    Implemented EIT generation in dvbpsi_GenEITSections function.
+
+commit 62312d68cdf026e4bd4c1c840d5f62217138aaae
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Sep 5 12:57:19 2011 +0200
+
+    example/dvbinfo/libdvbpsi.c: fix typo in libdvbpsi_init()
+
+commit edcb64bc433ec43bda357dc7dd574543aa26c685
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Sep 5 11:04:51 2011 +0200
+
+    tables/bat.h: cleanup indentation.
+
+commit ab5ab39ac4e55f89e8c413f5c88549995e5ba925
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Sep 5 11:04:20 2011 +0200
+
+    examples/dvbinfo/libdvbpsi.c: cleanup
+
+commit 2c8cc24ec1060e7b6ddab6a31640097d56a4b0b5
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Sep 1 10:22:59 2011 +0200
+
+    examples/get_pcr_pid.c: Fail if attaching PMT decoder fails.
+    
+    Squashed commit 53be8f into this one.
+    (cherry picked from commit 53be8f3b1932bd6ee2ec04cf7afc7f9ba01b7a86)
+
+commit 3b2dcf445103e549fb74dbd8762f8ecbd6e66492
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Aug 25 17:04:08 2011 +0200
+
+    examples/get_pcr_pid.c: free p_buffer on exit.
+    (cherry picked from commit 870c2f7d76e3a9c34dd54c75947496181eb727bf)
+
+commit b169eb0ce8604cb43d4f10d7be7d3d606130bf02
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sun Aug 28 11:06:13 2011 +0200
+
+    Use -no-undefined when bullding for MacOS X
+    (cherry picked from commit 5e384da06e9d0b417338ed5779681dcb3df6e78d)
+
+commit 34f345aa816062b9348afe27ab5ab96258cc746a
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Aug 25 16:50:55 2011 +0200
+
+    examples/get_pcr_pid.c: free p_buffer on exit
+
+commit 4a9fb815b6a390f82fc0a7fe25b0cb7141aaa42c
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Aug 25 15:28:21 2011 +0200
+
+    Use -no-undefined when building for windows
+    (cherry picked from commit 9e027628d1587be26d35df10cce10c0b2a4542e8)
+    
+    Conflicts:
+    
+    	src/Makefile.am
+
+commit 0fb9d3d9d1775eb6e4ed43f09f739008bf13ba1a
+Author: Andry Wolk <andywolk@gmail.com>
+Date:   Thu Aug 25 13:10:27 2011 +0200
+
+    Fail linking when there are undefined symbols upon producing the shared library.
+    
+    Signed-off-by: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+    
+    (cherry picked from commit 9ecad71f0355d454cb039c34281b3e3d7b7f907b)
+    
+    Conflicts:
+    
+    	src/Makefile.am
+
+commit 1236502dbb14601223ee4e6dd18d66f34db26a8d
+Author: Andry Wolk <andywolk@gmail.com>
+Date:   Thu Aug 25 13:07:27 2011 +0200
+
+    Make dynamic libraries under MSYS
+    
+    Libtool did not make DLL when building under MSYS.
+    
+    Signed-off-by: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+    (cherry picked from commit 3f8a2b7c7eba23459429f013e550912cb531990e)
+    (cherry picked from commit e3cbc9d3d199c46a5f7f58f8df8be8cc8d423e61)
+
+commit 10ef5721bceb47f339460397b420164a52a47b17
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Aug 25 13:30:20 2011 +0200
+
+    Prepare for a 0.2.1 release
+    (cherry picked from commit 18ddb2a5bc6bf631ff684befc1e38ac489483c2f)
+
+commit 5ad1a48d42ec96e138e6b4fc958a238deb376737
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Aug 25 15:28:21 2011 +0200
+
+    Use -no-undefined when building for windows
+    (cherry picked from commit 9e027628d1587be26d35df10cce10c0b2a4542e8)
+
+commit a887472d26163ca0e6bf98d683031b1a4210ef85
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Aug 25 15:08:48 2011 +0200
+
+    src/dvbpsi.h: typo depreceated -> deprecated
+    (cherry picked from commit 49b35a965ba5cf4df6752d98cc14444b60922538)
+
+commit a9c4f543b01fb1e95600abd76d44e970894b7ab3
+Author: Andry Wolk <andywolk@gmail.com>
+Date:   Thu Aug 25 13:10:27 2011 +0200
+
+    Fail linking when there are undefined symbols upon producing the shared library.
+    
+    Signed-off-by: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+
+commit 3f8a2b7c7eba23459429f013e550912cb531990e
+Author: Andry Wolk <andywolk@gmail.com>
+Date:   Thu Aug 25 13:07:27 2011 +0200
+
+    Make dynamic libraries under MSYS
+    
+    Libtool did not make DLL when building under MSYS.
+    
+    Signed-off-by: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+
+commit 7fd6d1cf393abafafcb483643e761d4fc656a55d
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 24 15:29:40 2011 +0200
+
+    example/decode_mpeg.c: i_report is undeclared if HAVE_SYS_SOCKET_H is undefined.
+    (cherry picked from commit 0a40ad27c7a3cbcb92d841f3beebe3d11fcaea2c)
+
+commit a1427a41a13ce9dfd851d068a68f5d70993b9869
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 24 15:26:53 2011 +0200
+
+    examples/dvbinfo: print receive timestamp
+
+commit 09aa897149cf0a0d835e8cd3fba80f7141c5b0be
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Aug 24 15:25:09 2011 +0200
+
+    examples/decode_mpeg.c: i_report undefined if HAVE_SYS_SOCKET_H is not defined.
+
+commit 88185c536400dca62b897a8e12cdbeb28a957b1d
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 17:14:16 2011 +0200
+
+    src/tables/sis.*: Make dvbpsi_NewSIS() and dvbpsi_DeleteSIS() functions.
+
+commit 0f344e1750313b6a0ff76f52d2a49ea6111de580
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 17:09:23 2011 +0200
+
+    src/tables/sdt.*: Make dvbpsi_NewSDT() and dvbpsi_DeleteSDT() functions.
+
+commit 81d3a7c9e8ceba2c2210cdd44417cc1c57c5a7c1
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 17:03:21 2011 +0200
+
+    src/tables/pmt.*: Make dvbpsi_NewPMT() and dvbpsi_DeletePMT() functions.
+
+commit 774d741bf647b1ae726bcad737f4897c23bff961
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 15:18:32 2011 +0200
+
+    src/tables/tot.*: Make dvbpsi_NewTOT() and dvbpsi_DeleteTOT() functions.
+
+commit 8487fbefb09197c790ef0d01d4db054e5123b68f
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 15:12:10 2011 +0200
+
+    examples/dvbinfo/libdvbpsi.c: Only TOT carries an CRC_32
+    
+    Do not print CRC32 for TDT table and make a distinction between
+    the two tables.
+
+commit abdd7cf4ffad914d3a88f51e66f84994321ec793
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 14:43:06 2011 +0200
+
+    src/dvbpsi.c: TDT carries no CRC_32
+    
+    TDT carries no CRC_32, thus exclude it from validating CRC_32.
+
+commit d0ba55f682eca733fb5396b8df645e4bc8b84b7b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 14:41:42 2011 +0200
+
+    src/tables/tot.h: add full table names
+    
+    Mention full table names for TDT/TOT.
+
+commit bced04ebc9398262b8ab68684c8a17e26ac00fb5
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 13:44:59 2011 +0200
+
+    src/dvbpsi.c: dvbpsi_PushPacket() print table_id on CRC32 error
+    
+    Give more information in the error message for aiding further
+    analysis of the encountered error.
+
+commit fb4ae42b7546515bd707ec4cf1d5993780558344
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 13:34:51 2011 +0200
+
+    examples/dvbinfo/dvbinfo.c: add output option
+    
+    Add an option to dump the input (file, network stream) to disk for
+    later analysis.
+
+commit 9dacd4f1191ebe93d89707c040c1212038ab4188
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 12:43:39 2011 +0200
+
+    src/tables/eit.*: Make dvbpsi_NewEIT() and dvbpsi_DeleteEIT() functions.
+
+commit 479ad4cb90a524471f28bf879b99939554dbb090
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 11:59:00 2011 +0200
+
+    src/tables/{b,p}at.h: Documentation updates.
+
+commit ef8352eff3ebe63e3bbbe536e46e0e072e880f52
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 11:58:21 2011 +0200
+
+    src/tables/cat.*: Make dvbpsi_NewCAT() and dvbpsi_DeleteCAT() functions.
+
+commit dd248c8451bf66b6d381b87b3ae906199dda25ca
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 11:45:59 2011 +0200
+
+    src/tables/bat.c: error handling in GenBATSections()
+    
+    Return NULL when allocation of new PSI sections fail. The function
+    will not return incomplete BAT PSI sections, but will return NULL
+    instead.
+
+commit 7f132123313c664dd4f0d4eba522d8e5d9cec30d
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 11:37:22 2011 +0200
+
+    src/tables/pat.*: Make dvbpsi_NewPat() and dvbpsi_DeletePAT() functions.
+
+commit 3b681a1b823e1cb18156c2cc0e26c24a1359371e
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 11:17:34 2011 +0200
+
+    src/tables/pat.c: Error handling in GenPAT()
+    
+    Return NULL on failure of building an entire PAT.
+
+commit 4ce2b8c34dc403756313bcf86a568ca86eaf7d43
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 11:16:32 2011 +0200
+
+    src/tables/pat.c: Cleanup indentation
+
+commit c932b1269249c58497766f11902c400542b51a54
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jun 24 10:50:40 2011 +0200
+
+    src/dvbpsi.c: only print CRC32 error when CRC32 checksum is wrong
+    
+    Check if it is really the CRC32 that is wrong or if it is another issue.
+
+commit 6cda9e15239c9eb09bd1401619a3a8efb4b9eaef
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 13 19:59:24 2011 +0200
+
+    BAT: Make dvbpsi_NewBat() and dvbpsi_DeleteBAT() functions.
+    
+    Make dvbpsi_NewBat() and dvbpsi_DeleteBAT() functions.
+
+commit 85086925f73145ea9d8cceaac92eee0f636fa998
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 13 19:47:45 2011 +0200
+
+    src/tables/*: initialize to NULL.
+    
+    Initialize freed sections with dvbpsi_DeletePSISections() to NULL.
+
+commit 0400d4db904f37d95859e5ddf8e4370887e4c159
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 13 19:25:26 2011 +0200
+
+    PMT: do not leak p_section pointer when decoding failed.
+
+commit cf495469e800e5fff653e794900b14d6e604767d
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 13 19:09:05 2011 +0200
+
+    dvbinfo: handle errors
+
+commit dd861d0ad960a85686b97961cabe89aee10225ee
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 13 19:01:25 2011 +0200
+
+    TOT: Cleanup
+    
+    - use i_extension argument
+    - privatize dvbpsi_ValidTOTSection()
+
+commit 4fecc0d0fffafee36aa0b65a380d4abee0cc5fa9
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jun 13 18:58:51 2011 +0200
+
+    src/tables/sic.c: dvbpsi_DetachSIS: Cleanup.
+    
+    Free sis_decoder_t and set p_subdec->p_cb_data to NULL.
+
+commit 6dbd8e7fb32c72a79c90b8cc6910de47561d0dd6
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon May 23 17:33:06 2011 +0200
+
+    examples/dvbinfo/libdvbpsi.c: Fix range checking.
+
+commit b557c99cd5cb0ca91d3eb11cffaa070400f68716
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon May 23 17:09:23 2011 +0200
+
+    src/tables: Remove unused parameter from private dvbpsi_DecodeXXX() function.
+
+commit abaf5349353984e3bacc9e5fdf64d0f6ab5a7ff6
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon May 23 17:07:33 2011 +0200
+
+    src/descriptors/dr_8a.c: implement b_duplicate flag
+    
+    The function did not implement b_duplicate flag, while all other
+    descriptors do.
+
+commit c2153a02422113e8ac8c7735c4306cd3c1e7e24a
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon May 23 17:05:58 2011 +0200
+
+    examples/dvbinfo/dvbinfo.c: Fix comparing signed with unsigned values.
+
+commit ee0610c61b3115e2ef918347a64f19af2cc25e8b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu May 19 16:19:42 2011 +0200
+
+    src/descriptor.h: Document that descriptor functions return NULL on error.
+    
+    Descriptors generators and decoders return NULL on error and a pointer to
+    the descriptor structure on success.
+
+commit ffa65b4ebe9d391563851ce42b250f2407c2f59a
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu May 19 16:14:30 2011 +0200
+
+    src/tables/cat.c: Cleanup
+    
+    Remove b_append from dvbpsi_GatherCATSections()
+
+commit 9e0d751e7996badd62fa75382cb8bce12b664a89
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu May 19 16:13:46 2011 +0200
+
+    src/tables/tot.c: Cleanup
+    
+    - remove b_append from dvbpsi_GatherTOTSections()
+
+commit 0eebb7f24b036cc37e3b05ecacd9e5df0337a289
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu May 19 15:44:41 2011 +0200
+
+    booleanize variables used as booleans
+    
+    Type int was used with some variables prefixed with b_ treating them
+    as booleans. This patch turns them into real booleans.
+
+commit 26a42d944c7c3c7dbd8b3f45819e90ddc3536da5
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu May 19 15:05:07 2011 +0200
+
+    example/dvbinfo: fix compilation for other BSD Operating Systems.
+
+commit ac436a518ba0e1ba18a28c511c174a9508f28eb7
+Author: Brad Smith <brad@comstyle.com>
+Date:   Fri May 6 17:19:52 2011 -0400
+
+    Fix compilation on other BSD Operating Systems such as OpenBSD, NetBSD and DragonFly.
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit f5fa22463805cd010815f19429d583edd8a1c277
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu May 19 15:02:40 2011 +0200
+
+    src/psi.c: identation
+
+commit 79aed10a87cc0d0baa031623489b47a334e75048
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu May 19 14:59:57 2011 +0200
+
+    src/psi.c: cleanup
+    
+    No functional changes.
+
+commit 9fa24dab002200b9c9987ef6cf23b6bf46fcf8de
+Author: Brad Smith <brad@comstyle.com>
+Date:   Fri May 6 17:19:52 2011 -0400
+
+    Fix compilation on other BSD Operating Systems such as OpenBSD, NetBSD and DragonFly.
+    
+    Signed-off-by: Jean-Paul Saman <jpsaman@videolan.org>
+
+commit a1b9489329b0b696e26aefcffeb323c23e37d7b2
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu May 5 11:52:55 2011 +0200
+
+    doc: update version and licensing information to reflect current release.
+
+commit 92895a7cc2d2935042ec621c02825b48281be55f
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed May 4 16:46:39 2011 +0200
+
+    libdvbpsi.spec.in: remove --enable-debug
+    
+    Using --enable-debug makes libdvbpsi too verbose. Instead use
+    RPM_BUILD_OPTS="-g -gdb3" rpmbuld -ta libdvbpsi-0.2.0.tar.gz to generate
+    a bujld with more debugging information.
+
+commit a905bc77d8efa2f04b9f6fed28e47e847f6642f6
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Apr 21 15:53:49 2011 +0200
+
+    Aid rpm build for non 32-bit builds
+    
+    - Added --libdir=%{_libdir} to configure
+    - Added --enable-debug to compile with debug symbols
+
+commit fa6932360d0cf12ac3daf1f6e45b9a76dc3a8298
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Mar 25 12:02:28 2011 +0100
+
+    Mark API's depreceated in preparation of release 1.0.0, with updated dvbpsi API.
+    
+    Packagers and application developers should anticipate the following changes for libdvbpsi version 1.0.0:
+    - removal of struct dvbpsi_handle
+    - new struct dvbpsi_t (iso dvbpsi_handle)
+    - structure size changes, decoders share common members
+    - removal of printfs in libdvbpsi code
+    - adding message callback for error, warning and debugging messages
+    
+    The API changes are needed to remove printfs from the library and to make the libdvbpsi API more consistent.
+
+commit f7dd8ed214084e4b6e602ca7ad9cca8519877840
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Mar 30 09:52:42 2011 +0200
+
+    src/demux.h: cleanup
+
+commit 07b5e6b1461918306014fc5c1df883d065c54d60
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 28 19:58:22 2011 +0200
+
+    src/demux.h: correct comment.
+
+commit 71cc59bb114ba0feb5ecdfd5a49bb7d64c72ab06
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 28 19:33:47 2011 +0200
+
+    Use dvbpsi_NewDecoder() and dvbpsi_DeleteDecoder() to allocate decoders for Demux, PAT, PMT and CAT.
+
+commit 4adb388a741c16f10f5c28d6beab76e9235e11e7
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 28 16:44:52 2011 +0200
+
+    src/dvbpsi.c: dvbpsi_DeleteDecoder() add assert
+    
+    Assert if p_decoder->p_current_section is not NULL.
+
+commit e238d9425a8d1b73224631c86724ba89ccb2f9bc
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 28 16:30:11 2011 +0200
+
+    examples/dvbinfo: honor debug setting regardless
+    
+    Do not make an exception for dvbpsi tables debugging.
+
+commit 9a5a4fa0961cdfebabf99803922247f6a8da1d4f
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 28 16:27:00 2011 +0200
+
+    src/dvbpsi.c: dvbpsi_PushPacket() sanity checking
+
+commit dd6d44b5aa2ec52b87b7106a3c1a12ec45134d8c
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 28 16:09:01 2011 +0200
+
+    src/dvbpsi.{c,h}: changed dvbpsi_PushPacket() prototype
+    
+    Change prototype of dvbpsi_PushPacket() to return bool iso void
+
+commit 5901abc21ca0e7b77c9dcf4ffaff2092e700e376
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 28 16:07:53 2011 +0200
+
+    examples/dvbinfo: enable TDT table
+
+commit 3ed3f3122a0993ba15dae6dad5ca212552aef13b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 28 15:55:53 2011 +0200
+
+    src/dvbpsi.c: Do not check continuity counter when this PID has not been seen before
+    
+    Do not check continuity counter when this PID has not been seen before.
+    This used to produce false positives.
+
+commit 9f095dd96a01a6271185cbfe58788f1e5e4d7a4d
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 28 15:54:54 2011 +0200
+
+    src/dvbpsi.c: cleanup indentation
+
+commit c0ca06c309e15b1fb97de2c39b116128334252ec
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Mar 28 14:48:38 2011 +0200
+
+    Add message type to message callback function.
+
+commit 3272675b56aaed4c4e7eab7b18790de755e8b158
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Mar 25 11:25:43 2011 +0100
+
+    Prepare for 0.2.0 release.
+
+commit baf927dd9e8b5984d574f1fba602dd0d9bc9a832
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Mar 25 10:57:37 2011 +0100
+
+    src/tables/sis.*: Add Splice Command structures definitions. (WIP)
+    
+    SCTE 35 2004 section 7.2 describes the following Splice Commands:
+    - 0x00 splice_null
+    - 0x04 splice_schedule
+    - 0x05 splice_insert
+    - 0x06 time_signal
+    - 0x07 bandwidth_reservation
+
+commit 062539709dab9e80fb39e2b48f8d3092d28c134e
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Mar 16 16:16:09 2011 +0100
+
+    NEWS: add descriptor 0x44
+
+commit a585a8aaee555f8bbb47d01634b61ea90e847db7
+Author: Ilkka Ollakka <ileoo@videolan.org>
+Date:   Tue Mar 15 11:29:18 2011 +0200
+
+    add dr_44 handling, NIT decode for dvb-c
+
+commit 8ff6d3c9bcb0ae573ad8bc132bbd593fc742c526
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Mar 16 13:55:24 2011 +0100
+
+    src/tables/{pat,pmt,tot}.c: use boolean
+    
+    Make use p_current->b_syntax_indicator and p_current->b_private_indicator are used as booleans.
+
+commit 23cec13457aa50b762fe9f13f7402e14b9d1d568
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Mar 16 13:54:51 2011 +0100
+
+    src/psi.{c,h}: update documentation
+
+commit f53ea0e5f80ed11df30222bab6d587fb2e5efa4b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Tue Mar 15 17:55:37 2011 +0100
+
+    src/table/sis*: Cleanup
+    
+    - Use bool for structure members that are used as bools
+    - Indentation
+
+commit 9441b0006cdfe7b95d7951bd8a9cdc9bd52745f8
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Tue Mar 15 17:49:27 2011 +0100
+
+    src/table/sdt*: Cleanup
+    
+    - Use bool for structure members that are used as bools
+    - Indentation
+
+commit b80d45d137f6411dc87805e0523c7a603e6f8588
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Tue Mar 15 17:28:46 2011 +0100
+
+    src/table/nit*: Cleanup
+    
+    - Use bool for structure members that are used as bools
+    - Indentation
+
+commit e950dbfb0faf869a429d93122647b080101cc454
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Tue Mar 15 16:54:05 2011 +0100
+
+    src/table/eit*: Cleanup
+    
+    - Use bool for structure members that are used as bools
+    - Indentation
+
+commit e1aee6aa3664170ed794803ce0e03fbf27f8b27b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Tue Mar 15 16:53:33 2011 +0100
+
+    src/tables/bat.h: update documentation
+
+commit 76902d9bd0931e59c339905e4e6afa4b17faa095
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 23 16:34:11 2011 +0100
+
+    src/*: make decoder->b_discontinuity an decoder->b_complete_header a boolean
+    
+    The dvbpsi_decoder_t members b_discontinuity and b_complete_header are used as a boolean.
+
+commit 5e15388023471d45e95a554c490809216a85bebd
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 23 16:22:40 2011 +0100
+
+    examples/dvbinfo: use dvbpsi_HasDecoder()
+    
+    Simplify code by using dvbpsi_HasDecoder().
+
+commit 019bd4d0673d7af813c2f8c53be5877d01a990a3
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 23 16:07:08 2011 +0100
+
+    Add function dvbpsi_HasDecoder(dvbpsi_t *handle)
+    
+    The function dvbpsi_HasDecoder(dvbpsi_t *handle) returns 'true' when a decoder has been attached to this dvbpsi handle. If the handle is not valid or no decoder is attached, then it will return 'false'.
+
+commit 360e93b0a4f3a07a351248c8b4c600846d6ffd57
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 23 15:26:58 2011 +0100
+
+    src/table/cat*: Cleanup
+    
+    - Use bool for structure members that are used as bools
+    - Indentation
+
+commit 9df181003d74f11cbfa4dd3d9ffc255d2c2e32e3
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 16 17:00:47 2011 +0100
+
+    .gitignore: ignore doc/doxygen
+
+commit b2b5e8695c5a2a3ae17031d8c3d21c57bc86923a
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 16 16:58:25 2011 +0100
+
+    src/table/bat*: Cleanup
+    
+    - Use bool for structure members that are used as bools
+    - Indentation
+
+commit 2e95f74ff0bc0dacd5a76d97215de1e5472cd9f0
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 7 16:46:17 2011 +0100
+
+    examples/dvbinfo: prints DVB PSI information for DVB and MPEG-TS streams.
+    
+    The dvbpsi-info tool provides information about the DVB PSI tables in
+    DVB and MPEG-TS streams (or files). It uses libdvbpsi to gather all
+    information and prints it to stdout.
+
+commit 834db590ff87eb1414ac678943ebb81d983ba22b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 16 15:56:02 2011 +0100
+
+    src/table/pmt*: Cleanup
+    
+    - Use bool for structure members that are used as bools
+    - Indentation
+
+commit dc475fd560de5ca39c4e5983a2a2fc63f15136cb
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 14 17:31:45 2011 +0100
+
+    src/table/pat*: Cleanup
+    
+    - Use bool for structure members that are used as bools
+    - Indentation
+
+commit 4fc878e7c2825cb33c5972b4f22c2975f4537b9b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 14 17:30:58 2011 +0100
+
+    src/psi.{c,h}: Cleanup
+    
+    - Introduce bool for things that are used as bools
+    - Indentation
+
+commit a0622578e421314e70ebcf8ce595d8805f89ddd7
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 14 13:11:09 2011 +0100
+
+    src/tables/bat*: remove executable bit.
+    
+    Remove executable bit.
+
+commit c080a8a7a01200f8d45408e7d6f69bbf70520898
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 14 12:52:06 2011 +0100
+
+    tables and descriptors: check  malloc return value.
+    
+    Check mallocs return value.
+
+commit a39ac17703ae30c0b6a9d9347b9215af533df3b0
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Feb 10 15:55:31 2011 +0100
+
+    libdvbpsi: API changes
+    
+    - Add pointer to dvbpsi_t * to dvbpsi_BuildPSISection()
+    - Make dvbpsi_ValidTOTSection() return a boolean
+    - Make dvbpsi_ValidPSISection() return a boolean
+
+commit f6f2cc0502a2cab8076efb5f1590682323813f95
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Feb 10 15:31:50 2011 +0100
+
+    examples/decode_mpeg.c: do not leak PMT handles
+
+commit 9b3cc048a1566c6ff459ec47b17befa0fc9c8cf5
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 9 17:11:37 2011 +0100
+
+    src/dvbpsi.c: simplify logging code
+    
+    Less duplicate code.
+
+commit 7e1ae788c653072d76bab5ff441e5239397d56bd
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 7 14:03:18 2011 +0100
+
+    dvbpsi_AttachXXX() functions now return a boolean iso of pointer to dvbpsi_t *handle.
+    
+    - dvbpsi_AttachDemux()
+    - dvbpsi_AttachPAT()
+    - dvbpsi_AttachPMT()
+    - dvbpsi_AttachSDT()
+    - dvbpsi-AttachCAT()
+    - dvbpsi-AttachBAT()
+    - dvbpsi-AttachEIT()
+    - dvbpsi-AttachNIT()
+    - dvbpsi-AttachTOT()
+    - dvbpsi-AttachSIS()
+
+commit fc83f896709a9d064884bdccd88333998c44d977
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 7 14:08:09 2011 +0100
+
+    configure.ac: extra checks
+
+commit 48d7f02749c475086b5684c721748e050d2b4386
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 7 13:20:40 2011 +0100
+
+    configure.ac: workaround gettimeofday not being found.
+    
+    Even when sys/time.h exists the function gettimeofday is not picked up
+    by this configure script. The example/decode_mpeg.c program compiles
+    fine when sys/time.h is present.
+
+commit 2e81f509f1c28fdc36c0ffd77707fa921b86b6bb
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 7 12:56:35 2011 +0100
+
+    examples/decode_mpeg.c: give usefull information when gettimeofday is not fouund.
+
+commit f9d35a61d662cd989cca197b93c4a9cb3d87a088
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 7 12:38:44 2011 +0100
+
+    examples/decode_pat.c: cleanup allocated handles.
+    
+    The cleanup paths forgot to cleanup the libdvbpsi handles.
+
+commit d8b5b4423e85d82a800297c4234d32ea8cee769b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 7 12:36:47 2011 +0100
+
+    examples/get_pcr_pid.c: fix leaking of memory
+    
+    The cleanup paths forgot to cleanup the allocated libdvbpsi handles.
+
+commit d6bdd063c3cf1cd8b5c9c33cfe7f6d1eaec1542f
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 7 11:17:53 2011 +0100
+
+    src/dvbpsi.c: assert() on correct condition
+    
+    The assert fired on the p_dvbpsi->p_private being NULL, while it should
+    have reacted on p_dvbpsi->p_private not being NULL. When the handle to
+    libdvbpsi (holding msg callback) is being deleted NO decoder maybe attached.
+
+commit afa7ad7e373aaced5a398d6089a365e9729380e2
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 7 11:07:59 2011 +0100
+
+    examples/decode_mpeg.c: various fixes
+    
+    Fixed:
+    - bug in discontinuity counter signalling (ignore null packets)
+    - check for TS sync word
+
+commit f1cf7bd0b9633ba83752cf3f2a2e2232e3b80ed7
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Feb 7 10:39:39 2011 +0100
+
+    examples/decode_bat.c: correct permissions
+    
+    The source file had executable permissions which is inappropriate for source code files.
+
+commit e971163d801670ea43472b7b1a35733a5fad1f66
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Feb 3 14:08:06 2011 +0100
+
+    doc/{index,usage}.doxygen: adjust for new API
+
+commit d9da10970674af32bc691b93093bfbff51e1da23
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Feb 3 13:54:08 2011 +0100
+
+    Doxygen fix
+
+commit a771fcb3e567644dd4a13e8b27af591ed60117fd
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Feb 3 13:52:10 2011 +0100
+
+    misc: update API's used
+
+commit 7cfea795081c6bea13147c8d1695c125a747a8c0
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Feb 3 13:51:46 2011 +0100
+
+    examples: update API used.
+
+commit d5b28e05cee715d2d488d6473d614de7a1f9eddc
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Feb 3 13:51:20 2011 +0100
+
+    fixup: 19a31474292c8ddbd7bc7b57a60c4773d6f3703b
+
+commit 15d26b4c2951d9251b09898c0721aa43b02379a5
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 2 17:55:38 2011 +0100
+
+    Doxygen documentation fixex.
+
+commit 52d1a27cd1e60c41875f1c2f69559cebf31f4ac7
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 2 17:34:34 2011 +0100
+
+    src/descriptors: doxygen documentation fixes.
+    
+    Fix not document functions and wrongly documented functions.
+
+commit bddf441f577060544fded76a9584f27e9bb15dd3
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 2 17:28:28 2011 +0100
+
+    src/tables: Documentation fixes
+    
+    Correct function definitions in doxygen blocks.
+
+commit 19a31474292c8ddbd7bc7b57a60c4773d6f3703b
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Wed Feb 2 16:24:55 2011 +0100
+
+    src/tables/*: Privatize dvbpsi_decoder_t in dvbpsi_t
+    
+    All dvbpsi decoders now use dvbpsi_t as handle instead of
+    dvbpsi_decoder_t *. The pointer to dvbpsi_decoder_t is privatized
+    and accessible through (dvbpsi_t *)->p_private member. The user
+    must make sure to cast it to the correct dvbpsi_*_decoder_t type
+    before accessing structure members.
+    
+    Dvbpsi decoder developers should use the define DVBPSI_DECODER_COMMON
+    at the start of a new dvbpsi_*_decoder_t.
+    
+    WARNING: THIS COMMIT BREAKS THE EXISTING API IN A MAJOR WAY !!!
+    
+    - most public APIs requires a pointer to existing dvbpsi_t
+    - new functions to obtain and delete a pointer to dvbpsi_t structure:
+      dvbpsi_NewHandle() and dvbpsi_DeleteHandle()
+    - subtable descriptors fixes
+    - indentations
+
+commit f6de3f79814c205fbe580101021a96464b8ee6db
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Jan 20 23:01:24 2011 +0100
+
+    src/descriptors/*: Remove dvbpsi_error()
+    
+    The descriptor structs have no reference to dvbpsi_h handle, so using
+    the dvbpsi_message_cb is currently impossible. Therefor remove the
+    dvbpsi_error() messages for now.
+
+commit 72c8e6fa77d9453587ccdd7c39a6f8d9c9660482
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Jan 20 22:44:49 2011 +0100
+
+    src/tables/*: replace DVBPSI_ERROR with dvbpsi_error
+    
+    Follow up of commit id: 1f223e37a5882f8daa79b0a32c668852d6aad1ed
+    
+    Use a message callback of dvbpsi_h instead of printf. The decoder
+    table functions all use a decoder_t. In dvbpsi.h a decoder_t * is
+    typedefed as dvbpsi_h.
+    Table encoder (or generators) do not use a dvbpsi_h handle. The
+    DVBPSI_{ERROR,DEBUG} have been disabled in these functions for now.
+    
+    The descriptors will be done in another commit.
+
+commit 1f223e37a5882f8daa79b0a32c668852d6aad1ed
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jan 14 14:19:12 2011 +0100
+
+    unify error, debug and warning messages
+    
+    Libdvbpsi used printf and fprintf to return debug and error information to the caller.
+    This bypasses any logging mechanism the calling application uses and does not take
+    multi-threaded applications into account.
+    The unifying of messages (error, debug or warning) allows a calling application to
+    filter (message level: -1, 0, 1 or 2) and handle the messages in its own way.
+
+commit d4a47c1f3bc6037fba0f6ebf7ffa5b0f7861c8ee
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jan 14 14:15:17 2011 +0100
+
+    configure.ac: buildsystem
+    
+    - add --std=gnu99
+    - add -D_GNU_SOURCE
+    - remove DEBUG define in preparation of message callback.
+
+commit 7ea93117ba42665fd81ba14eb7e1912578283dc2
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Jan 14 14:14:40 2011 +0100
+
+    libdvbpsi: bump binary API version
+
+commit e7cbfefbf4ecb6f963185e757f596f05c6ae4017
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 16:19:59 2011 +0100
+
+    doc: update information
+    
+    Update documentation information and fix structure somewhat.
+
+commit d28255b585523c6457859ad14616a05e2f896414
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 16:19:37 2011 +0100
+
+    doxygen: update configuration file to newer version
+
+commit e232e3d3c38f9fe780256fc00608f0a5173a8d53
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 15:47:48 2011 +0100
+
+    doxygen: libdvbpsi version 1.0.0
+
+commit 98911e88739913ab5f18dbbf1fae760dda13ec5e
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 14:52:29 2011 +0100
+
+    dvbpsi_private.h: Declare DVBPSI_DEBUG_ARG and DVBPSI_ERROR_ARG functions as static.
+
+commit 9d80d52fb8c1f1ebb722165b92cac041c9c5cc43
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 14:51:56 2011 +0100
+
+    configure.ac: add -Werror
+    
+    Raise warnings to error level and break compilation.
+
+commit 88c4dada387cd1de886d3a96a4412472a62110a4
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 14:50:55 2011 +0100
+
+    descriptors/dr_8a.c: Remove unused variable i
+
+commit bd913184ba943fba31d256a647b077c62c9162e8
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 14:39:35 2011 +0100
+
+    --std=gnu99: declare for-loop variables inside for() where possible
+    
+    Replace
+    
+      unsigned int i;
+      for(i = 0; ...)
+    
+    with
+    
+      for(unsigned int i=; ...)
+
+commit 9be0fb84b5ac4b48c50b02282737bb4f08ecf65e
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 14:38:50 2011 +0100
+
+    Allow GNU extensions for C '99 standard.
+
+commit eeaf18ffc45a358bd6117f895571cd6bb91e9406
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 11:50:28 2011 +0100
+
+    examples/get_pcr_pid.c: fix compiler warning
+    
+    Fixed compiler warning in function TSHandle(), which passed a 'const uint8_t *' into
+    dvbpsi_PushPacket() that expected a 'uint8_t *'.
+
+commit 083069982ee541fac661d5cb1eed2bf24f4c962d
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu Nov 25 09:52:30 2010 +0100
+
+    .gitignore: add examples/decode_bat
+
+commit a0487647cae3a8a4e4810c6b7fbda4ad9173701e
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Nov 19 14:46:29 2010 +0100
+
+    NEWS: new BAT decoder and generator by Zlu Zu
+
+commit e2393869539b1b9eb4b3fb02c65dd3970c1c2328
+Author: Zlu Zu <zluzu@gmail.com>
+Date:   Fri Nov 19 14:42:15 2010 +0100
+
+    BAT decoder and generator
+    
+    Original patch was modified by Jean-Paul Saman <jpsaman@videolan.org>
+    - changed license to LGPLv2.1
+    - general cleanup
+    - fixed memleaks
+    - add missing prototypes to bat_private.h
+    - add static to functions in example/decode_bat.c
+
+commit 897aa49f832ee792899924f345902099f418de84
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Nov 19 13:04:34 2010 +0100
+
+    libdvbpsi: RPM spec update
+    
+    Update license information
+
+commit e114a03c859984e33af6e60e9369b441b74f5acd
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Fri Nov 19 12:52:29 2010 +0100
+
+    Update NEWS
+
+commit 50182a60c61d70f39b76ccfc1490adb52bba5ae6
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 11:15:41 2011 +0100
+
+    Relicense libdvbpsi library under LGPLv2.1
+    
+    All original authors and contributors have been contacted and asked the
+    question: "Do you agree with relicensing libdvbpsi under the LGPLv2.1 ?".
+    
+    All original authors contributors and responded positively to this request
+    as summurized in this commit log:
+    
+      Authors and committers                        GPLv2 -> LGPLv2.1 License change
+    ================================================================================
+      Arnaud de Bossoreille de Ribou <bozo@via.ecp.fr>                 Yes
+      Johan Bilien <jobi@via.ecp.fr>                                   Yes
+      Johann Hanne <jhml@gmx.net>                                      Yes
+      Andrew John Hughes <gnu_andrew@member.fsf.org>                   Yes
+      Tristan Leteurtre <tristan.leteurtre@anevia.com>                 Yes
+      Damien Lucas <damien.lucas@anevia.com>                           Yes
+      Viktor Luzin <vl@msp.ru>                                         Yes
+      Christophe Massiot <massiot@via.ecp.fr>                          Yes
+      Jiri Pinkava <jiri.pinkava@vscht.cz>                             Yes
+      Jean-Paul Saman <jpsaman@videolan.org>                           Yes
+      Gildas Bazin <gbazin@videolan.org>                               Yes
+      Derk-Jan Hartman <thedj@videolan.org>                            Yes
+      Sam Hocevar <sam@videolan.org>                                   Yes
+      Sigmund Augdal <dnumgis@videolan.org>                            Yes
+      Laurent Aimar <fenrir@videolan.org>                              Yes
+
+commit b60dd8ab7ae0a3218083ebe07a112fb5cc35d31e
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 11:04:25 2011 +0100
+
+    New Splice Information Section Table (SIS)
+    
+    From SCTE 35 (2004) specification.
+
+commit 783306f05ff5a848b7c06123cc8837e7b4e082e6
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon Jan 3 11:00:25 2011 +0100
+
+    New CUE Identifier Descriptor (0x8a)
+    
+    From SCTE 35 2004 specification
+
+commit 20f365da7cb0df21664fdeb3b56dbe36fc7ea5e6
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Thu May 6 17:21:28 2010 +0200
+
+    ignore these files
+
+commit 21f4f84ef012b1f37c38cdae3195b4580dd1186a
+Author: Jean-Paul Saman <jean-paul.saman@m2x.nl>
+Date:   Mon May 3 12:48:02 2010 +0200
+
+    Bump version number to 1.0.0
+
+commit 7396625b3fac734d519d4244419ca83880fc7def
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Thu May 6 14:59:19 2010 +0000
+
+    Fix compilation after breakage of revision 201
+
+commit b358a55d2eae83c61c84e1da7ea3490a12ae1ac0
+Author: Christophe Mutricy <xtophe@videolan.org>
+Date:   Sun May 2 22:20:07 2010 +0000
+
+    Don't distribute an out-of-date debian/ dir
+    
+    Take it from your distro if you need it
+
+commit a06d0ac7c5f8febbb5407294310676fad3cb93ff
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Fri Apr 23 08:15:12 2010 +0000
+
+    remove libdvbpsi.spec it is generated from configure now
+
+commit 9031efc3f2aaee571f589ae8ea19999de65959bd
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Fri Apr 23 08:14:46 2010 +0000
+
+    libdvbpsi.spec: keep version consistent
+    
+    - added libdvbpsi.spec.in
+    - generate libdvbpsi.spec from configure
+
+commit 40ffc4b2d0e795df5a3311af9a909e4144a168d7
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Tue Apr 13 11:32:13 2010 +0000
+
+    update rpm specfile
+
+commit 531f8b930a4d9bd0d1f999a3903c4ba270816a50
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Tue Apr 13 11:31:02 2010 +0000
+
+    correctly bump soname ('-version-info 6:0:0')
+
+commit 49f5850309becc7c7732a1be423ce4fa4bc4219f
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Tue Apr 13 08:56:29 2010 +0000
+
+     * libdvbpsi.pc.in: Seem to have forgotten this file in the previous commit.
+
+commit fe44f91b8331b518abd07ff0229c23b578fa5902
+Author: Ramiro Polla <ramiro.polla@gmail.com>
+Date:   Sun Feb 14 14:32:02 2010 +0000
+
+     ALL: package-config support
+
+commit 98b9f6750a075ca412aa561c37c2ea091b98ea0d
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Fri Feb 12 10:18:49 2010 +0000
+
+    decode_mpeg: use unix file format
+
+commit 7f42b528d98ee5237f8a485c84250a195b2dab51
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Jan 13 09:49:20 2010 +0000
+
+    decode_mpeg: fix various bugs spotted by Bernhard Ehlers
+
+commit 3f285c5792b3fa0358047af4fdfd716910e76a0e
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Thu Jan 7 19:47:05 2010 +0000
+
+     * examples/decode_mpeg.c: Fix usage help for --mtu.
+
+commit 5b537cebe46290b0a98ccfa0e9c3cc6ca84c7b9c
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Thu Jan 7 19:40:50 2010 +0000
+
+     * README: We no longer use CVS, and libdvbpsi@ doesn't exist.
+
+commit 03ac4b3af8baa0cad62868aa93d94d039db8cbad
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Thu Jan 7 18:28:16 2010 +0000
+
+     * examples/get_pcr_pid.c: Triple-check the program number.
+
+commit 92c567367e2813cba826b082bb5df5390d126ce8
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Thu Jan 7 16:53:36 2010 +0000
+
+     * examples/get_pcr_pid.c: New example to output the PCR PID of a TS file.
+
+commit 63d5c0cbee7435129097bd6bc2a774fbaa4075c3
+Author: Marian Durkovic <md@videolan.org>
+Date:   Wed Nov 18 07:26:10 2009 +0000
+
+    Avoid empty SI tables and always deliver valid ones.
+
+commit 57393efcad3318971ce07b9af56775c0066126d8
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Tue Oct 20 17:46:21 2009 +0000
+
+     * src/dvbpsi.c: Do not check CRC of stuffing table, as pointed out by Marian Ďurkovič.
+
+commit 1f75b838217f6763cd2e25f8bc2d73e087ef66e8
+Author: Christophe Mutricy <xtophe@videolan.org>
+Date:   Thu Sep 17 22:53:13 2009 +0000
+
+    Let's not be the odd one. No need of SONAME in tarball name
+
+commit a852466b994e89ea96fb07c9cfdfbc85720340c3
+Author: Christophe Mutricy <xtophe@videolan.org>
+Date:   Thu Sep 17 22:51:14 2009 +0000
+
+    Set libtool version info for new release
+
+commit 74fb484ddc37f03c3bd08bf3f932cf89b84359fd
+Author: Christophe Mutricy <xtophe@videolan.org>
+Date:   Thu Sep 17 22:50:05 2009 +0000
+
+    Recognize automake 1.11
+
+commit c5266cef7c9868801ae5f687b8dd24e6f070cd3a
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Sep 24 14:11:54 2008 +0000
+
+    Simplify.
+
+commit d043e84be1cae8ac2b82fd712f9e97d76d84a2e4
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Sep 24 12:54:32 2008 +0000
+
+    Rework timing analysis of udp/pcr packets from an MPEG-TS stream.
+    
+    * added -r (--report) switch to report timings on either udp (default)  or pcr arrival
+    * fixed types mixups
+    * fixed type printing
+    * cleanup report printing to make it easier to use with gnuplot
+    * print other messages to stderr (PAT/PMT detection)
+    * removed duplicate constructs
+
+commit 454bd2a35c5ae01f9c55c8e82849db8ea742dfa2
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Mon Jul 14 09:03:19 2008 +0000
+
+      * .gitignore: add an ignore file for git-svn users.
+
+commit 7a7270d4a853c6bc373af8fae2cc99cc466dfb37
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Mon Jul 14 09:03:16 2008 +0000
+
+      * configure.ac: hide autotools binaries in a .auto/ directory.
+
+commit 62a01b89c9760776e0a35d8b2c450d7fe7c97e6f
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Mon Jul 14 09:03:13 2008 +0000
+
+      * Fix a bunch of warnings, mostly due to missing or invalid prototypes.
+
+commit 80b5d69feb70c6aa1ef434435da3d0084a273db6
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Mon Jul 14 09:03:10 2008 +0000
+
+      * configure.ac: output a few additional useful warnings.
+
+commit d70cfbad900aac170b92e17ab4e5f53708573559
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Mon Jul 14 09:03:04 2008 +0000
+
+      * bootstrap: update bootstrapping script.
+
+commit 352e8b2b1d8b1aa05b2dec1abb7990e3cb62e8a2
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Sun Jul 13 12:52:18 2008 +0000
+
+      * Fix a few warnings caused by format string/type mismatches.
+
+commit 487341a970e0a1cd5eb337a5862ae5638ef9dc8e
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Thu May 22 16:55:20 2008 +0000
+
+    remove debug
+
+commit a3bd2d5e2a7d4bf4afc4fafd3916c17bc9bd3802
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Sat Apr 26 12:12:06 2008 +0000
+
+     Add support for descriptor 0x5a (terrestrial delivery
+    system descriptor).
+
+commit 03f732ca85f1641c39c539304339275a62df9b6d
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Sat Apr 26 12:10:54 2008 +0000
+
+     Add support for descriptor 0x58 (DVB local time offset
+    descriptor).
+
+commit e0f9ab0f33f93b643331f90db5270587f89079e5
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Sat Apr 26 12:09:45 2008 +0000
+
+     Add support for descriptor 0x43 (DVB satellite delivery system descriptor).
+
+commit 3fec84e16eb29c3190606d68930a3b611ba2c682
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Thu Apr 24 20:49:16 2008 +0000
+
+    NIT, TOT and TDT support by Johann Hanne:
+    Support for the TOT table added. As the TDT table is nearly the same (it's a TOT without descriptors and CRC), it can also be used to create a TDT. As the TOT includes a CRC32 in it's payload, the patch also moves the CRC table to dvbpsi.c, so it can be access from tot.c.
+
+commit cdc626f307e1c9201d6da47fe390ba6508f99f20
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Thu Jan 17 07:40:38 2008 +0000
+
+    Add myself to the AUTHORS file
+
+commit 2283e0ac49eee12c3876a2dc3f94b9e350a0e047
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Thu Jan 17 07:40:00 2008 +0000
+
+    Fix sentence
+
+commit 8ba1a707740e1fe9453e676808d3cc326e5e3e45
+Author: Thierry Thomas <thierry@FreeBSD.org>
+Date:   Thu Jan 17 07:38:18 2008 +0000
+
+    FreeBSD buildfix for examples/connect.c
+
+commit ea6adee5cc013c1ef9da77dd0a1561029dd44d77
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Sat Dec 22 12:25:55 2007 +0000
+
+    Fix parity
+
+commit cd657555a512b3548e3bf4d0428386590fd43e73
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Tue Dec 18 13:06:43 2007 +0000
+
+    Bump up version number
+
+commit 4b86e23e0913fcab2776139508685ac7f933c710
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Tue Dec 18 12:54:48 2007 +0000
+
+    Add news about VBI_data_descriptor
+
+commit e1619ef7a996439184cd4e0f8d013c1355582dd8
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Tue Dec 18 12:50:39 2007 +0000
+
+    Add 0x45 descriptor
+
+commit eb9789ace2ec23a27a9c2c1bed87032a4774e791
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Tue Dec 18 11:39:10 2007 +0000
+
+    Implement VBI_data_descriptor according to EN 300 468 v1.7.1 section 6.2.46.
+
+commit 0602ad23c40890c1d78e9efebfcf1bee409e1c6c
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Tue Dec 18 11:35:21 2007 +0000
+
+    Remove trailing whitespace and updated comments.
+
+commit b14bc0feee49b962205a65894b23f7b11a329d4c
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Mon Oct 22 10:18:05 2007 +0000
+
+    Forgot to update changelog
+
+commit 8405fc26f77638de9a810416a8978ef9eb9da02c
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Tue Oct 16 18:01:15 2007 +0000
+
+     Add dr_69.h to dr.h
+
+commit b18ef663375cc56e0d60abf3daace15690dfa061
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Sun Oct 14 19:53:41 2007 +0000
+
+     "make dist" does not include examples/connect.h in the tarballs, so they will not compile. This attached patch fixes this.
+
+commit 7067e01931b806cbf0d3adf9cd2f70a6406f8631
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Fri Oct 12 21:07:24 2007 +0000
+
+    Add Jiri Pinkava to AUTHORS and update NEWS
+
+commit fd14b5c20ff47c15fb87a34584dc0d6960ef0f7f
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Fri Oct 12 21:05:37 2007 +0000
+
+    remove excess whitespace
+
+commit 2fac91b7681159d677b6e997e8cf2dfd071b1f5c
+Author: Jiri Pinkava <Jiri.Pinkava@vscht.cz>
+Date:   Fri Oct 12 21:05:05 2007 +0000
+
+    New descriptor 0x69 (Program Delivery Control PDC). Programme Delivery Control (PDC) is a standard (ETS 300 231) to control video recorders using hidden codes in the teletext service. The PDC data indicates to the recorder when a show or program starts. PDC is often used together with StarText, enabling the user to select a programme to record using specially coded teletext programme listings. The combination of features is often called PDC/StarText. More information on: http://en.wikipedia.org/wiki/Programme_Delivery_Control.
+
+commit 5ae3fe470b5077c3279d0fb77b31e3c888118302
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Thu Oct 11 20:25:35 2007 +0000
+
+    Added changelog entry for new release.
+
+commit fe5bf1298b6a36d44de1980b64748e09e2bca815
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Thu Oct 11 20:21:47 2007 +0000
+
+    Added cat support to news.
+
+commit 692e3dc21c040b501563ff954fea752db7f99de3
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Thu Oct 11 20:19:10 2007 +0000
+
+     Update version information to 0.1.6 and changed package name to libdvbpsi5, because of an changing ABI.
+
+commit d8a16fcee1cdba6b11deb730539a55bade150a44
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Thu Oct 11 06:47:59 2007 +0000
+
+      function in gen_pmt.c passes a char[] variable where the called function has an uint8_t[] in its declaration.
+
+commit 9ca76c73d7b17e1693c53dc850fe7d7e5570e769
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Thu Oct 11 06:47:13 2007 +0000
+
+     eit.h misses a declaration for:
+    dvbpsi_descriptor_t* dvbpsi_EITEventAddDescriptor(
+                                                  dvbpsi_eit_event_t* p_event,
+                                                  uint8_t i_tag, uint8_t i_length,
+                                                  uint8_t* p_data);
+
+commit f23905536374d15d7521e2e33934b9e051516727
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Thu Oct 11 06:46:25 2007 +0000
+
+     The C file defines:
+    dvbpsi_descriptor_t * dvbpsi_GenStuffingDr(
+                                            dvbpsi_stuffing_dr_t * p_decoded,
+                                            int b_duplicate)
+    but the header file declares:
+    dvbpsi_descriptor_t * dvbpsi_GenStuffingDataDr(
+                                            dvbpsi_stuffing_dr_t * p_decoded,
+                                            int b_duplicate);
+    
+    The patch fixes this (and also two wrong function names within
+    comments).
+
+commit 11ec6e666722c0a61b2356adec1857c04bf7c776
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Thu Oct 11 06:45:21 2007 +0000
+
+     cat.c includes an unused variable.
+
+commit 05b4b0a5bbac374b075bc9d1864111b0707ebf5e
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Fri Oct 5 17:53:35 2007 +0000
+
+    Adding CAT support
+
+commit ef2ef6d234f3ca2fb595b42ef205f732d67508e6
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Tue Apr 24 16:44:05 2007 +0000
+
+     * src/tables/eit.c: Simplify EIT table completion (thanks Johann).
+
+commit 4899809e2cba167c87b8545a6942a6c9d1a4e605
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Tue Apr 24 16:43:09 2007 +0000
+
+     * src/descriptors/dr_56.c: Fixed a (major) typo in dr_56.c (thanks Johann !)
+
+commit b44e4bc942057c479fec3b5d779dcfb68304aa3d
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Mon Apr 16 16:53:22 2007 +0000
+
+     * src/tables/eit.c: EIT discontinuities
+
+commit 80aa1be272ffd3147e59c1236b130eb94fe67a32
+Author: Christophe Mutricy <xtophe@videolan.org>
+Date:   Wed Mar 21 20:02:19 2007 +0000
+
+    bootstrap: support automake 1.10
+
+commit 71733b2110ae415c9538ed53f139372dc5fa9f4b
+Author: Derk-Jan Hartman <hartman@videolan.org>
+Date:   Mon Mar 12 02:57:25 2007 +0000
+
+    * Also accept 0x46 as descriptor tag when decoding. For encoding we will need to add a new param to the descriptor struct.
+
+commit d97f7e766e116bd8e6de6dba8a24effc79e40205
+Author: Derk-Jan Hartman <hartman@videolan.org>
+Date:   Mon Mar 12 02:41:39 2007 +0000
+
+    * Fix dr_56 documentation
+
+commit 21fd3288e51f0afde06f34579496cb1bd96db2e0
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Mon Jan 22 18:03:13 2007 +0000
+
+     * Prepare for version 0.1.6.
+
+commit 30d1e3d10f23f039c1fbdec62df61dfc5a2fd75a
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Fri Jan 19 17:33:26 2007 +0000
+
+     * misc : Removed test of the audio descriptor since with the new
+       definition we don't test anything.
+
+commit a5420f9590ce8eb849ef72119100ba778f41622d
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Fri Jan 19 17:32:37 2007 +0000
+
+     * src/descriptors/dr_56.c: Fixed bad declaration and typo in descriptor
+       56 (teletext).
+
+commit 6656b0314c97319f6b30bf6dcf2f7aad67193c2c
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Wed Sep 20 11:56:27 2006 +0000
+
+      * Update bootstrap file.
+      * Check for gettimeofday() in configure.ac.
+      * Fix decode_mpeg.c so that it builds on Win32.
+
+commit f4deac18db26853c172d62938852366de6eac590
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Wed Sep 20 10:42:52 2006 +0000
+
+      * Fix clock accuracy computing, it's (integer * 10 ^ - exponent).
+
+commit 50ed68f706ce97b663a3b4449feab8bcb3f86c91
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Tue Sep 19 23:37:39 2006 +0000
+
+      * Temporarily disable i_audio_type test in test_dr.c until someone fixes
+        dr.xml (broken due to the new 0x0a descriptor specs).
+
+commit bcd7b66476dd16a27a772c88b10b0b4f3876d89e
+Author: Sigmund Augdal Helberg <sigmunau@videolan.org>
+Date:   Tue Jul 18 08:34:12 2006 +0000
+
+    Fix descriptor 0x0a to match newer specs. Note that this will break binary compatibility.
+    
+    TODO: Update test code
+
+commit db622d74775f39db267c62bc7a1851a455fd6d54
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Fri Feb 3 15:44:46 2006 +0000
+
+     * src/dvbpsi.c: Fixed the use of uninitialized data when
+       section_syntax_indicator=0.
+
+commit 63f9c0fcdc39b96f88134034c5d9f432162931f3
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Thu Nov 17 23:14:19 2005 +0000
+
+    Added bytes transferred and bitrates between two PCR's to the verbose output.
+
+commit 2da20ad299296e11f5e68876d46c003efd66113d
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Nov 9 21:38:43 2005 +0000
+
+    beautifying
+
+commit 6b78658a2d77f9a30d1e5a4edbcc16c970a561c7
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Nov 9 21:23:27 2005 +0000
+
+    Add sequence number
+
+commit 486ebf4e468f42bf75f85b35101b79f075463123
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Nov 9 21:09:29 2005 +0000
+
+    fix indentation
+
+commit 3dd2403c20631962891327f6095a5e5fffea44c4
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Nov 9 20:44:07 2005 +0000
+
+    Add pid to verbose output
+
+commit cc32b9ffc846acc9b7e0922ad847e7e67f680ba9
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Nov 9 19:52:06 2005 +0000
+
+    Prettying the printfs in verbose mode.
+
+commit ad961fdaff19b70be4089838a44ad761a55b4bcf
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Nov 9 19:14:46 2005 +0000
+
+    Added a verbose option that prints PCR statistics in milliseconds.
+
+commit c0fe1c1b4e866c09a99278e6a65e02de3a8003b5
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Oct 26 21:53:58 2005 +0000
+
+    print backwards PCR
+
+commit c28a82013a0c4218cc085c224db3c0e5edb69f16
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Thu Sep 22 20:44:09 2005 +0000
+
+    Remove conflicting redefinition of macro release and fix several typo in this spec file.
+
+commit ad619b4307a8c1e48aeb8c3f551bed5dda4afe1d
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Sat Sep 17 13:41:55 2005 +0000
+
+      * Build decode_mpeg on Win32, just don’t build the network part.
+
+commit c44a14d855618a075baaff41b478ebcc783721a2
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Thu Sep 15 16:14:52 2005 +0000
+
+      * Do not build examples/decode_mpeg on Win32.
+
+commit d64243d805439d8bca350442fa8c6842e63dd8fd
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Thu Sep 15 16:14:20 2005 +0000
+
+      * Fixed the package name in Debian build rules.
+
+commit aa51d94049f4f72c4f518504820965f1669f837e
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Wed Sep 14 19:16:53 2005 +0000
+
+     * src/tables/sdt.h: Declaration of dvbpsi_SDTServiceAddDescriptor.
+
+commit 789ac5df66f445dd3066a5db3ecc745413ae3f86
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Aug 3 08:44:38 2005 +0000
+
+    setting svn properties on the files
+
+commit 032141374b9c06e3acd0a5efa9a61565b59966d5
+Author: Jean-Paul Saman <jpsaman@videolan.org>
+Date:   Wed Aug 3 08:43:05 2005 +0000
+
+    example tool for checking an MPEG2-TS stream.
+
+commit b76dabd5ac2b5814620188ebcd580002676c2422
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Wed Jul 6 13:46:17 2005 +0000
+
+     * Updated ChangeLog.
+
+commit b7e0f9a0c52326b6dd8df006992828c90eae83cd
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Wed Jul 6 13:07:44 2005 +0000
+
+      * updated build files for 0.1.5 release.
+      * removed unneedde executable flags.
+
+commit 72b5582324e9defad1e7f038cc78da46508e0aa5
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Wed Jul 6 12:42:10 2005 +0000
+
+     * ALL: preparing for 0.1.5 release.
+
+commit 357cbbca7d6b8b2afcdd52ce795ca6a9fb04759f
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Mon Jul 4 15:20:54 2005 +0000
+
+     * src/dvbpsi.c: Fixed a long-standing issue in the section gathering. The
+       code assumed that no more than 2 sections could be present in a TS
+       packet, this is wrong. Consequently on some rare transponders (Hotbird
+       11785 H), some PMT sections may be lost. This is a MAJOR bug of
+       libdvbpsi and we should release a new version immediately.
+
+commit ba10fd850c24f61360884089ba62e59595f2b0a1
+Author: Gildas Bazin <gbazin@videolan.org>
+Date:   Sat Jun 4 12:52:02 2005 +0000
+
+    * src/tables/sdt.c, src/descriptors/dr_48.c: added sanity checks for bad streams.
+
+commit c0a8fcdb4812264c50bf03e72506872c81ffb553
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Tue May 17 19:59:13 2005 +0000
+
+     * configure.ac : Allow the user to specify extra arguments to CFLAGS.
+
+commit 65dcdf8bcc25943e3e5f9c55d39868a2c316d835
+Author: Gildas Bazin <gbazin@videolan.org>
+Date:   Tue Apr 19 12:33:21 2005 +0000
+
+    * ALL: bunch of bug and mem-leak fixes.
+
+commit bddeded315d48750a55dccf4a84d7086be3cb3dc
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Mon Apr 11 15:59:48 2005 +0000
+
+    * src/dvbpsi.c: Fixed drop of first packet when gathering sections.
+
+commit 5f9ca8d45503ed405bbd4664bb7c764917e42cda
+Author: Laurent Aimar <fenrir@videolan.org>
+Date:   Wed Mar 23 17:03:12 2005 +0000
+
+     * Makefile.am: added new files ...
+
+commit f6142a34f3d8651db9a5eee51a1a362262482f2b
+Author: Laurent Aimar <fenrir@videolan.org>
+Date:   Wed Mar 23 17:02:48 2005 +0000
+
+     * all: added descriptor 4d/4e for EIT.
+
+commit a1028692e6671aab8a89793584907b181a6f8715
+Author: Andrew John Hughes <gnu_andrew@member.fsf.org>
+Date:   Mon Mar 21 13:38:56 2005 +0000
+
+    * src/descriptor: Descriptor 0x52 decoding and generation
+    * examples/decode_pmt.c: More verbose output
+
+commit 0ad4a56c3d1532d1f8f5da485b5a0a6a02e54793
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Fri Jan 21 14:34:51 2005 +0000
+
+    * src/tables/*.h: Protect multiple-lines macros with { }
+
+commit 64f314d904577900a2a72c9b3f2d41d88517ac48
+Author: Gildas Bazin <gbazin@videolan.org>
+Date:   Wed Dec 22 12:09:54 2004 +0000
+
+    * ALL: WinCE port.
+
+commit 7b137904a48dbcec2fadabe285294f628cd8e03f
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Mon Dec 20 13:54:29 2004 +0000
+
+     * Updated AUTHORS file.
+
+commit 5a67b3bc3190126339e9a6aa37db15ca6dadd234
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Mon Dec 20 13:43:25 2004 +0000
+
+     * src/tables/eit.c: Fixed EIT b_free_ca.
+
+commit 9f9966358b5f5e42f2da4cdca0b48a2a13520a6c
+Author: Luzin Viktor <vl@msp.ru>
+Date:   Mon Dec 20 13:42:55 2004 +0000
+
+     * src/tables/sdt.c: Fixed b_free_ca and b_eit_schedule, implemented
+       SDT generation.
+
+commit 6f05295c7f7c408196538b7d0e16322b995e6ee5
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Wed Nov 10 19:34:56 2004 +0000
+
+     * src/dvbpsi.c: When encountering a discontinuity, print the PID.
+
+commit 595b1b084e8d88ed3d0b507f1bfcea19b00aea3d
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Wed Nov 10 14:47:53 2004 +0000
+
+     * src/tables/eit.c, src/tables/sdt.c: Fixed numerous parsing bugs due to
+       wrong offsets and bad reading of the spec (sic).
+
+commit 3e59642d9888380d3047c244fa33488b837a7f8a
+Author: Derk-Jan Hartman <hartman@videolan.org>
+Date:   Fri Oct 29 12:26:37 2004 +0000
+
+    * compile fixes
+
+commit 62a24ea6b39ab311fa250a42f91a96de902c6a34
+Author: Derk-Jan Hartman <hartman@videolan.org>
+Date:   Fri Oct 29 12:20:44 2004 +0000
+
+    * New 0x56 EBU System B Teletext descriptor decoder.
+      Currently untested
+
+commit d578fa4cd55c3c6510ca6e9db1a646f44f94acc8
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Fri Oct 22 13:04:36 2004 +0000
+
+     * src/dvbpsi.c: duplicate packets are legal, do not treat them as a
+       discontinuity.
+
+commit 8176eb84f414b7e3b6989e8d58d0d6b1fa97178a
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Tue Oct 19 19:17:49 2004 +0000
+
+      * src/tables/eit*: EIT decoder (no generator yet)
+      * 0x55 (dvb parental rating) descriptor decoder
+      * fixed a segfault in the subtitles descriptor decoder
+      * bumped up version number to 0.1.5
+
+commit 84476959fe0d9e98cebdb37173768f60498b4583
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Fri Aug 27 09:30:01 2004 +0000
+
+      * New minor Debian upload.
+
+commit 454bd35bed5757e84920210122326aafaef47452
+Author: Damien Lucas <nitrox@videolan.org>
+Date:   Fri Aug 27 09:08:17 2004 +0000
+
+    Fixed a bug in the PMT parser
+    ( descriptor could have a size of 0 bytes ...
+      That is the case on the channel "Barnkanalen" on swedish DVB-T transmissions)
+
+commit a22c2bece031149ac43284a73df7414bd01f14d2
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Mon Jul 5 09:22:27 2004 +0000
+
+      * bootstrap:
+        + Run libtoolize before aclocal.
+        + Support automake 1.8.
+
+commit b8146fc67e9153867d003130b8445bc86ad1a93f
+Author: Gildas Bazin <gbazin@videolan.org>
+Date:   Mon Jun 28 19:17:23 2004 +0000
+
+    * src/descriptors/dr_59.c: fixed dvb subtitles descriptor generation.
+
+commit 6501d6f6016efdf0925ce7272fb0e4634788ea08
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Tue Feb 24 14:31:18 2004 +0000
+
+      * Added proper SVN keywords to files and directories (for $Id and ignores).
+
+commit 8f46fc8ea8e265c0eee43774dd9333966c6e8c33
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Mon Feb 23 21:44:01 2004 +0000
+
+      * ChangeLog:
+        + Moved changelog to SVN format.
+
+commit b8c3c63bd7be9ffbc87e235c9ca4d1b9ca62f7db
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Fri Jan 2 14:23:41 2004 +0000
+
+      * debian/rules:
+        + Distribute the NEWS file.
+      * examples/.cvsignore:
+        + Ignore decode_sdt.
+
+commit e67f87a6c92ff9f2eeaed8b63f1ab907f96ef073
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Fri Jan 2 14:15:46 2004 +0000
+
+      * libdvbpsi.spec debian/changelog:
+        + Prepared the 0.1.4 release.
+      * NEWS ChangeLog:
+        + Renamed the old changelog to a NEWS file.
+        + Regenerated a ChangeLog from the CVS logs.
+      * Makefile.am:
+        + Added a "make changelog" rule.
+
+commit 03fa28813e2911d0ef7273a9acadf03407c5ab35
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Thu Nov 6 17:41:42 2003 +0000
+
+      * configure.ac, src/Makefile.am:
+        + Set interface to 3:0:0.
+        + Set version number to 0.1.4.
+        + Use the autotools/ directory.
+      * debian/control:
+        + Set policy to 3.6.1.0.
+        + Renamed source package to libdvbpsi3.
+        + Removed the autotools-dev build dependency.
+
+commit 94f6a27915a8a1d5283b6c1294ac7dca449e29ac
+Author: Damien Lucas <nitrox@videolan.org>
+Date:   Thu Nov 6 16:20:30 2003 +0000
+
+    . 0x59 (dvb subtitles) descriptor decoder
+      Work of Tristan Leteurtre <tristan.leteurtre@anevia.com>
+
+commit a620ded052da2441d7ed06c91681fae7e338a0af
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Thu Nov 6 10:13:40 2003 +0000
+
+      * bootstrap: imported libdvdcss's bootstrap file.
+
+commit a8e08ab19584c4bb8abd2284834df32feda1184d
+Author: Johann Hanne <jhml@gmx.net>
+Date:   Tue Sep 23 13:04:54 2003 +0000
+
+      . Memory leak fix
+
+commit 64d607ace87c6085568dbdaa6ae923ca5d07f47c
+Author: Cyril Deguet <asmax@videolan.org>
+Date:   Tue Sep 16 18:43:09 2003 +0000
+
+    * fixed an unitialiazed pointer (thanks jonny ;)
+
+commit 35a48b96df084676a5f5411a77269e9a7a835c65
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Wed Jul 30 10:14:08 2003 +0000
+
+      * debian/Makefile.am:
+        + Added debian/compat.
+        + Removed debian/*.dirs.
+
+commit b9b2a5c325f01c237b91c281d1916e4b05e8caa3
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Wed Jul 30 10:11:55 2003 +0000
+
+      * debian/rules: Don't rely on debian/*.dirs to create directories.
+
+commit 50523b77bc0d630292a9778153923b4714ebc817
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Wed Jul 30 10:06:56 2003 +0000
+
+      * debian/control:
+        + Set policy to 3.6.0. No changes required.
+        + Set debhelper build-dependency to (>= 4.0) due to debian/compat.
+        + Renamed source package to libdvbpsi2.
+      * libdvbpsi.spec:
+        + Renamed source package to libdvbpsi2.
+
+commit e57ac61ee7dada09475eb1165120f0620e575a66
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Wed Jul 30 10:00:12 2003 +0000
+
+      * src/Makefile.am: Changed major number.
+      * configure.ac: Changed package name to libdvbpsi2.
+
+commit c9fc8126162d42a76bf8c9c26f9ab64798a84334
+Author: Gildas Bazin <gbazin@videolan.org>
+Date:   Mon Jul 28 23:24:12 2003 +0000
+
+    * src/Makefile.am: include demux.h in the dist.
+
+commit 28e734f4faf6971745170a72e67ab8accb17d98c
+Author: Gildas Bazin <gbazin@videolan.org>
+Date:   Mon Jul 28 23:12:22 2003 +0000
+
+    * ALL: bumped version number to 0.1.3
+
+commit 2b4e3f01392c13100fe79c476770b00fdeacfe3c
+Author: Laurent Aimar <fenrir@videolan.org>
+Date:   Fri Jul 25 21:08:45 2003 +0000
+
+     * pmt.c : fixed my last commit.
+
+commit 2a3f1c19161581d3b9dda0a82b8161eebcc40c90
+Author: Laurent Aimar <fenrir@videolan.org>
+Date:   Fri Jul 25 20:20:40 2003 +0000
+
+     * all: fixed segfault with invalid/corrupted psi data.
+
+commit 978d167762882448da6b7015610582a20575f674
+Author: Yves Duret <yves@videolan.org>
+Date:   Sun Feb 2 11:47:13 2003 +0000
+
+    - updated URL again.
+    - macros for redhat.
+    - fixes here and here.
+
+commit 07c3739efed30edbfe5c2976e83e25bf1064c1b9
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Tue Jan 14 19:51:14 2003 +0000
+
+      * ./debian/control: fixed a typo (thanks jorge!).
+
+commit 4d3a1a07d75d8c055a45c9efa2a0130e8ff9c524
+Author: Yves Duret <yves@videolan.org>
+Date:   Fri Dec 13 13:06:38 2002 +0000
+
+    corrected few things for sir rpmlint (uploaded in Mandrake).
+
+commit ead000dcea18b636f886c8676312ec8828d563b3
+Author: Yves Duret <yves@videolan.org>
+Date:   Fri Dec 13 09:54:02 2002 +0000
+
+    update spec file:
+     - s#Copyright#License#
+     - include the libtool .la files.
+     - use macros.
+     - update URL: tag.
+
+commit da12e0cde9d8fc9b8d3b29b84d11c68620d8a9db
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Fri Dec 13 09:34:32 2002 +0000
+
+    Fixed a typo.
+
+commit 34c444be20360681eaf57c8b638ec5dfab5c28f5
+Author: Johan Bilien <jobi@videolan.org>
+Date:   Thu Dec 12 10:19:32 2002 +0000
+
+      * src/descriptors/*: fixed some typos
+      * misc/*: added tests on the new descriptors
+
+commit 7258f595b206f2d601ae6982b98a17d9ec41d764
+Author: Johan Bilien <jobi@videolan.org>
+Date:   Wed Dec 11 13:14:42 2002 +0000
+
+      * src/descriptors/*: added a few DVB descriptors decoder and generator
+        (Stuffing, Bouquet Name, Service Name)
+
+commit e3cc31b3605453b302e618c3ec6cb86c71fde2f8
+Author: Johan Bilien <jobi@videolan.org>
+Date:   Wed Dec 11 13:04:57 2002 +0000
+
+      * src/demux.*: DVB PSI tables demux, required since one PID channel
+        may contain different tables.
+      * src/tables/sdt*: SDT decoder (no generator yet)
+      * examples/decode_sdt.c: added SDT decoder example
+
+commit fc4f423775c0f3e0ca1f9ce6b763231846910a43
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Mon Dec 2 12:59:57 2002 +0000
+
+      * ./bootstrap: automake 1.7 is accepted as well.
+      * ./bootstrap: we look for glibtoolize if libtoolize isn't present.
+
+commit 340d0e220a8511430fd3386b348f41a1df4cdc03
+Author: Alexis de Lattre <alexis@videolan.org>
+Date:   Mon Oct 14 09:23:32 2002 +0000
+
+    Package Debian for Woody / Sarge / Sid and not just Sid.
+
+commit 80d9fe9a229247c6cfbe691f2750aab14700521e
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Fri Oct 11 09:40:43 2002 +0000
+
+      * Updated changelogs and package files for the release.
+
+commit 42845b00926a628b13b529684b5c17138ae8c69b
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Fri Oct 11 09:28:38 2002 +0000
+
+      * Makefile.am: added bootstrap to the distribution.
+
+commit b3d2d110db4cf25786a6f53fcc6939657b1a2a63
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Fri Oct 11 09:19:18 2002 +0000
+
+      * bootstrap: we remove generated files before running the autotools, to
+        make sure we get the latest version.
+      * bootstrap, Makefile.am: moved the --foreign flag to Makefile.am.
+      * src/Makefile.am: renamed an unused _SOURCES variable to something
+        automake will not choke on.
+      * src/Makefile.am: updated the library version.
+
+commit c7cd7fab88cc34d060bc1a74507f134b1d73e526
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Thu Oct 10 22:24:26 2002 +0000
+
+    Better automake detection.
+
+commit 25c8864184e399e79a05d544350106e3ab6f6016
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Thu Oct 10 22:08:28 2002 +0000
+
+    Really bumped up revision number to 0.1.2 :p.
+
+commit 3f152bd72d713d986ec83e353de402bd0a3cdc0f
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Thu Oct 10 22:07:26 2002 +0000
+
+      * */Makefile.am: reworked automake directories to avoid linking problems
+        on Mac OS X.
+      * Bumped up revision number to 0.1.2.
+
+commit acbc44444d21253481d49c0676e49f21fb279e17
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Thu Oct 10 09:27:02 2002 +0000
+
+      * configure.ac, bootstrap: removed redundant stuff from CVS such as the
+        Makefile.in files, configure and config.*, and added a bootstrap script
+        to generate them; renamed configure.in to configure.ac and moved config.h
+        to . because it's now the recommended practice.
+
+commit 0bca9760ab09fb9c5331f55f7e833b18a8308175
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Mon Oct 7 14:15:14 2002 +0000
+
+      * src/dvbpsi.h: removed automatic inclusion of inttypes.h because it was
+        too platform-dependent and led to lots of cross-compilation problems. Now
+        the program using libdvbpsi has to make sure it is C99 compliant.
+
+commit 761093d82202f89dd0b65c9c0f125ba8bc006bc9
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Thu Jun 6 21:33:31 2002 +0000
+
+      * ltmain.sh: updated from debian 'sid' version of libtool, should fix the
+        Mac OS X compilation.
+
+commit b3f15d618dbcc2a7bc2bcf34bdc16175144f6acc
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Sun Jun 2 23:04:08 2002 +0000
+
+      * configure.in, configure, src/config.h.in, src/dvbpsi.h, misc/gen_crc.c: int types detection. It fixes (or should fix) solaris and mingw port.
+
+commit 9364c2c9aa94353f66a39fb808017fe13fa37eb6
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Fri May 24 21:58:16 2002 +0000
+
+      * src/tables/pmt.c: fixed the PMT generator which used to add one PSI
+        section for one ES.
+
+commit 5eb0bc39f805dd244e60bdb0ca377c8dc292600a
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Sat May 18 12:20:46 2002 +0000
+
+      * ALL: ran the auto* tools across the whole mess.
+
+commit d0bdf9d2bda4be37ff66d906714e53cd991736bb
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Sat May 18 12:12:48 2002 +0000
+
+      * ./debian/Makefile.am: forgot to update this file. hmpf.
+
+commit 47a6797472bbe9dccb5f1eb5cfee7b1b6f11dc4c
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Sat May 18 11:53:44 2002 +0000
+
+      * ./debian/*: updated Debian control files for the 0.1.1 release.
+
+commit f8d1273d6e4f1c0e5ce689e6fe3ffada34136f6c
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Sat May 18 11:41:46 2002 +0000
+
+      * .cvsignore: fixed ignore list.
+
+commit c152ca79637cf351bf02fc1d8ab0db16df1ac96d
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Sat May 18 11:39:07 2002 +0000
+
+     * ALL: automake rebuild.
+     * ChangeLog: up to date changelog.
+     * configure, configure.in: updated version.
+     * libdvbpsi.spec: updated RPM configuration.
+     * src/Makefile.am, src/Makefile.in: updated libtool interface.
+     * misc/Makefile.am, misc/Makefile.in: added test_dr.h into distribution.
+
+commit e8cc2c2b3aacedf64b3deeb9d5f79e116b8dc875
+Author: Christophe Massiot <massiot@videolan.org>
+Date:   Tue May 14 21:47:35 2002 +0000
+
+    Fix for MacOS X.
+
+commit ce657dce06d49d3d7cfe9b2004d1fd7bde65b0bc
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Sat May 11 11:42:27 2002 +0000
+
+      * src/descriptors/dr.h: stupid mistake.
+
+commit 5a62b3a69cb4fba2a052987ecdff00df772b743a
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Fri May 10 23:50:36 2002 +0000
+
+      * ALL: doc fixes.
+
+commit 8b8a9736e04e8a4fc16a8fc7e5590580ee4060f0
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Fri May 10 22:58:53 2002 +0000
+
+      * src/descriptors/dr_09.c: reserved bits set to 1 as specified in ISO.
+      * src/descriptors/dr.h: new headers.
+      * src/descriptors/Makefile.am: new descriptors.
+      * misc/dr.xml, misc/test_dr.c: up to date descriptor definition and
+        associated generated file.
+      * src/descriptors/dr_0b.h, src/descriptors/dr_0b.c: MPEG2 "system
+        clock" descriptor decoder and generator.
+      * src/descriptors/dr_0c.h, src/descriptors/dr_0c.c: MPEG2 "multiplex
+        buffer utilization" descriptor decoder and generator.
+      * src/descriptors/dr_0d.h, src/descriptors/dr_0d.c: MPEG2 "copyright"
+        descriptor decoder and generator.
+      * src/descriptors/dr_0e.h, src/descriptors/dr_0e.c: MPEG2 "maximum
+        bitrate" descriptor decoder and generator.
+      * src/descriptors/dr_0f.h, src/descriptors/dr_0f.c: MPEG2 "private
+        data indicator" descriptor decoder and generator.
+    
+    Note: all the MPEG2 descriptors decoders and generators (except for wide
+    range data) have been tested with the "test_dr" program located in the
+    "misc" directory.
+
+commit 6a75b337dfea705301c8f8b7980dfb0ad9762aad
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Thu May 9 20:39:02 2002 +0000
+
+      * misc/dr.dtd, misc/dr.xml, misc/dr.xsl, misc/test_dr.h, misc/test_dr.c: more improvement.
+
+commit 9d4d880d9c6805199f8d80e9d38b451565bec01e
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Thu May 9 19:59:20 2002 +0000
+
+      * misc/dr.dtd, misc/dr.xml, misc/dr.xsl, misc/test_dr.h, misc/test_dr.c: modified the way tests are performed (avoid stupid iterations).
+
+commit d5412905ff8c5b71c01dec03c4e4851cbce040d8
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Thu May 9 17:00:03 2002 +0000
+
+      * src/descriptors/dr_02.c:
+      * src/descriptors/dr_07.c:
+      * src/descriptors/dr_08.c:
+      * src/descriptors/dr_09.c:
+      * src/descriptors/dr_0a.c:
+      * misc/dr.xml: xml brief description of each descriptor to generate
+        "misc/test_dr.c".
+      * misc/dr.xsl: stylesheet used to generate "misc/test_dr.c".
+      * misc/dr.dtd: DTD against which misc/dr.xml validates.
+      * misc/test_dr.c: generated file.
+      * misc/test_dr.h: macros used by misc/test_dr.c.
+      * src/descriptors/dr.h: gathers all dr_*.h headers.
+
+commit 4a7f609bd265137d062c321f1eccf395ee224900
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Wed May 8 16:45:33 2002 +0000
+
+      * src/descriptors/dr_08.h: fixed a typo.
+      * src/descriptors/dr_09.h, src/descriptors/dr_09.c: MPEG2 "conditional
+        access" descriptor decoder and generator (not tested).
+      * src/descriptors/dr_0a.h, src/descriptors/dr_0a.c: MPEG2 "ISO 639
+        language" descriptor decoder and generator (not tested).
+
+commit 338d3bf8f966a2113bfe2c5e1641a7bb511920c9
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Wed May 8 15:55:32 2002 +0000
+
+      * src/descriptors/dr_06.h, src/descriptors/dr_06.c: MPEG2 "data
+        stream alignment" descriptor decoder and generator (not tested).
+      * src/descriptors/dr_07.h, src/descriptors/dr_07.c: MPEG2 "target
+        background grid" descriptor decoder and generator (not tested).
+      * src/descriptors/dr_08.h, src/descriptors/dr_08.c: MPEG2 "video
+        window" descriptor decoder and generator (not tested).
+
+commit 927a8e2c9a80c5cd5c85c72e5d6b1fc292b8deca
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Wed May 8 14:56:28 2002 +0000
+
+      * doc/doxygen.cfg: up to date documentation configuration.
+      * src/descriptor.c: doesn't copy data if none when creating a
+        descriptor.
+      * src/descriptors/dr_02.c, src/descriptors/dr_03.c: generators
+        optimization.
+      * src/descriptors/dr_04.h, src/descriptors/dr_04.c: MPEG2 "hierarchy"
+        descriptor decoder and generator (not tested).
+      * src/descriptors/dr_05.h, src/descriptors/dr_05.c: MPEG2
+        "registration" descriptor decoder and generator (not tested).
+
+commit dbbf06dc5591168fdc3ac6c03ca2f6d0a410ddf1
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Wed May 8 13:33:52 2002 +0000
+
+      * src/descriptors/dr_02.h, src/descriptors/dr_02.c: fixed a typo and
+        a little optimization.
+      * src/descriptors/dr_03.h, src/descriptors/dr_03.c: MPEG2 "audio
+        stream" descriptor decoder and generator (not tested).
+
+commit 3fa924f58e27325af13887858c657547d561cbe3
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Wed May 8 13:11:41 2002 +0000
+
+      * src/descriptors/dr_02.c: removed a warning under solaris.
+
+commit f64b1a5f885259ab8b8925b6d4724841295be003
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Wed May 8 13:00:40 2002 +0000
+
+      * ALL: added the src/descriptors directory.
+      * src/descriptor.h, src/descriptor.c: added a p_decoded field to the
+        dvbpsi_descriptor_s structure and added an 's' to the
+        dvbpsi_DeleteDescriptors function.
+      * src/tables/pmt.c: added 's' where needed.
+      * src/tables/pat.h: typo in the documentation.
+      * src/descriptors/dr_02.h, src/descriptors/dr_02.c: MPEG2 "video
+        stream" descriptor decoder and generator (not tested).
+
+commit 6dd28f049a40ba43c35acceee508253ca4131b88
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Tue Apr 9 00:42:46 2002 +0000
+
+      * libdvbpsi.spec: corrected sources URL.
+      * Makefile.*: added spec file to the distribution.
+
+commit 2e0eccea305b6c6fcd5e524b8ccd692e7b6d9a8a
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Mon Apr 8 23:01:35 2002 +0000
+
+      * libdvbpsi.spec: corrected URL.
+
+commit c194e598f7c828a0d769b2402d4ef76305df3a9a
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Mon Apr 8 22:45:29 2002 +0000
+
+      * libdvbpsi.spec: added rpm .spec file.
+
+commit dc53462561ff37247464e242994b8917f5bfd83a
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Wed Apr 3 00:09:43 2002 +0000
+
+      * ChangeLog: updated cgangelog.
+      * NEWS: updated NEWS.
+      * debian/Makefile.*: debian Makefiles.
+
+commit 4dd9977b25eca1fe557ab2269258521f12b244ce
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Tue Apr 2 23:41:56 2002 +0000
+
+      * ./debian/libdvbpsi0.copyright: fixed download URL.
+      * ./debian/rules: we now build packages with --enable-release.
+
+commit 43aa0a8b0627990f9cf058c7d0013f46869ce636
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Tue Apr 2 23:30:58 2002 +0000
+
+    Removed the font from the distribution.
+
+commit 292673fec89d9d3dec3c717f09085562014d5b5d
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Tue Apr 2 23:28:52 2002 +0000
+
+      - Added debian stuff in the distribution;
+      - workaround for the generation of decoder.png in the documentation.
+
+commit 8ca9983e05ad6d5c84db1198883462d739fffacf
+Author: Sam Hocevar <sam@videolan.org>
+Date:   Tue Apr 2 22:57:35 2002 +0000
+
+      * ./debian/*: Debian package generation files.
+      * ./examples/Makefile.am: example programs aren't installed by default.
+      * ./src/Makefile.am: libtool now uses -version-info instead of -release.
+
+commit a6738cff074971d1bfecc0a2a13a6a8804dfe5fe
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Tue Apr 2 17:55:30 2002 +0000
+
+    typo.
+
+commit fc531c9a0ffb6ac435b31a121548a81b848e9f5c
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Tue Apr 2 17:47:42 2002 +0000
+
+    Updated INSTALL and README.
+
+commit cdcd768a547bfd2d5ef90703c3eb37a4495e4a7d
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Thu Mar 28 14:59:42 2002 +0000
+
+    Little modification in the API usage page.
+
+commit ac093e24f350bc2807b4e9f7ed8299312fcf5505
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Thu Mar 28 14:48:43 2002 +0000
+
+    Added the font file and some little fixes.
+
+commit f4d738af92873543a19901c74b363262562aaa9c
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Thu Mar 28 12:08:53 2002 +0000
+
+    Cool graphs in documentation.
+
+commit f51fea17b3b47fe87433d95f8d3a04fbd2f1452e
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Wed Mar 27 20:13:25 2002 +0000
+
+    Documentation files included in "dist" target.
+
+commit cd5238063cafce895416587792dd37e7c1db0e02
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Wed Mar 27 20:02:43 2002 +0000
+
+    More powerfull API documentation.
+    Added Some human readable documentation
+    Added a .cvsignore
+
+commit 680c3848d3ae03a51a8e7847fb75579b0b489056
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Mon Mar 25 23:34:02 2002 +0000
+
+    .cvsignore stuff
+
+commit 288621285d605659b9f244be5fac908a5e5635e0
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Mon Mar 25 21:00:50 2002 +0000
+
+    Doxygen documentation.
+
+commit 27375b1afe583dd33677eae4bc643433c8a0b52b
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Mon Mar 18 23:53:39 2002 +0000
+
+    typo.
+
+commit 13d777ebff8c7c36e797ccc0634a01c2975a30e6
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Mon Mar 18 12:38:53 2002 +0000
+
+    Bug fix in the PMT decoder.
+
+commit b7d38e03fd54a454ac3a7895fa656ed23031d319
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Fri Mar 15 12:16:01 2002 +0000
+
+    C++ compliant headers.
+
+commit d7c4c7aa6f78f7a123e63458057a4a51bfc312fa
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Tue Jan 22 23:28:17 2002 +0000
+
+    I forgot to free the arrays.
+
+commit 0ee0fc099037da95c3266253d1917aef865993c7
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Tue Jan 22 20:30:16 2002 +0000
+
+      - new generation of PAT and PMT decoders that can receive non-consecutive
+        section numbers;
+      - moved tables codecs into "src/tables";
+      - moved PSI decoder in public files to allow external decoders.
+
+commit 11c556c8912e9c36f55e7f37e39dad0bcc444d4c
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Wed Jan 9 11:22:26 2002 +0000
+
+      - PMT generator;
+      - example (gen_pmt);
+      - fixed a non-null pointer in 'descriptor.c';
+      - cosmetic changes;
+      - generators review and comments.
+
+commit c2f3a9d763b433808973a41fd6c7a94f9ee01c1b
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Mon Jan 7 19:35:45 2002 +0000
+
+    Cosmetic change in debug messages.
+
+commit bfbc9602b021d08b36a22fd8b764373101949e9b
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Mon Jan 7 18:53:03 2002 +0000
+
+    Added .cvsignore files.
+
+commit e7e2f252e0ef928ef728a5116f3c3d09526f28bb
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Mon Jan 7 18:44:03 2002 +0000
+
+    Fix solaris compilation.
+
+commit 27b035654c090d209f74c2aee859e5f0067e08b2
+Author: Arnaud de Bossoreille de Ribou <bozo@videolan.org>
+Date:   Mon Jan 7 18:30:35 2002 +0000
+
+    Initial commit.

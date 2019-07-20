@@ -1,0 +1,91 @@
+INSTALL file for "libdvbpsi".
+
+ * Developers
+ * Configuring "libdvbpsi"
+ * Building "libdvbpsi"
+ * Installing and using "libdvbpsi"
+ * Building documentation
+ * Building packages
+
+Developers
+==========
+
+Before starting to enhance libdvbpsi as you downloaded it from the git repository
+at git.videolan.org make sure you have autotools (autoconf, automake, m4, libtool)
+installed.
+
+Clone the repository:
+
+  git clone git://git.videolan.org/libdvbpsi.git
+
+In contrast to other autotools enabled programs libdvbpsi uses a script named
+'bootstrap' to generate the configure script. Others use a program 'autogen.sh'
+for that. For libdvbpsi you need to run:
+
+  ./bootstrap
+
+Run the configure script for development:
+
+  ./configure --prefix=/usr --enable-debug --disable-release
+
+Now you can start enhancing libdvbpsi.
+
+Configuring "libdvbpsi"
+=======================
+
+A typical way to configure libdvbpsi is:
+
+  ./configure --prefix=/usr
+
+See './configure --help' for more information.
+
+If you intend to debug stuff, you may want to compile with debugging
+symbols:
+
+  ./configure --enable-debug
+
+If you want a fully optimized version you should use
+
+  ./configure --enable-release
+
+
+Building "libdvbpsi"
+====================
+
+Once configured, run 'make' to build the library and the programs
+located in the 'examples' and 'misc' directories.
+
+Installing and using "libdvbpsi"
+================================
+
+You can install the library, its headers and the programs located in
+the 'examples' directory by typing:
+
+  make install
+
+Including one of the headers is done by adding the following line in
+your '.c' file:
+
+  #include <dvbpsi/dvbpsi.h>
+
+The program must be linked against the lib with the '-ldvbpsi' option
+for gcc.
+
+Building documentation
+======================
+
+Once configured, run 'make doc' to build the documentation in html
+(doc/doxygen/html) and latex (doc/doxygen/latex). You'll need the
+doxygen tool (http://www.doxygen.org/) and the graphviz tool
+(http://www.research.att.com/sw/tools/graphviz).
+
+Building packages
+=================
+
+Once configure, run 'make dist', this will generate a libdvbpsi-${VERSION}.tar.gz
+and libdvbpsi-${VERSION}.tar.bz2. If you intend to build a package for RPM based
+linux distributions, then you can run 'rpmbuild -ta libdvbpsi-${VERSION}.tar.gz'
+or 'rpmbuild -ta libdvbpsi-${VERSION}.tar.bz2'.
+
+For distributions that use another package management system look at their documentation
+on howto create a installable package for it.

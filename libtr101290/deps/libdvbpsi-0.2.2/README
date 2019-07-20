@@ -1,0 +1,37 @@
+README for "libdvbpsi"
+
+
+Introduction
+============
+
+The libdvbpsi is part of the VideoLAN project, a full MPEG2
+client/server solution. The libdvbpsi can also be used with extra
+programs that need DVB and PSI decoders and generators.
+
+The VideoLAN team decided to write the libdvbpsi to make the VideoLAN
+Client and the VideoLAN Server capable of demultiplexing a satellite
+DVB stream. The library aims at making it easy to decode PSI tables
+(such as PAT, PMT etc.) present in a TS/DVB stream.
+
+
+Building, Installing and Using "libdvbpsi"
+==========================================
+
+See the INSTALL file for this.
+
+
+Troubleshooting
+===============
+
+A mailing-list has been set up for discussion about the libdvbpsi:
+libdvbpsi-devel. SVN mails are sent to this list. More information on
+VideoLAN website: http://www.videolan.org/
+
+
+Resources
+=========
+
+The VideoLAN web site at http://www.videolan.org/ is a good start for
+information about MPEG and DVD playing. Have a look at the documentation
+section, as well as the bookmarks.
+

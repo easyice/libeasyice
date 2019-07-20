@@ -1,0 +1,978 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\EasyICE.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\EasyICE.ico"
+IDR_EasyICETYPE         ICON                    "res\\EasyICEDoc.ico"
+IDI_PLAY_FAST           ICON                    "res\\Player\\fast.ico"
+IDI_PLAY_PAUSE          ICON                    "res\\Player\\pause.ico"
+IDI_PLAY_PLAY           ICON                    "res\\Player\\play.ico"
+IDI_PLAY_SLOW           ICON                    "res\\Player\\slow.ico"
+IDI_PLAY_STEP           ICON                    "res\\Player\\step.ico"
+IDI_PLAY_STOP           ICON                    "res\\Player\\stop.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDB_BITMAP_ICONS        BITMAP                  "res\\PaneIcons.bmp"
+IDB_BITMAP_TABLE        BITMAP                  "res\\PSI_SI\\tree_images.bmp"
+IDB_BITMAP_PIDTYPE      BITMAP                  "res\\PidType.bmp"
+IDB_BITMAP_TR101290     BITMAP                  "res\\tr101290.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 16
+BEGIN
+    BUTTON      ID_FILE_OPEN
+	BUTTON      ID_FILE_OPENNETWORKSTREAM
+    BUTTON      ID_FILE_CLOSE
+	SEPARATOR
+	SEPARATOR
+    BUTTON      ID_TB_NOTEPAD
+    BUTTON      ID_TB_CALC
+	SEPARATOR
+	SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&文件"
+    BEGIN
+        MENUITEM "&打开文件...\tCtrl+O",              ID_FILE_OPEN
+		MENUITEM "&打开网络...\tCtrl+N",		  ID_FILE_OPENNETWORKSTREAM
+		POPUP "最近打开的"
+        BEGIN
+            MENUITEM "最近打开的",                ID_FILE_MRU_FILE1, GRAYED
+			MENUITEM "清除菜单",                       ID_RECENTFILES_CLEAR
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "退出",                          ID_APP_EXIT
+    END
+    POPUP "&视图"
+    BEGIN
+        POPUP "&工具栏"
+        BEGIN
+            MENUITEM "&工具栏",                        ID_VIEW_TOOLBAR
+            MENUITEM SEPARATOR
+        END
+        MENUITEM "&状态栏",                        ID_VIEW_STATUS_BAR
+    END
+    POPUP "工具"
+    BEGIN
+        MENUITEM "抽取 PID",                      ID_TOOLS_SPLIT_WITH_PID
+        MENUITEM "重设 PID",                      ID_TOOLS_RESET_PID
+        MENUITEM "204 转 188",                    ID_TOOLS_204TO188
+		MENUITEM "记事本",	                      ID_TB_NOTEPAD
+		MENUITEM "计算器",	                      ID_TB_CALC
+		MENUITEM "提取 TS",						  ID_TOOLS_EXTRACT_TS
+    END
+    POPUP "&帮助"
+    BEGIN
+        MENUITEM "&关于 EasyICE...",              ID_APP_ABOUT
+    END
+END
+
+IDR_EasyICETYPE MENU 
+BEGIN
+    POPUP "&文件"
+    BEGIN
+        MENUITEM "&打开文件...\tCtrl+O",              ID_FILE_OPEN
+		MENUITEM "&打开网络...\tCtrl+N",		  ID_FILE_OPENNETWORKSTREAM
+		POPUP "最近打开的"
+        BEGIN
+            MENUITEM "最近打开的",                ID_FILE_MRU_FILE1, GRAYED
+			MENUITEM "清除菜单",                       ID_RECENTFILES_CLEAR
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&关闭",                         ID_FILE_CLOSE
+        MENUITEM "退出",                          ID_APP_EXIT
+    END
+    POPUP "&录制"
+    BEGIN
+        MENUITEM "开始",						ID_RECORD_START
+        MENUITEM "停止",                        ID_RECORD_STOP
+    END
+    POPUP "&视图"
+    BEGIN
+        POPUP "&工具栏"
+        BEGIN
+            MENUITEM "&工具栏",                        ID_VIEW_TOOLBAR
+            MENUITEM SEPARATOR
+            MENUITEM "&定制...",                      35001
+        END
+        MENUITEM "&状态栏",                        ID_VIEW_STATUS_BAR
+    END
+    POPUP "工具"
+    BEGIN
+        MENUITEM "抽取 PID",                      ID_TOOLS_SPLIT_WITH_PID
+        MENUITEM "重设 PID",                      ID_TOOLS_RESET_PID
+        MENUITEM "204 转 188",                    ID_TOOLS_204TO188
+		MENUITEM "记事本",	                      ID_TB_NOTEPAD
+		MENUITEM "计算器",	                      ID_TB_CALC
+		MENUITEM "提取 TS",						  ID_TOOLS_EXTRACT_TS
+    END
+    POPUP "&窗口"
+    BEGIN
+        MENUITEM "&层叠",                         ID_WINDOW_CASCADE
+        MENUITEM "&平铺",                         ID_WINDOW_TILE_HORZ
+        MENUITEM "&排列图标",                       ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "Window List",                 35000
+    END
+    POPUP "&帮助"
+    BEGIN
+        MENUITEM "&关于 EasyICE...",              ID_APP_ABOUT
+    END
+END
+
+IDR_MENU_PACKET_LIST MENU 
+BEGIN
+    POPUP "右键菜单"
+    BEGIN
+        MENUITEM "查找 (Ctrl+F)",                 ID_MPL_JUMP
+        MENUITEM "复制偏移地址",                      ID_MPL_COPY_ADDR
+        MENUITEM "定位到播放器",                      ID_MPL_TO_PLAYER
+        MENUITEM "保存此数据包",                      ID_MPL_SAVE_PACKET
+    END
+END
+
+IDR_MENU_GRAPH MENU 
+BEGIN
+    POPUP "右键菜单"
+    BEGIN
+        MENUITEM "保存图片",                        ID_MENU_GRAPH_SAVE_PNG
+		MENUITEM "导出",	                      ID_MENU_GRAPH_EXPORT
+    END
+END
+
+IDR_MENU_PSI MENU 
+BEGIN
+    POPUP "右键菜单"
+    BEGIN
+        MENUITEM "展开所有",                        ID_MENU_PSI_EXPAND
+        MENUITEM "折叠所有",                        ID_MENU_PSI_SHRINK
+    END
+END
+
+IDR_MENU_TR_MSG MENU 
+BEGIN
+    POPUP "右键菜单"
+    BEGIN
+        MENUITEM "显示所有类型事件",                    ID_MENU_TR_SHOW_ALL
+        MENUITEM "复制偏移地址",                      ID_MENU_TR_COPY_OFFSET
+        MENUITEM "跳转到偏移地址",                     ID_MENU_TR_JUMPTO_OFFSET
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+	"N",            ID_FILE_OPENNETWORKSTREAM, VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 305, 156
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 EasyICE"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,12,21,20
+    LTEXT           "EasyICE 2.6.0.6 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2009-2016",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,248,7,50,16,WS_GROUP
+    EDITTEXT        IDC_EDIT_VER_INFO,7,50,291,95,ES_MULTILINE | ES_READONLY | WS_VSCROLL
+END
+
+IDD_PLAYERVIEW DIALOGEX 0, 0, 354, 201
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "宋体, MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "",IDC_STATIC_PLAYER,120,32,107,59,SS_CENTERIMAGE
+    PUSHBUTTON      "Play",IDC_BTN_PLAY,87,158,20,14,BS_ICON
+    PUSHBUTTON      "Stop",IDC_BTN_STOP,153,157,20,14,BS_ICON
+    GROUPBOX        "",IDC_STATIC_MEDIA_CTL,7,141,340,40
+    PUSHBUTTON      "Rewind",IDC_BTN_REWIND,176,157,20,14,BS_ICON
+    PUSHBUTTON      "Fast",IDC_BTN_FAST,201,156,20,14,BS_ICON
+    PUSHBUTTON      "Step",IDC_BTN_STEP,227,156,20,14,BS_ICON
+    PUSHBUTTON      "Pause",IDC_BTN_PAUSE,113,158,20,14,BS_ICON
+END
+
+IDD_FILEOPEN_OPT_RANGE DIALOGEX 0, 0, 219, 102
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_CAPTION
+CAPTION "范围"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "选择要分析的数据范围",IDC_STATIC,7,12,205,81,0,WS_EX_TRANSPARENT
+    CONTROL         "整个文件",IDC_RADIO_FILE_WHOLE,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,12,32,48,10
+    CONTROL         "抽样分析　（单位：字节）",IDC_RADIO_FILE_PART,"Button",BS_AUTORADIOBUTTON,12,50,116,10
+    EDITTEXT        IDC_EDIT_BEGIN,33,66,74,13,ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    EDITTEXT        IDC_EDIT_END,132,66,74,13,ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    LTEXT           "从：",IDC_STATIC_FROME,13,68,17,8,WS_DISABLED
+    LTEXT           "到：",IDC_STATIC_TO,111,68,17,8,WS_DISABLED
+END
+
+IDD_TOOLS_SPLIT_WITH_PID DIALOGEX 0, 0, 299, 138
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "抽取数据"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_PIDS,55,22,192,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_INPUT,55,66,192,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BTN_BROWSE_INPUT,256,66,29,14
+    EDITTEXT        IDC_EDIT_OUTPUT,55,86,192,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BTN_BROWSE_OUTPUT,256,85,29,14
+    DEFPUSHBUTTON   "开始",IDC_BTN_START,173,115,46,14
+    PUSHBUTTON      "取消",IDCANCEL,235,115,46,14
+    GROUPBOX        "根据PID抽取",IDC_STATIC,7,6,283,105
+    LTEXT           "源文件:",IDC_STATIC,15,68,28,8
+    LTEXT           "设置PID:",IDC_STATIC,15,25,31,8
+    LTEXT           "输出文件:",IDC_STATIC,15,89,36,8
+    LTEXT           "多个PID之间请用逗号 ,  隔开",IDC_STATIC,15,41,101,8
+END
+
+IDD_TOOLS_RESET_PID DIALOGEX 0, 0, 296, 218
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "重设PID"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_INPUT,62,152,174,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BUTTON_BR_SRC,241,151,35,14
+    EDITTEXT        IDC_EDIT_OUTPUT,62,170,174,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BUTTON_BR_DST,242,169,35,14
+    DEFPUSHBUTTON   "开始",IDC_BUTTON_START,177,196,43,14
+    PUSHBUTTON      "取消",IDCANCEL,236,196,43,14
+    CONTROL         "",IDC_LIST_PIDS,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,21,32,250,113
+    GROUPBOX        "",IDC_STATIC,7,7,273,184
+    LTEXT           "源文件:",IDC_STATIC,17,154,28,8
+    LTEXT           "输出文件:",IDC_STATIC,15,172,39,8
+    LTEXT           "在下面填入要重设的PID:",IDC_STATIC,23,17,87,8
+    EDITTEXT        IDC_EDIT_ITEM,233,15,40,14,ES_AUTOHSCROLL | ES_NUMBER
+END
+
+IDD_TOOLS_204TO188 DIALOGEX 0, 0, 293, 87
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "204 -> 188"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_INPUT,62,18,163,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BUTTON_BR_IN,235,18,36,14
+    EDITTEXT        IDC_EDIT_OUTPUT,62,39,163,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BUTTON_BR_OUT,235,39,36,14
+    DEFPUSHBUTTON   "开始",IDC_BTN_START,176,66,40,14
+    PUSHBUTTON      "取消",IDCANCEL,232,66,40,14
+    GROUPBOX        "",IDC_STATIC,7,4,275,59
+    LTEXT           "源文件:",IDC_STATIC,17,21,28,8
+    LTEXT           "输出文件:",IDC_STATIC,17,42,36,8
+END
+
+IDD_TOOLS_PROGRESS DIALOGEX 0, 0, 176, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Progress"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,7,162,26
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",WS_BORDER,8,14,161,15
+    DEFPUSHBUTTON   "中止",IDC_BTN_STOP,128,35,41,14
+END
+
+IDD_GRAPHVIEW DIALOGEX 0, 0, 294, 214
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_CHARTVIEWER,"Static",SS_BITMAP | SS_NOTIFY,0,0,15,13
+    CONTROL         "",IDC_LIST_GOP,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,0,32,60,50
+    SCROLLBAR       IDC_SCROLLBAR_H,0,202,294,11
+    SCROLLBAR       IDC_SCROLLBAR_V,283,0,11,171,SBS_VERT
+END
+
+IDD_PROFRAM_INFO DIALOGEX 0, 0, 155, 158
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Program info"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TREE_PROGRAMS,"SysTreeView32",TVS_HASBUTTONS | TVS_LINESATROOT | WS_TABSTOP,0,0,155,158,WS_EX_TRANSPARENT
+END
+
+IDD_PACKET_FIND DIALOGEX 0, 0, 312, 125
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查找"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_FIND_WHAT,54,7,193,168,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "查找方式:",IDC_STATIC,136,27,111,91
+    CONTROL         "Index",IDC_RADIO_INDEX,"Button",BS_AUTORADIOBUTTON | WS_GROUP,140,39,35,10
+    CONTROL         "Offset",IDC_RADIO_OFFSET,"Button",BS_AUTORADIOBUTTON,140,51,37,10
+    CONTROL         "FrameNum",IDC_RADIO_FRAMENUM,"Button",BS_AUTORADIOBUTTON,140,63,50,10
+    CONTROL         "PID",IDC_RADIO_PID,"Button",BS_AUTORADIOBUTTON,140,75,27,10
+    CONTROL         "I Frame",IDC_RADIO_FRAME_I,"Button",BS_AUTORADIOBUTTON,140,87,41,10
+    CONTROL         "PCR Packet",IDC_RADIO_PCR_PACKET,"Button",BS_AUTORADIOBUTTON,140,99,53,10
+    DEFPUSHBUTTON   "查找下一个",ID_BTN_FIND_NEXT,254,7,49,13
+    PUSHBUTTON      "关闭",IDCANCEL,254,104,49,13
+    LTEXT           "内容:",IDC_STATIC,11,9,37,8
+    CONTROL         "向上搜索",IDC_CHECK_SEARCHUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,39,48,10
+    GROUPBOX        "选项",IDC_STATIC,7,27,111,91
+END
+
+IDD_FILEOPEN_OPT_MI DIALOGEX 0, 0, 219, 102
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_CAPTION
+CAPTION "媒体信息"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "采样分析",IDC_CHECK_SAPLE_MI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,10,44,10
+    LTEXT           "采样分析媒体信息.\n如果关闭此项，媒体信息检测将分析整个文件，不管数据范围如何设置（默认）",IDC_STATIC,7,29,188,44
+END
+
+IDD_TOOLS_EXTRACT_TS DIALOGEX 0, 0, 296, 224
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Extract TS"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_SOURCE_TYPE,71,17,99,89,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_INPUT,71,33,176,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BTN_BROWSE_INPUT,252,33,33,14
+    EDITTEXT        IDC_EDIT_OUTPUT,70,53,177,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BTN_BROWSE_OUTPUT,252,52,33,14
+    PUSHBUTTON      "开始",IDC_BTN_START,252,76,33,14
+    DEFPUSHBUTTON   "打开",IDC_BTN_OPEN,189,203,40,14
+    PUSHBUTTON      "取消",IDCANCEL,245,203,40,14
+    GROUPBOX        "",IDC_STATIC,7,3,282,197
+    LTEXT           "输入文件:",IDC_STATIC,15,35,49,8
+    LTEXT           "输出路径:",IDC_STATIC,15,56,49,8
+    LTEXT           "状态:",IDC_STATIC,15,79,24,8
+    LTEXT           "空闲",IDC_STATIC_STATUS,74,79,133,8
+    CONTROL         "",IDC_LIST_OUT_FILE,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,15,110,272,80
+    LTEXT           "输出文件列表:",IDC_STATIC,15,94,52,8
+    LTEXT           "源类型:",IDC_STATIC,15,18,44,8
+END
+
+IDD_NETVALIDATE DIALOGEX 0, 0, 252, 99
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "网络验证"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,153,70,50,14
+    PUSHBUTTON      "购买",IDC_BTN_BUY,49,71,50,14
+    LTEXT           "21x21",IDC_STATIC_NV_ERROR_ICON,29,26,21,21
+    LTEXT           "网络验证失败！",IDC_STATIC_NV_ERROR_TEXT,67,21,116,8
+    LTEXT           "正在进行验证",IDC_STATIC_NV_MSG,67,40,139,8
+	CONTROL         "",IDC_EXPLORER1,"{8856F961-340A-11D0-A96B-00C04FD705A2}",NOT WS_VISIBLE | WS_TABSTOP,224,75,21,17
+END
+
+IDD_OPEN_NETWORK DIALOGEX 0, 0, 275, 164
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "打开网络"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_OPEN_URL,13,35,247,82,CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "确定",IDOK,74,141,54,16
+    PUSHBUTTON      "取消",IDCANCEL,146,141,54,16
+    GROUPBOX        "网络协议",IDC_STATIC,7,7,261,129
+    LTEXT           "请输入网络 URL:",IDC_STATIC,13,21,104,8
+    LTEXT           "udp://239.0.0.1:1234 \r\nudp://172.16.3.1@239.0.0.1:1234 \r\nrtp://127.0.0.1:1234 \r\nhttp://127.0.0.1/test.m3u8",IDC_STATIC,22,54,179,35,WS_DISABLED
+	LTEXT           "Local IP:",IDC_STATIC_LOCAL_IP,13,117,28,8
+    COMBOBOX        IDC_COMBO_LOCAL_IP,45,115,99,39,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+	CONTROL         "Record",IDC_CHECK_RECORD_ENABLE,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,13,97,39,10
+    EDITTEXT        IDC_EDIT_RECORD_SAVE_PATHNAME,53,95,207,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE
+END
+
+IDD_PCRVIEW DIALOGEX 0, 0, 320, 200
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_CHARTVIEWER_PCR_OJ,"Static",SS_BITMAP,7,7,20,20
+    CONTROL         "",IDC_CHARTVIEWER_PCR_AC,"Static",SS_BITMAP,7,31,20,20
+    CONTROL         "",IDC_CHARTVIEWER_PCR_IT,"Static",SS_BITMAP,7,55,20,20
+    CONTROL         "",IDC_CHARTVIEWER_REALTIME_RATE,"Static",SS_BITMAP,7,78,20,20
+END
+
+IDD_PCROPTVIEW DIALOGEX 0, 0, 115, 158
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    LTEXT           "码率计算周期(毫秒):",IDC_STATIC,7,7,101,8
+    COMBOBOX        IDC_COMBO_RATE_PERIOD,7,22,65,58,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+
+IDD_HLS_BUF_VIEW DIALOGEX 0, 0, 320, 200
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_CHARTVIEWER_HLS_BUF,"Static",SS_BITMAP,7,7,20,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_NETVALIDATE DLGINIT
+BEGIN
+    IDC_EXPLORER1, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x034f, 0x0000, 0x02e5, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212, 
+0x0008, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000, 
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+    IDR_PANE_HEXEDIT        "十六进制"
+    IDR_PANE_FLAGS          "标志"
+    IDR_PANE_INFO           "信息"
+    IDR_PANE_NODES          "节点"
+    IDR_VIEW_PSI            "PSI"
+    IDR_VIEW_PACKET         "\n数据包"
+    //IDS_OFDFILTER           "MPEG2-TS(*.mpg,*.m2t,*.ts)|*.mpg;*.m2t;*.ts|所有文件 (*.*)|*.*||"
+	IDS_OFDFILTER           "MPEG2-TS(*.mpg,*.m2t,*.ts)|*.mpg;*.m2t;*.ts|Pcap File(*.pcap,*.cap)|*.pcap;*.cap|所有文件 (*.*)|*.*||"
+	IDS_OFD_PCAP_FILTER     "Pcap File(*.pcap,*.cap)|*.pcap;*.cap|所有文件 (*.*)|*.*||"
+    IDS_OFDSAVEFILTER       "MPEG2-TS(*.ts)|*.ts|所有文件 (*.*)|*.*||"
+    IDR_VIEW_PID            "PID"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_VIEW_PLAYER         "\n播放器"
+	IDR_FRAME_PCR			"PCR"
+    IDR_PANE_PROG           "节目"
+    IDR_PANE_QUALITY        "质量"
+	IDR_PANE_PCR_OPT		"选项"
+    IDR_VIEW_TR101290       "TR101290"
+    IDR_PANE_TR101290_ALL   "TR101290"
+    IDR_PANE_TR101290_INFO  "信息"
+    IDR_PANE_TR101290_MSG   "事件 (Last 5000)"
+	IDR_VIEW_HLS            "\nHLS"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_VIEW_MEDIA_INFO     "媒体信息"
+	IDR_VIEW_LOG			"日志"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_PANE_NOTEPAD		"记事本"
+	IDS_OFD_TEXT_FILTER		"文本文档(*.txt)|*.txt|所有文件 (*.*)|*.*||"
+
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_OFD_PIC_FILTER      "支持的文件(*.png,*.jpg,*.jpeg,*.gif,*.bmp)|*.png;*.jpg;*.jpeg;*.gif;*.bmp||"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "EasyICE"
+    IDR_EasyICETYPE         "\nEasyICE\nEasyICE\n\n\nEasyICE.Document\nEasyICE.Document"
+    IDR_VIEW_GRAPH          "\n图表"
+    ID_TASKPAN_TITLE_SYNC   "同步信息"
+    ID_TASKPAN_ITEM_TIMES   "时 间 戳"
+    ID_TASKPAN_ITEM_DEV     "PTS/DTS - PCR"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_TASKPAN_TITLE_GOP    "GOP"
+    ID_TASKPAN_ITEM_GOP_LIST "GOP 列表"
+    ID_TASKPAN_ITEM_GOP_FRAMES "GOP 帧数"
+	ID_TASKPAN_ITEM_GOP_BYTES  "GOP 字节数"
+    ID_TASKPAN_TITLE_RATE   "码率"
+    ID_TASKPAN_ITEM_RATE_WOBBLE "码率抖动"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "EasyICE"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW					"创建新文档\n新建"
+    ID_FILE_OPEN				"打开TS文件\n打开文件"
+	ID_FILE_OPENNETWORKSTREAM	"打开网络流\n打开 URL"
+    ID_FILE_CLOSE				"关闭文件或网络流\n关闭"
+    ID_FILE_SAVE				"保存活动文档\n保存"
+    ID_FILE_SAVE_AS				"用新名称保存活动文档\n另存为"
+    ID_FILE_PAGE_SETUP			"更改打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP			"更改打印机选项和打印选项\n打印设置"
+    ID_FILE_PRINT				"打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW		"显示整页\n打印预览"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息、版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开此文档"
+    ID_FILE_MRU_FILE2       "打开此文档"
+    ID_FILE_MRU_FILE3       "打开此文档"
+    ID_FILE_MRU_FILE4       "打开此文档"
+    ID_FILE_MRU_FILE5       "打开此文档"
+    ID_FILE_MRU_FILE6       "打开此文档"
+    ID_FILE_MRU_FILE7       "打开此文档"
+    ID_FILE_MRU_FILE8       "打开此文档"
+    ID_FILE_MRU_FILE9       "打开此文档"
+    ID_FILE_MRU_FILE10      "打开此文档"
+    ID_FILE_MRU_FILE11      "打开此文档"
+    ID_FILE_MRU_FILE12      "打开此文档"
+    ID_FILE_MRU_FILE13      "打开此文档"
+    ID_FILE_MRU_FILE14      "打开此文档"
+    ID_FILE_MRU_FILE15      "打开此文档"
+    ID_FILE_MRU_FILE16      "打开此文档"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回上一个窗格\n上一窗格"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_NEW           "为活动文档打开另一个窗口\n新建窗口"
+    ID_WINDOW_ARRANGE       "在窗口底部排列图标\n排列图标"
+    ID_WINDOW_CASCADE       "以重叠方式排列窗口\n层叠窗口"
+    ID_WINDOW_TILE_HORZ     "以非重叠的平铺方式排列窗口\n平铺窗口"
+    ID_WINDOW_TILE_VERT     "以非重叠的平铺方式排列窗口\n平铺窗口"
+    ID_WINDOW_SPLIT         "将活动窗口拆分为多个窗格\n拆分"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "清除选定内容\n清除"
+    ID_EDIT_CLEAR_ALL       "清除全部内容\n全部清除"
+    ID_EDIT_COPY            "复制选定内容并将其放到剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切选定内容并将其放到剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的文本\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一操作\n重复"
+    ID_EDIT_REPLACE         "用其他文本替换特定的文本\n替换"
+    ID_EDIT_SELECT_ALL      "选定整个文档\n全选"
+    ID_EDIT_UNDO            "撤消上一操作\n撤消"
+    ID_EDIT_REDO            "恢复上次撤消的操作\n重做"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n切换工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n切换状态栏"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "更改窗口大小"
+    AFX_IDS_SCMOVE          "更改窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小为图标"
+    AFX_IDS_SCMAXIMIZE      "使窗口最大化显示"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到前一个文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动窗口并提示保存文档"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "将窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务列表"
+    AFX_IDS_MDICHILD        "激活此窗口"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预览"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_PANE_OPTIONS        "选项"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_OPEN_FILE_FAILED    "打开文件失败！"
+    IDS_NOT_MPEG_FILE       "不是MPEG-TS文件！"
+    IDS_NO_ENOUGH_DATA      "没有足够的数据进行分析！"
+    IDS_TAB_PLAYER          "播放器"
+    IDS_PIDVIEW_TOTAL       "总计"
+    IDS_PIDVIEW_PERCENT     "百分比"
+    IDS_PIDVIEW_TYPE        "类型"
+    IDS_PIDVIEW_INDEX       "索引"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TOOLS_SELECT_SOURCE_FIRST "请选择源文件"
+    IDS_TOOLS_SELECT_DEST_FIRST "请选择输出文件"
+    IDS_TOOLS_INOUT_SAME    "源文件与输出文件不能相同"
+    IDS_TOOLS_OUTFILE_EXIST "文件已存在，是否覆盖？"
+    IDS_TOOLS_FILL_FULL     "请填写完整"
+    IDS_TOOLS_INPUT_CORRECT "请输入正确的PID:0-8191"
+    IDS_TOOLS_INPUT_PID     "请输入要抽取的PID"
+    IDS_TOOLS_PID_ERROR     "输入PID错误！"
+    IDS_CLOSE_CURRENT_FILE  "是否关闭任务？"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DLL_FORCE_CLOSE     "是否强制结束？"
+    IDS_DLL_TASK_RUNNING    "任务处理中"
+    IDS_DLL_ERROR           "错误"
+    IDS_DLL_READ_ERROR      "读文件错误！"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TR_LV1              "-----第 1 级-----"
+    IDS_TR_LV1_SYNC_LOST    "同步丢失错误"
+    IDS_TR_LV1_SYNC_BYTE_ERR "同步字节错误"
+    IDS_TR_LV1_PAT_ERR      "PAT 错误"
+    IDS_TR_LV1_CC_ERR       "连续计数错误"
+    IDS_TR_LV1_PMT_ERR      "PMT 错误"
+    IDS_TR_LV1_PID_ERR      "PID 错误"
+    IDS_TR_LV2              "-----第 2 级-----"
+    IDS_TR_LV2_TS_ERR       "传输错误"
+    IDS_TR_LV2_CRC_ERR      "CRC 错误"
+    IDS_TR_LV2_PCR_REPET_ERR "PCR 间隔错误"
+    IDS_TR_LV2_PCR_DISCON_ERR "PCR 不连续错误"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TR_LV2_PCR_AC_ERR   "PCR 精度错误"
+    IDS_TR_LV2_PTS_ERR      "PTS 错误"
+    IDS_TR_LV2_CAT_ERR      "CAT 错误"
+    IDS_TR_LV3              "-----第 3 级-----"
+    IDS_TR_LV3_NIT_ACT_ERR  "NIT_actual 错误"
+    IDS_TR_LV3_NIT_OTHER_ERR "NIT_other 错误"
+    IDS_TR_LV3_SI_REPET_ERR "SI 表间隔错误"
+    IDS_TR_LV3_UNREFER_PID_ERR "关联 PID 错误"
+    IDS_TR_LV3_SDT_ACT_ERR  "SDT_actual 错误"
+    IDS_TR_LV3_SDT_OTHER_ERR "SDT_other 错误"
+    IDS_TR_LV3_EIT_ACT_ERR  "EIT_actual 错误"
+    IDS_TR_LV3_EIT_OTHER_ERR "EIT_other 错误"
+    IDS_TR_LV3_EIT_PF_ERR   "EIT_PF 错误"
+    IDS_TR_LV3_RST_ERR      "RST 错误"
+    IDS_TR_LV3_TDT_ERR      "TDT 错误"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TR_LV1_PAT_ERR_OCC  "PAT 间隔 错误"
+    IDS_TR_LV1_PAT_ERR_TID  "PAT table_id 错误"
+    IDS_TR_LV1_PAT_ERR_SCF  "PAT 加扰指示 错误"
+    IDS_TR_LV1_PMT_ERR_OCC  "PMT 间隔 错误"
+    IDS_TR_LV1_PMT_ERR_SCF  "PMT 加扰指示 错误"
+    IDS_TR_LV2_CRC_ERR_PAT  "PAT CRC 错误"
+    IDS_TR_LV2_CRC_ERR_CAT  "CAT CRC 错误"
+    IDS_TR_LV2_CRC_ERR_PMT  "PMT CRC 错误"
+    IDS_TR_LV2_CRC_ERR_NIT  "NIT CRC 错误"
+    IDS_TR_LV2_CRC_ERR_SDT  "SDT CRC 错误"
+    IDS_TR_LV2_CRC_ERR_BAT  "BAT CRC 错误"
+    IDS_TR_LV2_CRC_ERR_TOT  "TOT CRC 错误"
+    IDS_TR_LV2_CRC_ERR_EIT  "EIT CRC 错误"
+    IDS_TR_LV2_CAT_ERR_TID  "CAT table_id 错误"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TR_LV3_NIT_ACT_ERR_TID "NIT_act table_id 错误"
+    IDS_TR_LV3_NIT_ACT_ERR_INT "NIT_act 间隔 错误"
+    IDS_TR_LV3_SDT_ACT_ERR_TID "SDT_act table_id 错误"
+    IDS_TR_LV3_SDT_ACT_ERR_INT "SDT_act 间隔 错误"
+    IDS_TR_LV3_EIT_ACT_ERR_TID "EIT_act table_id 错误"
+    IDS_TR_LV3_EIT_ACT_ERR_INT "EIT_act 间隔 错误"
+    IDS_TR_LV3_RST_ERR_TID  "RST table_id 错误"
+    IDS_TR_LV3_RST_ERR_INT  "RST 间隔 错误"
+    IDS_TR_LV3_TDT_ERR_TID  "TDT table_id 错误"
+    IDS_TR_LV3_TDT_ERR_INT  "TDT 间隔 错误"
+    IDS_TR_LV3_INT_BAT      "TDT 间隔 错误"
+    IDS_TR_LV3_INT_EIT_SCHEDULE_ACT "EIT_schedule_act 间隔 错误"
+    IDS_TR_LV3_INT_EIT_SCHEDULE_OTHER "EIT_schedule_other 间隔 错误"
+    IDS_TR_LV3_INT_TOT      "TOT 间隔 错误"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TR_DESC_PAT_OCC     "PAT 间隔时间大于 0.5 秒"
+    IDS_TR_DESC_PAT_TID     "PAT table_id 不等于 0"
+    IDS_TR_DESC_PAT_SCF     "PAT 加扰指示不等于 0"
+    IDS_TR_DESC_PMT_OCC     "PMT 间隔时间大于 0.5 秒"
+    IDS_TR_DESC_PMT_SCF     "PMT 加扰指示不等于 0"
+    IDS_TR_DESC_PID         "PID 没有及时到来 %d"
+    IDS_TR_DESC_PCR_REPETITION "PCR 间隔超过40ms,PID = %d"
+    IDS_TR_DESC_PCR_AC      "PCR 精度误差超过正负 500ns,PID = %d"
+    IDS_TR_DESC_PTS         "PTS 间隔超过 700ms,PID = %d"
+    IDS_TR_DESC_INT         "间隔：%I64d,PID = %d"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FILEOPENSHT_CAPTION "选项"
+    IDS_OK                  "确定"
+    IDS_CANCEL              "取消"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TR_LV1_BRIEF_SYNC_LOST "同步丢失错误,共 %d 次.\r\n"
+    IDS_TR_LV1_BRIEF_SYNC_BYTE_ERR "同步字节不等于 0x47,共 %d 次.\r\n"
+    IDS_TR_LV1_BRIEF_PAT_ERR 
+                            "PAT 错误,共 %d 次.\r\n\t其中:\r\nPAT 间隔大于 0.5 秒,有 %d 次.\r\nPID=0 但 table_id 不等于 0,有 %d 次. \r\nPAT 的 TS 包加扰指示不等于 0,有 %d 次.\r\n"
+    IDS_TR_LV1_BRIEF_CC_ERR "连续计数错误,共 %d 次.\r\n"
+    IDS_TR_LV1_BRIEF_PMT_ERR 
+                            "PMT 错误,共 %d 次.\r\n\t其中:\r\nPMT 间隔时间大于 0.5 秒,有 %d 次.\r\nPMT 的 TS 包加扰指示不等于 0,有 %d 次.\r\n"
+    IDS_TR_LV1_BRIEF_PID_ERR "PMT 关联的 PID 没有及时到达,有 %d 次.\r\n"
+    IDS_TR_LV2_BRIEF_TS_ERR "TS 包的传输错误指示为 1,有 %d 次.\r\n"
+    IDS_TR_LV2_BRIEF_CRC_ERR 
+                            "CRC 错误,共 %d 次.\r\n\t其中:\r\nCRC 错误出现在 PAT 表中,有 %d 次.\r\nCRC 错误出现在 CAT 表中,有 %d 次.\r\nCRC 错误出现在 PMT 表中,有 %d 次.\r\nCRC 错误出现在 NIT 表中,有 %d 次.\r\nCRC 错误出现在 SDT 表中,有 %d 次.\r\nCRC 错误出现在 BAT 表中,有 %d 次.\r\nCRC 错误出现在 TOT 表中,有 %d 次.\r\nCRC 错误出现在 EIT 表中,有 %d 次.\r\n"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TR_LV2_BRIEF_PCR_REPET_ERR "PCR 间隔超过 40ms,共 %d 次.\r\n"
+    IDS_TR_LV2_BRIEF_PCR_DISCON_ERR 
+                            "未设置不连续标志的情况下前后 PCR 差值大于 100ms,共 %d 次.\r\n"
+    IDS_TR_LV2_BRIEF_PCR_AC_ERR "PCR 精度误差超过正负 500ns,共 %d 次.\r\n"
+    IDS_TR_LV2_BRIEF_PTS_ERR "PTS 间隔超过 700ms,共 %d 次.\r\n"
+    IDS_TR_LV2_BRIEF_CAT_ERR 
+                            "CAT 错误,共 %d 次.\r\n\t其中:\r\nPID=1 但 table_id 不等于 1,有 %d 次.\r\n"
+    IDS_TR_LV3_BRIEF_NIT_ACT_ERR 
+                            "NIT_actual 错误,共 %d 次.\r\n\t其中:\r\ntable_id 不等于 0x40 或 0x41 或 0x72,有 %d 次.\r\nNIT_act 间隔超时,有 %d 次.\r\nNIT_act 间隔短于 25ms,有 %d 次.\r\n"
+    IDS_TR_LV3_BRIEF_NIT_OTHER_ERR 
+                            "NIT_other 错误,共 %d 次.\r\n\t其中:\r\nNIT_other 间隔超时,有 %d 次.\r\nNIT_other 间隔短于 25ms,有 %d 次.\r\n"
+    IDS_TR_LV3_BRIEF_SI_REPET_ERR 
+                            "SI 表间隔错误,共 %d 次.\r\n\t其中:\r\nSI                  section 间隔短于 25ms,有 %d 次.\r\nNIT                 section 间隔超时,有 %d 次.\r\nBAT                 section 间隔超时,有 %d 次.\r\nSDT_act             section 间隔超时,有 %d 次.\r\nSDT_other           section 间隔超时,有 %d 次.\r\nEIT_PF_act          section 间隔超时,有 %d 次.\r\nEIT_PF_other        section 间隔超时,有 %d 次.\r\nEIT_SCHEDULE_act    section 间隔超时,有 %d 次.\r\nEIT_SCHEDULE_other  section 间隔超时,有 %d 次.\r\nTDT                 section 间隔超时,有 %d 次.\r\nTOT                 section 间隔超时,有 %d 次.\r\n"
+    IDS_TR_LV3_BRIEF_UNREFER_PID_ERR "有 PID 在 0.5 秒还未被 PMT 和 CAT 关联,有 %d 次."
+    IDS_TR_LV3_BRIEF_SDT_ACT_ERR 
+                            "SDT_actual 错误,共 %d 次.\r\n\t其中:\r\nSDT_act 间隔超时,有 %d 次.\r\nPID=0x11 但 table_id 不等于 0x42,0x46,0x4A 或 0x72,有 %d 次.\r\nSDT_act 间隔短于 25ms,有 %d 次.\r\n"
+    IDS_TR_LV3_BRIEF_SDT_OTHER_ERR 
+                            "SDT_other 错误,共 %d 次.\r\n\t其中:\r\nSDT_other 间隔超时,有 %d 次.\r\nSDT_other 间隔短于 25ms,有 %d 次.\r\n"
+    IDS_TR_LV3_BRIEF_EIT_ACT_ERR 
+                            "EIT_actual 错误,共 %d 次.\r\n\t其中:\r\nEIT_PF_act 间隔超时,有 %d 次.\r\ntable_id 错误,有 %d 次.\r\nEIT_PF_act 间隔短于 25ms,有 %d 次.\r\n"
+    IDS_TR_LV3_BRIEF_EIT_OTHER_ERR 
+                            "EIT_other 错误,共 %d 次.\r\n\t其中:\r\nEIT_PF_other 间隔超时,有 %d 次.\r\nEIT_PF_other 间隔短于 25ms,有 %d 次.\r\n"
+    IDS_TR_LV3_BRIEF_EIT_PF_ERR "EIT_P 或 F 仅出现一个,有 %d 次."
+    IDS_TR_LV3_BRIEF_RST_ERR 
+                            "RST 错误,共 %d 次\r\n\t其中:\r\ntable_id 错误,有 %d 次.\r\nRST section 间隔短于 25ms,有 %d 次.\r\n"
+    IDS_TR_LV3_BRIEF_TDT_ERR 
+                            "TDT 错误,共 %d 次\r\n\t其中:\r\nTDT 间隔超时,有 %d 次.\r\ntable_id 错误,有 %d 次.\r\nRST section 间隔短于 25ms,有 %d 次.\r\n"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NV_ERROR			"验证失败！"
+	IDS_NV_OUTOFDAY			"版本已过期,请下载新版本: \r\n www.easyice.cn"
+	IDS_NV_NET_ERR			"网络错误！"
+	IDS_NV_VALIDAING		"正在验证"
+	IDS_NV_DOWNLOAD			"下载"
+	IDS_HLS_TP_QUALITY				"传输流监测"
+    IDS_HLS_TP_SEGMENT_QUALITY		"切片质量"
+    IDS_HLS_TP_DIAGNOSIS			"诊断"
+    IDS_HLS_TP_PROTOCOL				"协议分析"
+	IDS_HLS_TP_PROTOCOL_HLS			"HLS"
+    IDS_HLS_TP_PROTOCOL_HTTP		"HTTP"
+	IDS_HLS_SQ_PATPMT       "以 PAT,PMT 开始"
+    IDS_HLS_SQ_PATPMT_BRIEF "每个切片都应当以PAT和PMT为起始. \r\n"
+    IDS_HLS_SQ_COMPLETE_VF  "完整的视频帧"
+    IDS_HLS_SQ_COMPLETE_VF_BRIEF "如果存在视频，切片最好包含完整的视频帧。切片时最好选择在帧边界\r\n"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_HLS_SQ_COMPLETE_AF  "完整的音频帧"
+    IDS_HLS_SQ_COMPLETE_AF_BRIEF "切片最好包含完整的音频帧。切片时最好选择在帧边界\r\n"
+    IDS_HLS_SQ_CC           "TS 包连续性"
+    IDS_HLS_SQ_CC_BRIEF     "相邻切片之间的TS包不应存在连续计数错 - 除非上一个切片在播放列表中有 EXT-X-DISCONTINUITY 标签\r\n\r\n"
+    IDS_HLS_SQ_TC           "时间戳连续性"
+    IDS_HLS_SQ_TC_BRIEF     "相邻切片之间的时间戳应该是连续的 - 除非上一个切片在播放列表中有 EXT-X-DISCONTINUITY 标签\r\n\r\n"
+    IDS_HLS_SQ_ONE_KEYFRAME     "至少一个I帧"
+    IDS_HLS_SQ_ONE_KEYFRAME_BRIEF 
+                            "如果存在视频，切片应该至少存在 一个 关键帧\r\n"
+    IDS_HLS_TP_GLOBAL       "全局"
+	IDS_HLS_SQ_KEYFRAME_START "以关键帧开始"
+    IDS_HLS_SQ_KEYFRAME_START_BRIEF "如果存在视频，切片中出现的第一个帧最好是关键帧"
+	IDS_HLS_DIA_MSG_SPTS    "切片必须是单节目流"
+    IDS_HLS_DIA_MSG_VIDEOTYPE "视频编码类型不符合HLS协议规范"
+    IDS_HLS_DIA_MSG_AUDIOTYPE "音频编码类型不符合HLS协议规范"
+    IDS_HLS_DIA_MSG_HAS_NULLPKT "码流存在空包"
+	IDS_HLS_DIA_MSG_HAS_HASBFRAME "存在B帧"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_HLS_BUFFER_UNDERFLOW "下溢 (Last 1000)"
+    IDS_HLS_WAITTING_QUEUE  "待下载"
+    IDS_HLS_DOWNLOAD_ERRORS "下载失败"
+    IDS_HLS_M3U8            "M3U8"
+    IDS_HLS_DOWNLOAD_HISTORY "下载历史 (Last 1000)"
+    IDS_HLS_HTTP_RESPONSE_HEAD_M3U8 "M3U8 响应头"
+    IDS_HLS_HTTP_RESPONSE_HEAD_SEGMENT "分片响应头"
+	IDS_HLS_RELEVANT_SEGMENT "相关分片 (Top 100)"
+	IDS_LICENSE_RUN_TIMEOUT "免费用户只能连续运行12小时，购买完全版，请致信： easyicedev@163.com"
+	IDS_PLAYER_PROMPT_TEXT  "播放器将稍后初始化，使用F11或Alt+Enter切换全屏播放"
+END
+
+
+STRINGTABLE 
+BEGIN
+
+	IDS_TOOLTIP_HEX				"十六进制添加 0x/0X 前缀"
+	IDS_FILE_CHECKSUM_ERROR		"软件自校验失败！"
+	IDS_TOOLS_SELECT_TO_START	"完毕,选择一个文件开始分析。"
+	IDS_IS_PCAP					"这可能是个捕获的网络包，是否使用解包程序打开？"
+	IDS_NO_FILE_CREATE			"没有文件被生成."
+
+END
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(1252)
+#include "res\EasyICE.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
